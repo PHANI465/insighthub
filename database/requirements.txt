@@ -1,0 +1,7 @@
+# database/requirements.txt
+# Install with: pip install -r database/requirements.txt
+# Requires Microsoft ODBC Driver 18 for SQL Server to be installed on the OS.
+# Download: https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server
+
+pyodbc==5.1.0         # Azure SQL / SQL Server ODBC connector for Python
+python-dotenv==1.0.1  # Loads .env for local development
