@@ -1,0 +1,4 @@
+{
+  "_comment": "Power BI dataset schema definition for InsightHub. Describes tables, columns, relationships, and DAX measures that Power BI Service will use to build reports. Matches the Azure SQL views exposed by the backend.",
+  "tables": []
+}

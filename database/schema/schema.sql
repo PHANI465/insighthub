@@ -1,0 +1,5 @@
+-- schema.sql
+-- Master schema for InsightHub Azure SQL database.
+-- Defines all tables: customers, products, sales_transactions, events, and
+-- the aggregated views used by the FastAPI backend and Power BI datasets.
+-- Run this once on a fresh database before applying migrations.

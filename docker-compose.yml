@@ -1,0 +1,43 @@
+# docker-compose.yml — local development stack for InsightHub.
+# Spins up the FastAPI backend, React frontend, and a local SQL Server instance.
+# Azure-managed services (ADF, AI Search, Power BI) are used directly via env vars.
+
+version: "3.9"
+
+services:
+  db:
+    # Local SQL Server for development (mirrors Azure SQL schema)
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "${DB_PASSWORD}"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - db_data:/var/opt/mssql
+
+  backend:
+    # FastAPI application served via Uvicorn
+    build: ./backend
+    env_file: .env
+    ports:
+      - "${API_PORT:-8000}:8000"
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    # React development server (Vite or CRA)
+    build: ./frontend
+    env_file: .env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  db_data:

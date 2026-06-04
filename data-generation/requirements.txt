@@ -1,0 +1,7 @@
+# data-generation/requirements.txt
+# Install with: pip install -r data-generation/requirements.txt
+
+faker==24.9.0                  # Realistic synthetic data generation
+azure-storage-blob==12.19.1   # Azure Blob Storage SDK for uploading CSVs
+azure-identity==1.16.0        # Azure auth (used by azure-storage-blob internally)
+python-dotenv==1.0.1          # Loads .env files for local development

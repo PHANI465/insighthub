@@ -1,0 +1,6 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "_comment": "Azure Data Factory pipeline template for InsightHub. Defines linked services, datasets, and data flows that copy raw data from ADLS into Azure SQL with type coercion and deduplication.",
+  "contentVersion": "1.0.0.0",
+  "resources": []
+}

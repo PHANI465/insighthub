@@ -1,0 +1,5 @@
+-- 001_initial_schema.sql
+-- First migration: creates the baseline tables from schema.sql.
+-- Each subsequent migration file is numbered sequentially (002_, 003_, …)
+-- and contains only the incremental ALTER / CREATE statements needed
+-- to evolve the schema without a full rebuild.
