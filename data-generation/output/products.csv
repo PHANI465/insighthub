@@ -1,0 +1,501 @@
+product_id,product_name,category,subcategory,sku,brand,unit_price,cost_price,margin_pct,stock_quantity,reorder_level,supplier,launch_date,status,weight_kg,rating,review_count
+f4ce4f29-973b-48c2-b905-43028cfb00fc,Rivera-Gamble History Core,Books,History,BOO-77398,Rivera-Gamble Systems,48.97,29.54,39.68,332,102,Moreno-Phillips,2017-11-03,Active,13.61,1.6,3602
+8eb81084-97c6-4066-ac71-e682e139c8f0,Jones-Galloway Decor Core,Home & Garden,Decor,HOM-29189,Jones-Galloway Co,687.64,365.99,46.78,334,27,"Kelly, Medina and Chandler",2025-09-28,Active,29.0,4.1,4062
+54072332-8676-4e50-8a42-055eda0e6aca,Garcia-Miller Outdoor Core,Toys,Outdoor Toys,TOY-62210,Garcia-Miller Co,193.39,83.95,56.59,208,33,Smith-Kerr,2024-09-11,Active,9.33,2.7,657
+c2edb1f4-85db-4658-81d6-e182708ee87c,Flowers Tools Lite,Home & Garden,Tools,HOM-83625,Flowers Industries,777.83,416.35,46.47,0,52,Hodges Inc,2020-02-29,Discontinued,14.03,4.2,718
+ef1c23a5-8552-402b-8802-66f830f72d36,"Cameron, Software Plus",Office,Software,OFF-98628,"Cameron, Tech",176.03,77.63,55.9,89,58,Sloan-Harper,2023-08-11,Active,20.0,1.8,3314
+79fc1d4e-41d6-4513-9361-9fb9e907e8d6,Gentry-Olson Smartphones Elite,Electronics,Smartphones,ELE-45255,Gentry-Olson Works,830.05,385.31,53.58,361,17,"Freeman, Cook and Williams",2020-12-05,Out of Stock,22.66,4.5,2091
+ade2807a-bfe2-4955-8122-f4530eb134ac,Thomas-Wilson Car Pro,Automotive,Car Accessories,AUT-62081,Thomas-Wilson Tech,894.02,567.11,36.57,78,119,"Edwards, Allen and Wells",2018-09-01,Active,20.24,3.6,775
+9ae4fbac-7ea1-4722-8e77-49b774eb3278,Garcia-Miller Bedding Lite,Home & Garden,Bedding,HOM-21206,Garcia-Miller Co,991.76,466.7,52.94,611,35,Richardson-Randolph,2023-06-25,Active,2.5,1.8,6305
+c7421fb1-728f-4fa0-97e6-83f07c17c97b,Caldwell Pantry Pro,Food & Grocery,Pantry Staples,FOO-90194,Caldwell Co,39.19,26.74,31.77,0,59,"Miller, King and Morrison",2025-11-27,Active,12.99,4.1,2450
+eefdc85c-6bf9-4099-8e1d-49c02f69e460,Kelley-Horton Tablets Prime,Electronics,Tablets,ELE-32000,Kelley-Horton Tech,145.8,89.99,38.28,175,72,"Ross, Christensen and Pearson",2018-11-22,Discontinued,11.78,3.0,6361
+c599a446-6c44-4456-8ee2-dccf84530b82,Grant Running Elite,Sports,Running,SPO-14101,Grant Co,803.96,389.45,51.56,195,30,Hendrix-Thomas,2025-01-04,Out of Stock,8.51,4.7,3116
+ae02bb1b-7327-4477-9510-be5e16155a96,Hill-Griffin Camping Essential,Sports,Camping,SPO-35569,Hill-Griffin Group,651.44,321.02,50.72,356,85,Winters Group,2026-03-29,Active,5.63,3.0,6063
+c1b022ff-7672-4f80-83c1-47a2bb228ec4,Grant Cameras Elite,Electronics,Cameras,ELE-51069,Grant Co,2259.94,1571.84,30.45,383,76,Zhang and Sons,2017-10-11,Active,9.86,4.5,4716
+cea45fcd-892f-40f0-a424-27258d784bce,Martin-Ramirez Action Core,Toys,Action Figures,TOY-71562,Martin-Ramirez Pro,24.21,14.96,38.21,749,119,"Crosby, Tran and Lee",2020-10-18,Active,23.06,3.3,1048
+bd77f63b-b96a-4ee3-ad9d-9484b770e424,Kennedy-English Camping Plus,Sports,Camping,SPO-71887,Kennedy-English Pro,379.67,233.78,38.43,77,44,Vang PLC,2026-01-07,Active,18.84,2.3,651
+4fb8ce43-5d75-48be-a8c6-433b79e7b334,Smith Action Pro,Toys,Action Figures,TOY-24704,Smith Industries,165.4,88.94,46.23,425,73,Shaw Ltd,2023-11-15,Active,12.29,4.5,2955
+dc167be8-d993-4561-85f7-1f717a9b334b,"King, Electronics Plus",Automotive,Electronics,AUT-33477,"King, Group",857.09,588.47,31.34,380,42,"Walton, Thompson and Patel",2020-04-01,Active,4.34,4.6,4163
+5914c0a0-94d1-4eaa-9fec-07d0862484a7,Robinson Self-Help Essential,Books,Self-Help,BOO-22687,Robinson Group,63.66,37.39,41.27,544,95,Higgins-Stewart,2018-11-29,Active,7.7,4.8,3608
+5ae75317-2930-470c-85b2-adf763691d25,Flowers History Ultra,Books,History,BOO-29306,Flowers Industries,12.47,6.74,45.95,218,106,"Schwartz, Ray and Watkins",2023-06-13,Active,28.81,2.7,2105
+45a39c8a-7ebc-4988-8b5d-61334bd921d8,Fowler Women's Ultra,Clothing,Women's Tops,CLO-86874,Fowler Works,265.93,120.35,54.74,377,34,"Lopez, Holden and Sexton",2019-09-22,Discontinued,7.28,2.9,1678
+b023acf2-d86c-4bef-b7d2-b6c3a08bbf31,Jones-Galloway Pantry Plus,Food & Grocery,Pantry Staples,FOO-73656,Jones-Galloway Co,77.18,39.82,48.41,217,33,Anderson-Mathews,2017-04-12,Active,13.2,2.9,4873
+63a6ba93-651b-4bd1-8c55-69f1a5768b83,"Peterson, Makeup Lite",Beauty,Makeup,BEA-62893,"Peterson, Industries",245.44,170.72,30.44,685,107,Andrews-Todd,2018-08-14,Active,22.99,2.9,1709
+e1796200-3fc8-47a8-b03d-07225d80299f,Thompson-Powell Action Essential,Toys,Action Figures,TOY-38417,Thompson-Powell Pro,105.94,44.52,57.98,787,41,Thompson-Wright,2019-03-12,Active,13.82,2.4,4959
+40164b58-925b-4b73-af97-50583cf6f530,Moyer-Brown Car Plus,Automotive,Car Care,AUT-78659,Moyer-Brown Labs,68.56,46.2,32.61,664,110,"Reilly, Jarvis and Welch",2022-08-13,Discontinued,1.26,4.6,4644
+ab87dfa9-2a37-4b60-aecf-05432ab9ee7a,Williams-Wang Lighting Prime,Automotive,Lighting,AUT-45364,Williams-Wang Industries,62.17,37.16,40.23,354,61,"Johnson, Ball and Skinner",2022-01-26,Active,0.44,4.7,826
+9e1f1b77-5d4a-43fa-97cd-7adae07fc5a2,Nunez-Thompson Technology Pro,Books,Technology,BOO-97673,Nunez-Thompson Systems,37.15,25.77,30.63,707,111,Perry Inc,2017-11-10,Out of Stock,23.22,4.0,4835
+27124079-dbea-485e-bf1d-143df86b4f47,Thomas-Buckley Dolls Max,Toys,Dolls & Plush,TOY-82201,Thomas-Buckley Labs,13.31,8.79,33.96,860,57,Arellano LLC,2017-04-10,Discontinued,10.62,2.9,747
+0d3bdd91-2345-418e-be36-67e0f99e3532,"Martinez, Educational Ultra",Toys,Educational,TOY-90227,"Martinez, Labs",164.2,100.09,39.04,470,38,Walker-Murray,2021-09-02,Active,6.5,2.0,3562
+b1fdd1a3-66d6-40cc-a5f5-bc8e84693b65,Hart Board Ultra,Toys,Board Games,TOY-83727,Hart Labs,108.6,74.75,31.17,459,107,Glover-Lynch,2017-03-11,Active,4.83,1.7,1928
+0c679c14-0e2a-4881-9fd9-3b6175d8a851,"Sullivan, Team Elite",Sports,Team Sports,SPO-80627,"Sullivan, Labs",124.15,63.78,48.63,573,43,Thomas-Ruiz,2021-11-10,Active,9.97,2.0,464
+ffb953df-591f-4410-a5d2-a29429ade2c3,Clarke-Ward Fitness Lite,Sports,Fitness,SPO-77971,Clarke-Ward Co,14.66,6.88,53.07,350,73,Gordon-Ward,2025-06-26,Active,21.6,2.7,145
+876ad308-a687-433a-8875-cd7557d67c0c,Thomas-Wilson Educational Plus,Toys,Educational,TOY-84209,Thomas-Wilson Tech,38.45,18.73,51.29,406,75,Campbell Group,2023-01-03,Discontinued,0.61,1.7,1667
+0132266e-03d7-4cf6-a14e-b3fe82d5197d,Burgess Women's Plus,Clothing,Women's Tops,CLO-80275,Burgess Systems,238.94,110.47,53.77,257,65,Navarro Inc,2020-03-11,Active,10.55,2.0,1227
+dd131f50-792e-4d96-aef5-5b6d8c24049d,"Frank, Running Core",Sports,Running,SPO-34998,"Frank, Tech",596.66,338.46,43.27,280,105,"Smith, Carter and Johnson",2024-12-31,Active,14.14,1.8,3084
+4b9e3a63-db0d-49d9-bebf-21fca554ac1d,"Williams, Skincare Pro",Beauty,Skincare,BEA-25552,"Williams, Industries",20.25,13.25,34.57,408,55,Thompson-Thompson,2021-10-26,Active,20.69,4.1,712
+44debe45-20f9-4de6-a91f-16099d4d7db4,Benjamin Makeup Lite,Beauty,Makeup,BEA-39639,Benjamin Tech,73.27,42.58,41.89,0,60,Mccall Group,2018-06-30,Active,25.72,2.9,664
+3d18bbd4-d639-4229-a5c9-7c05724608e0,Webb Car Ultra,Automotive,Car Accessories,AUT-70252,Webb Pro,991.63,575.58,41.96,0,72,"Joseph, Reyes and Guzman",2017-02-28,Active,2.43,2.1,2637
+efc3a249-d2db-422c-b17e-793a08b28cd4,"Joseph, Beverages Core",Food & Grocery,Beverages,FOO-76853,"Joseph, Systems",69.33,45.71,34.07,375,24,Mitchell-Robbins,2023-09-01,Out of Stock,26.15,2.2,6388
+ba442d63-dfca-44bc-98db-cf251e90c5d8,"Hooper, Tools Pro",Automotive,Tools & Equipment,AUT-41884,"Hooper, Pro",1207.36,646.56,46.45,471,30,"Jacobson, Johnson and Taylor",2018-10-11,Active,15.98,1.7,4850
+a698d07d-1523-47b7-81d0-a1586824c355,Hill-Griffin Beverages Ultra,Food & Grocery,Beverages,FOO-95642,Hill-Griffin Group,71.82,44.79,37.64,384,59,Lawrence-Mccall,2025-09-28,Active,20.34,4.2,3972
+d7d98bda-eabb-4bc1-bf41-cde47fbe7038,"Watson, Electronics Elite",Automotive,Electronics,AUT-31234,"Watson, Tech",359.63,217.01,39.66,439,99,Ford and Sons,2025-08-25,Active,16.16,3.0,6055
+a3a826d3-ef20-4775-a2a2-46bb8d13a57a,"Cameron, Headphones Essential",Electronics,Headphones,ELE-38637,"Cameron, Tech",682.38,426.14,37.55,533,102,"Galvan, Daniels and Moreno",2020-12-27,Active,6.18,2.0,166
+b236fdcf-5da2-4983-90e8-903851f9c02d,Robinson-Patterson Lighting Max,Automotive,Lighting,AUT-59301,Robinson-Patterson Co,1431.23,677.83,52.64,385,79,"Warren, Collins and Jenkins",2023-09-12,Out of Stock,15.17,3.4,5745
+9e012678-5294-45c4-8412-361d90372a66,Kelley-Horton Hair Pro,Beauty,Hair Care,BEA-86508,Kelley-Horton Tech,14.84,7.73,47.91,0,65,Wu LLC,2025-01-21,Active,7.44,1.7,5306
+79e418af-710d-495d-85d1-a12cb54e219a,Garcia-Miller Lighting Essential,Automotive,Lighting,AUT-27738,Garcia-Miller Co,1233.47,528.01,57.19,715,93,Cook-Gates,2023-03-24,Active,6.06,4.6,6473
+9bc9a6ed-90a1-4942-9c35-0a5f1b412b90,Riley Accessories Lite,Clothing,Accessories,CLO-83664,Riley Labs,254.93,117.68,53.84,186,18,"Bailey, Martinez and Zhang",2025-10-09,Discontinued,16.02,1.6,5809
+5679d4e3-b69d-43e4-a32f-60158384977a,"Price, Bedding Elite",Home & Garden,Bedding,HOM-68601,"Price, Co",746.26,429.28,42.48,372,93,Hebert-Harris,2018-11-20,Active,22.02,4.4,6150
+12b131aa-da78-418b-8c54-52189dcd0c92,Thomas-Wilson Organic Core,Food & Grocery,Organic,FOO-47109,Thomas-Wilson Tech,36.03,19.16,46.82,216,91,Hudson-Coleman,2019-10-23,Active,7.46,2.0,2196
+39af06a6-2d4f-4b96-be70-b4f935703b76,"Martinez, Bedding Prime",Home & Garden,Bedding,HOM-79157,"Martinez, Labs",902.0,595.01,34.03,364,103,Hartman LLC,2025-07-20,Active,3.38,3.6,13
+a4ecf5c9-0c25-4ee6-a77a-c50ad018db2e,Smith Hair Lite,Beauty,Hair Care,BEA-50007,Smith Industries,195.42,129.22,33.88,243,19,"Rogers, Tran and Cummings",2020-05-06,Active,19.43,2.3,5704
+15c1b7ff-1a56-48ff-888a-9a835dc42210,Turner-French Fragrances Ultra,Beauty,Fragrances,BEA-69893,Turner-French Pro,108.03,56.52,47.68,388,60,"Gray, Davis and Chavez",2025-07-18,Active,5.16,4.3,4407
+9dc3442c-d3e9-4fba-be7a-2f63cbe42d94,Robinson-Patterson Men's Ultra,Beauty,Men's Grooming,BEA-96530,Robinson-Patterson Co,213.5,138.0,35.36,214,99,Taylor-Jones,2017-07-02,Discontinued,2.75,3.5,3616
+8c15f2fd-8e83-4b77-9713-d4449130eede,Burgess Dolls Core,Toys,Dolls & Plush,TOY-87094,Burgess Systems,14.62,7.39,49.45,197,91,"White, Kemp and Terry",2023-09-18,Active,25.28,3.1,3366
+b424afb0-cb6d-4d9b-85f7-efffcf46c936,"Smith, Running Essential",Sports,Running,SPO-71626,"Smith, Tech",220.38,129.94,41.04,261,86,"Caldwell, Castillo and Harris",2018-06-28,Active,26.36,2.5,4359
+ea83e486-195d-4e31-944d-81ef01b8f5cf,Jacobs Software Core,Office,Software,OFF-45267,Jacobs Pro,634.1,349.44,44.89,383,83,"Ruiz, Schultz and Lucero",2020-12-13,Active,11.99,3.1,4205
+0b545cff-69ff-465b-8438-afa3d9b41efc,Lopez Denim Elite,Clothing,Denim,CLO-44956,Lopez Labs,95.05,51.5,45.82,184,97,Knight Inc,2020-12-12,Out of Stock,17.87,2.4,5305
+0e1fa71f-c88d-496e-ac78-71b2cd7fe740,Hahn Men's Pro,Beauty,Men's Grooming,BEA-97970,Hahn Tech,188.79,117.01,38.02,0,99,Cabrera PLC,2019-07-23,Active,6.66,4.8,3161
+36bc26b6-3a9f-4e27-8270-718919640586,Hart Car Pro,Automotive,Car Accessories,AUT-79474,Hart Labs,1009.58,579.8,42.57,570,102,"Good, Mcguire and Brown",2021-12-04,Out of Stock,2.24,4.3,4279
+0b3f38e8-3a80-452b-8e2c-caa8a3d5f195,Jacobs Water Elite,Sports,Water Sports,SPO-75150,Jacobs Pro,790.15,398.75,49.53,90,38,Bates-Martin,2026-04-23,Active,10.57,2.9,4995
+8ccbaf9e-921e-4139-bc61-96f1e15890df,"Johnson, Makeup Lite",Beauty,Makeup,BEA-10419,"Johnson, Co",237.4,113.5,52.19,608,15,Moore-Perry,2020-11-14,Active,28.73,2.3,4049
+9cde31e4-81a6-4caa-9c17-1720dbccdb8b,Ball Cameras Ultra,Electronics,Cameras,ELE-98715,Ball Pro,1251.05,589.9,52.85,244,20,Clark Ltd,2023-01-29,Discontinued,11.69,1.9,2743
+dd39afc8-d564-40c3-b0ff-5bcc920cfe65,"Campbell, Dolls Lite",Toys,Dolls & Plush,TOY-21960,"Campbell, Systems",36.34,15.74,56.69,429,40,Lewis-Fox,2023-09-02,Active,18.02,3.1,1049
+3488a8dc-b8f4-40be-a038-6867f764f9ff,Lopez Bedding Lite,Home & Garden,Bedding,HOM-58176,Lopez Labs,1519.78,884.96,41.77,610,110,Landry and Sons,2022-03-03,Active,13.88,2.8,3833
+cd357413-773b-4755-a653-6ea55da206e9,Moyer-Brown Fitness Elite,Sports,Fitness,SPO-10463,Moyer-Brown Labs,559.99,296.04,47.13,495,33,Graves-Johnson,2017-05-15,Active,2.66,3.0,257
+b0b4edf9-891d-4e5f-b049-c2c976e0a9ec,Dalton-Walker Fiction Elite,Books,Fiction,BOO-38501,Dalton-Walker Pro,77.47,41.0,47.08,695,41,Rose-Cole,2022-10-05,Active,28.36,3.0,3054
+85bbffe6-2782-4482-891b-8fa38f50121c,"Smith, Car Prime",Automotive,Car Care,AUT-67708,"Smith, Tech",716.37,309.07,56.86,451,21,Pollard and Sons,2019-10-13,Active,1.23,4.0,977
+402f2a1b-3421-4ed8-9377-cdcd89f13c70,"Mccoy, Men's Plus",Clothing,Men's Tops,CLO-69837,"Mccoy, Pro",265.72,124.38,53.19,415,73,Alvarez-Gonzalez,2018-08-11,Out of Stock,29.32,3.7,5354
+023d27d2-07df-4cab-bf8c-e635e71227c9,Avery Outdoor Essential,Home & Garden,Outdoor Living,HOM-66353,Avery Pro,1943.66,1011.15,47.98,564,83,Sparks Group,2024-12-01,Active,23.69,2.0,4159
+fbe1f176-8d10-4f80-b563-9727d03a00e2,Prince Water Essential,Sports,Water Sports,SPO-54013,Prince Works,826.28,422.81,48.83,156,105,Proctor-Blanchard,2019-07-10,Active,20.66,3.0,3613
+73c8b499-2abf-412c-b843-84cbd694cbb5,Flowers Decor Lite,Home & Garden,Decor,HOM-92962,Flowers Industries,598.89,264.43,55.85,437,99,"Sanchez, Hicks and Gregory",2020-06-07,Active,17.81,4.2,3099
+cccbd882-8ccf-493c-a2cb-822bcc3f3784,Hill-Griffin Fitness Lite,Sports,Fitness,SPO-24946,Hill-Griffin Group,667.91,432.94,35.18,202,22,"Griffin, Hanson and Ross",2025-08-29,Discontinued,28.52,2.8,1115
+4cbc09e1-58a2-4d8e-a9db-4bfc83a74e72,Hahn Men's Max,Beauty,Men's Grooming,BEA-78433,Hahn Tech,40.18,22.74,43.4,308,33,Gaines-Ramirez,2022-11-03,Active,12.91,1.9,4354
+e0801642-b1db-4a28-a7c6-77918ff54260,"Miller, Science Plus",Books,Science,BOO-84489,"Miller, Co",20.91,13.35,36.15,192,64,Lee Group,2026-05-18,Active,21.05,4.5,4537
+7a57fa75-f2e5-4b8a-bc8c-acfe19b09c89,Castaneda-Olson Skincare Prime,Beauty,Skincare,BEA-23866,Castaneda-Olson Co,133.21,84.37,36.66,268,107,"Smith, Jenkins and Sanchez",2022-06-11,Active,1.08,2.4,888
+fda05b8f-3c98-4045-82dd-72c95d8f3b18,Ramirez Supplies Max,Office,Supplies,OFF-38659,Ramirez Industries,428.07,239.4,44.07,244,107,Castro-Mullins,2019-03-23,Out of Stock,27.33,2.9,3944
+fa9119e0-4319-4cb1-af9e-c61171c55c7d,"Nelson, History Core",Books,History,BOO-26257,"Nelson, Systems",20.72,10.14,51.06,432,70,Hoffman-Jones,2023-02-15,Active,16.5,3.3,5748
+755b8c8e-9e79-4d34-856d-2d852600fba0,Kennedy-English Dolls Pro,Toys,Dolls & Plush,TOY-90279,Kennedy-English Pro,29.87,14.33,52.03,457,45,Hernandez-Kelly,2022-09-28,Out of Stock,4.82,2.5,6075
+afb03b85-8e17-4100-93c7-3f053b84186b,Savage Science Elite,Books,Science,BOO-35530,Savage Works,32.9,20.81,36.75,289,76,Stone and Sons,2021-07-20,Active,13.02,1.7,2455
+57c6445a-752e-41dd-99bd-b575dece87b8,Benjamin Smart Prime,Electronics,Smart Home Devices,ELE-16224,Benjamin Tech,1619.12,1055.95,34.78,279,23,"Shaw, Morse and Smith",2018-01-30,Active,2.24,2.4,1997
+f8400d0e-1615-4423-ad2e-0804ee7bb292,"Valdez, Makeup Core",Beauty,Makeup,BEA-79143,"Valdez, Industries",114.69,74.91,34.68,223,16,Tran PLC,2019-05-24,Active,8.53,3.9,6356
+851f2f3f-107a-4100-8778-b078e195dc8f,Caldwell Networking Lite,Office,Networking,OFF-34330,Caldwell Co,1177.74,530.68,54.94,266,78,Nichols Inc,2020-10-17,Active,16.05,1.5,1212
+c768079c-9d86-41bc-a7dc-67ec0cb3dd01,Mason-Tanner Supplies Ultra,Office,Supplies,OFF-75151,Mason-Tanner Industries,354.42,191.76,45.89,895,16,Pham PLC,2023-01-18,Discontinued,12.66,1.8,3193
+e81b9389-0be5-4597-8b24-0999a98cb726,"Frank, Headphones Prime",Electronics,Headphones,ELE-77281,"Frank, Tech",2350.3,1105.86,52.95,859,94,Keller-Long,2025-03-04,Active,4.34,4.4,5129
+f07fef9c-8624-437e-b852-a6e9b731dd5d,"Key, Software Pro",Office,Software,OFF-93120,"Key, Labs",1057.33,665.9,37.02,469,97,Rodriguez PLC,2017-07-06,Active,21.71,4.3,3678
+ef06862a-3138-427b-be23-67945861f4ee,Lee Men's Prime,Clothing,Men's Tops,CLO-92953,Lee Group,243.43,110.05,54.79,0,84,"Ibarra, Phillips and Robinson",2018-04-22,Discontinued,29.85,3.3,5644
+3efd596a-1c65-4042-b9a9-4a125c4df5fd,Morris-Walter Outdoor Lite,Home & Garden,Outdoor Living,HOM-22889,Morris-Walter Systems,185.67,114.11,38.54,622,91,Cook-Short,2025-04-16,Discontinued,18.77,1.8,5602
+2f6122d5-2447-448c-82c0-a28cb3da2fe3,Bradley Bedding Plus,Home & Garden,Bedding,HOM-34013,Bradley Group,1979.73,1004.38,49.27,118,99,Webster-Bray,2022-07-29,Active,0.08,2.3,24
+c065cf80-b65e-4553-b688-f1d6a2d7ea1d,"Hall, Accessories Plus",Clothing,Accessories,CLO-74205,"Hall, Group",189.36,108.78,42.55,780,46,Hines-Johnson,2018-03-28,Active,6.63,1.8,1589
+a90a5c0d-fb50-4725-b2bf-b764d4fbe394,Burgess Smart Ultra,Electronics,Smart Home Devices,ELE-17152,Burgess Systems,1519.01,758.62,50.06,449,104,Chaney Ltd,2024-09-06,Out of Stock,18.83,2.9,2310
+31d6581f-721c-495b-98ac-04742bffa2f6,Robinson Men's Lite,Beauty,Men's Grooming,BEA-66133,Robinson Group,202.01,116.07,42.54,694,50,"Hill, Oneill and Leblanc",2019-12-06,Active,13.19,3.4,4391
+8ed2f45b-643c-41bc-b83b-0ae891b4e3df,Hahn Snacks Max,Food & Grocery,Snacks,FOO-42704,Hahn Tech,63.23,36.01,43.05,273,103,Taylor-Tran,2022-09-17,Active,12.86,2.2,1547
+be2862b2-7511-4ddb-b9ab-9c4184bca170,Martin Men's Plus,Beauty,Men's Grooming,BEA-99582,Martin Co,238.9,160.31,32.9,304,34,Fowler-Ramirez,2019-07-25,Active,2.97,3.0,307
+03361b1d-82d1-40ab-9a10-2925894faec4,Lopez Kitchen Pro,Home & Garden,Kitchen,HOM-98412,Lopez Labs,510.53,295.15,42.19,421,101,"Anderson, White and Washington",2022-12-01,Discontinued,12.29,4.3,2770
+50c5841d-f50b-41ac-a3b4-148aeb415516,Martin-Ramirez Organic Plus,Food & Grocery,Organic,FOO-36824,Martin-Ramirez Pro,19.52,8.75,55.17,0,57,Martin-Krause,2022-06-14,Active,29.72,4.5,54
+04c73d45-2830-4a9d-ad3a-a3d016b34cb3,Long-Smith Denim Plus,Clothing,Denim,CLO-94189,Long-Smith Co,206.83,126.73,38.73,503,103,Garza-Cox,2023-05-22,Active,1.21,4.9,3685
+7c2e6411-7bbd-444a-be75-f35e124acdb9,Flowers Car Essential,Automotive,Car Accessories,AUT-31943,Flowers Industries,255.24,119.57,53.15,111,95,"Santos, Sullivan and Evans",2026-04-21,Active,25.89,4.2,6480
+a19cffa8-85fa-484f-ac46-0cd1bdf1389d,"Watson, Fiction Prime",Books,Fiction,BOO-94095,"Watson, Tech",68.27,38.34,43.84,399,75,"Gordon, Cantrell and James",2024-03-24,Active,19.26,4.8,2661
+d0a4baea-d277-4502-99d2-3c6e3ff65712,Leonard Men's Prime,Beauty,Men's Grooming,BEA-52233,Leonard Labs,13.81,6.01,56.48,464,69,Carey-Tucker,2024-04-07,Active,6.87,4.1,4566
+28a695b2-433b-46b3-a053-a5529ea28e8f,"Taylor, Outerwear Core",Clothing,Outerwear,CLO-26734,"Taylor, Group",137.17,83.16,39.37,567,88,Cisneros LLC,2018-11-01,Active,27.05,2.8,1259
+19dd58b3-5935-48e8-b090-ab726b3db682,Nunez-Thompson Networking Essential,Office,Networking,OFF-60638,Nunez-Thompson Systems,748.63,361.25,51.75,355,95,"Hart, Vaughn and Ortiz",2019-05-07,Out of Stock,6.31,3.6,1745
+a61c361b-e002-4936-bae8-779440532440,Bradley Headphones Lite,Electronics,Headphones,ELE-69372,Bradley Group,1207.17,604.94,49.89,581,24,Dixon Ltd,2024-02-29,Out of Stock,28.93,3.4,4479
+1b630b1c-f923-4a7d-af75-72ff7cbbc371,"Cole, Team Max",Sports,Team Sports,SPO-40325,"Cole, Industries",859.0,388.39,54.79,449,115,"Willis, Perry and Steele",2021-09-09,Active,15.71,1.9,5547
+0ac77bd8-5450-4843-83af-04fce1057fbf,Avery Board Max,Toys,Board Games,TOY-91373,Avery Pro,148.1,97.73,34.01,128,97,"Harris, Morton and Donovan",2025-01-04,Active,20.06,2.8,1480
+0b9d18d4-9cd6-4a52-aa5b-d993a14e9d76,"Peterson, Makeup Lite",Beauty,Makeup,BEA-60725,"Peterson, Industries",67.25,35.43,47.32,557,79,Schultz PLC,2022-06-18,Active,23.55,3.5,6462
+6ddbcdfb-02ee-4dad-8c48-45237536ad02,Benjamin Outerwear Elite,Clothing,Outerwear,CLO-18969,Benjamin Tech,209.89,106.88,49.08,263,33,Mata-Bowman,2025-05-07,Active,13.92,4.7,1712
+aef6221a-6247-41b7-b432-4a6c72e6a7e7,Flowers Running Core,Sports,Running,SPO-37231,Flowers Industries,776.27,417.47,46.22,334,96,"Taylor, Sims and Erickson",2023-08-14,Active,11.87,2.5,4931
+6e3b0c75-d85d-4c2c-bf82-88cad70de19b,Leonard Makeup Max,Beauty,Makeup,BEA-24780,Leonard Labs,125.23,73.07,41.65,495,23,Smith-Stephens,2019-07-06,Active,3.39,2.4,3704
+2bac8bc9-ce30-4866-ada6-12d4014c92c1,Robinson Outdoor Plus,Home & Garden,Outdoor Living,HOM-21673,Robinson Group,1486.57,944.91,36.44,378,117,"Smith, Potter and Willis",2019-06-08,Active,20.44,1.9,4924
+8abbc756-5a9f-4e14-96d4-0956697229ca,Benjamin Accessories Core,Clothing,Accessories,CLO-86787,Benjamin Tech,149.11,71.7,51.91,364,21,Bowen-Barnes,2018-02-17,Active,16.57,3.8,3023
+56f8f92a-ca14-42b4-8ab4-ca7b25ed9271,"Cole, History Core",Books,History,BOO-61081,"Cole, Industries",39.0,21.71,44.33,551,32,Nelson-Benton,2020-09-14,Active,24.47,4.2,3850
+a3f6ab28-cc05-49b1-abcb-80672310eb2b,Benjamin Electronics Elite,Automotive,Electronics,AUT-64491,Benjamin Tech,11.31,5.47,51.64,359,95,Nixon-Kane,2020-01-31,Out of Stock,29.19,1.5,3445
+a922739d-8b09-4481-b9a7-b6cc32506fbd,Williams-Wang Tablets Max,Electronics,Tablets,ELE-91660,Williams-Wang Industries,978.5,630.24,35.59,438,39,Miller and Sons,2021-08-09,Active,0.65,4.8,3413
+caa2db1a-fa0a-4f79-adbb-461220aef438,Thomas-Wilson Accessories Plus,Clothing,Accessories,CLO-92913,Thomas-Wilson Tech,15.5,7.01,54.77,329,93,Alvarez-Montgomery,2017-09-11,Active,21.54,3.4,1389
+8f3c6c94-091d-43be-bfc4-2719b33e7ca0,Jacobs Hair Pro,Beauty,Hair Care,BEA-93783,Jacobs Pro,171.0,86.7,49.3,205,108,Norris-Holmes,2026-03-21,Active,2.86,2.7,6308
+0bb60fcd-78d5-4e05-882a-0fe30b28ec52,Ramirez Kitchen Lite,Home & Garden,Kitchen,HOM-61549,Ramirez Industries,1450.31,933.32,35.65,382,38,"Murray, Anderson and Sanchez",2020-09-25,Active,6.14,3.2,941
+ee65b05c-0893-46a5-9f84-3c496153d6cb,Bradley Supplies Lite,Office,Supplies,OFF-28193,Bradley Group,199.89,135.71,32.11,590,39,Lamb and Sons,2025-12-15,Active,16.39,3.8,155
+fd2ddbf0-1fc5-4bf9-a225-ced4711a0810,Benjamin Headphones Ultra,Electronics,Headphones,ELE-11256,Benjamin Tech,146.82,70.3,52.12,613,48,Daniel Group,2023-08-04,Out of Stock,17.37,2.1,5049
+328cf4a6-c4dd-42c9-9f73-ccdec4472598,Gentry-Olson Fiction Plus,Books,Fiction,BOO-89685,Gentry-Olson Works,14.87,8.43,43.31,340,79,"Cuevas, Miller and Brown",2021-02-28,Active,24.79,3.6,861
+9f76ab12-fa48-46d2-a12e-e96eabd13500,Jacobs Dolls Max,Toys,Dolls & Plush,TOY-61887,Jacobs Pro,57.19,26.9,52.96,214,61,Alexander Group,2018-06-09,Out of Stock,3.16,2.2,3046
+e97eb8d1-f768-4fce-823d-8e81c46d77dc,Riley International Ultra,Food & Grocery,International Foods,FOO-70081,Riley Labs,62.17,27.96,55.03,191,102,"Clark, Wilcox and Gordon",2022-08-03,Discontinued,21.46,1.7,2104
+145d9447-62a8-4441-8db5-4862b1534515,Garcia-Miller Technology Core,Books,Technology,BOO-62149,Garcia-Miller Co,79.96,47.48,40.62,345,89,Gomez and Sons,2024-11-13,Active,5.85,1.7,5710
+159e5848-f39d-42f3-a408-98200cc0d197,"Johnson, Activewear Plus",Clothing,Activewear,CLO-99711,"Johnson, Co",295.51,127.61,56.82,742,69,"Torres, Dunlap and Jacobson",2019-12-07,Active,7.73,4.5,6461
+b034f0a2-6c32-4e3f-a071-d7f1cec38e52,Gonzales-Hernandez Kitchen Ultra,Home & Garden,Kitchen,HOM-87647,Gonzales-Hernandez Group,1232.61,739.37,40.02,767,97,"Sellers, Smith and Manning",2024-10-09,Active,26.65,1.9,1446
+192cd776-1a98-47c3-a838-e894be16dede,Warren-Lin Skincare Lite,Beauty,Skincare,BEA-36969,Warren-Lin Group,25.76,14.05,45.46,422,75,Harmon PLC,2022-07-13,Active,24.0,4.0,1508
+7a65197f-68f3-4014-b4aa-7bfc0fc6e4a5,Castaneda-Olson Water Essential,Sports,Water Sports,SPO-77494,Castaneda-Olson Co,726.42,311.57,57.11,537,93,Blackburn PLC,2021-01-21,Active,8.86,3.5,362
+bd9901d9-6bce-476f-b5f8-32f50004fbc4,"Jordan, Car Pro",Automotive,Car Care,AUT-94819,"Jordan, Tech",422.72,206.92,51.05,340,89,"Meyers, Crawford and Wells",2026-05-07,Discontinued,19.71,4.9,4488
+8b2b74d8-e4c0-465d-a4ba-abf24f7931ff,Clarke-Ward Kitchen Lite,Home & Garden,Kitchen,HOM-12509,Clarke-Ward Co,190.79,130.22,31.75,105,95,Hurley Group,2025-12-05,Active,7.19,4.2,5417
+a3cbc113-a910-4cbd-8138-3bcb92550533,Jacobs Tools Pro,Home & Garden,Tools,HOM-74027,Jacobs Pro,260.93,124.16,52.42,445,41,Harris LLC,2024-10-24,Active,5.06,2.1,5576
+53ad7b83-2f8a-450b-8293-092569c35185,Smith Outdoor Pro,Home & Garden,Outdoor Living,HOM-89487,Smith Pro,1584.87,685.78,56.73,816,120,Green Inc,2018-04-09,Active,19.95,4.2,4175
+bd924743-2c1d-4765-a0b5-14fe45f37d6a,"Peterson, Technology Pro",Books,Technology,BOO-81943,"Peterson, Industries",79.99,48.62,39.22,413,64,"White, Ortiz and Meyer",2020-05-08,Active,13.39,2.0,4724
+634b94cd-a901-476e-8610-f96f8cd9b5ea,Moyer-Brown Team Prime,Sports,Team Sports,SPO-23350,Moyer-Brown Labs,172.16,86.27,49.89,481,95,"Nunez, Delacruz and Wallace",2018-08-02,Out of Stock,20.41,3.8,3803
+85f91524-f555-4236-9d2a-22aa93e7a190,Mason-Tanner History Prime,Books,History,BOO-13501,Mason-Tanner Industries,33.24,17.08,48.62,369,105,"Grant, Martinez and Parker",2025-07-07,Active,24.04,4.5,941
+f4f66ecb-66bf-4309-b9b4-4134646fcaaf,"Williams, Pantry Plus",Food & Grocery,Pantry Staples,FOO-47804,"Williams, Industries",30.61,13.39,56.26,230,80,Buchanan Group,2021-06-15,Active,29.35,2.8,659
+2df8096d-6f99-4509-81ad-d26b33c4ba5a,Smith Dolls Lite,Toys,Dolls & Plush,TOY-36932,Smith Pro,187.5,93.71,50.02,372,45,Leon Group,2018-10-05,Discontinued,4.72,1.8,6010
+a43e5192-ed9c-4f4e-88e9-71337d7efd19,Kennedy-English Accessories Essential,Clothing,Accessories,CLO-35377,Kennedy-English Pro,146.09,63.86,56.29,670,53,Castro-Hess,2026-05-17,Active,28.51,4.6,2015
+08d317a8-9e26-4575-bf67-c6f5719dc087,Long-Smith Software Max,Office,Software,OFF-65782,Long-Smith Co,116.22,52.1,55.17,310,26,"Merritt, Griffin and Price",2025-01-19,Active,18.29,4.2,1145
+ad92e3c7-565d-4930-bb86-da2d7807ce32,Turner-French Running Max,Sports,Running,SPO-78477,Turner-French Pro,460.75,262.72,42.98,877,101,Phelps Ltd,2017-08-17,Active,6.63,2.2,1854
+0a91125e-fc84-4a7c-ad63-d0f28dee393b,Dixon Self-Help Max,Books,Self-Help,BOO-30423,Dixon Industries,55.87,36.78,34.17,0,19,Wallace-Snyder,2026-02-27,Active,18.43,3.8,6491
+c1c44222-1596-4b31-9f90-aae2b9f4039d,Fowler Electronics Elite,Automotive,Electronics,AUT-52889,Fowler Works,987.97,538.91,45.45,0,120,Singh-Michael,2023-08-22,Active,4.14,1.7,3061
+7985d719-50e0-4d36-91d3-360bfa5e93f5,Fowler Denim Prime,Clothing,Denim,CLO-26444,Fowler Works,113.24,64.99,42.61,140,56,"White, Rivers and Curtis",2025-05-18,Active,7.81,3.7,3564
+fad62c47-666a-42ff-9952-7b1d841474bd,Savage Outerwear Essential,Clothing,Outerwear,CLO-67360,Savage Works,155.13,73.26,52.78,224,45,"Hammond, Molina and Blair",2020-02-14,Active,16.8,1.6,6128
+9655de44-4489-4458-a437-09ea690a46f8,"Mccoy, Fiction Core",Books,Fiction,BOO-42946,"Mccoy, Pro",11.54,5.7,50.61,222,48,"Torres, Stafford and Yang",2021-01-07,Active,23.9,4.2,3241
+dbe7f1d6-47cd-4112-bc6f-b09a7830e061,"Joseph, Smart Elite",Electronics,Smart Home Devices,ELE-27672,"Joseph, Systems",1684.51,1066.21,36.71,145,26,"Martinez, Andrews and Walls",2019-09-11,Active,22.56,1.6,4596
+6d14c7b3-0670-4c59-90df-c0ceb0fcc6cd,"Johnson, Tablets Pro",Electronics,Tablets,ELE-45740,"Johnson, Co",1997.41,1320.96,33.87,158,66,"Mitchell, Silva and Flores",2024-07-15,Active,6.9,2.9,1398
+e8f4b64d-d1f3-4e59-b1e0-9e88b6a0bc31,"Watson, Camping Ultra",Sports,Camping,SPO-11855,"Watson, Tech",783.79,538.34,31.32,269,81,Smith-Brooks,2018-08-29,Active,2.1,4.8,3500
+8e321a99-cf1d-4516-9a71-726a69fb57d9,"Hooper, Fragrances Prime",Beauty,Fragrances,BEA-51216,"Hooper, Pro",108.42,69.75,35.67,421,72,"Elliott, Hughes and Cooper",2024-11-27,Active,16.66,4.0,578
+b1ae3a53-21d9-4974-b393-f996dbdd9541,Hahn Bedding Ultra,Home & Garden,Bedding,HOM-74668,Hahn Tech,251.62,125.88,49.97,405,76,Holmes-Ayala,2026-04-15,Active,18.46,3.7,4383
+467aa18c-6c14-45a0-a636-3e8a48dd13bf,"Johnson, Running Ultra",Sports,Running,SPO-80855,"Johnson, Co",188.36,86.17,54.25,0,80,"Morrison, Moody and Flynn",2019-08-10,Active,27.43,2.5,1314
+2e06b76c-0015-42f2-861c-5bbb59b4e58b,Kennedy-English Electronics Plus,Automotive,Electronics,AUT-25869,Kennedy-English Pro,1039.36,597.69,42.49,272,111,"Spears, Hood and Hancock",2018-06-24,Active,4.46,2.7,28
+25a67f55-02c3-4635-8287-ae8494237234,"Smith, Lighting Essential",Automotive,Lighting,AUT-53088,"Smith, Tech",1036.87,636.9,38.57,614,28,"Potter, Dixon and Fletcher",2025-11-28,Discontinued,24.18,4.9,633
+880a0daf-934c-483e-8757-0d406f2ad200,"Cameron, International Essential",Food & Grocery,International Foods,FOO-43099,"Cameron, Tech",74.14,35.2,52.52,282,101,Armstrong Ltd,2020-03-04,Active,14.67,1.5,2780
+6b8c948e-43ff-4813-84c2-55bae7065324,Long-Smith History Ultra,Books,History,BOO-20651,Long-Smith Co,42.12,26.78,36.42,478,85,"Adams, Johnson and Pennington",2018-10-27,Active,4.33,3.7,1685
+4500ff41-60c3-4c2f-aff6-65e74d3239d0,"Jordan, Business Lite",Books,Business,BOO-96099,"Jordan, Tech",49.12,24.02,51.1,80,32,Morgan-Arnold,2024-05-31,Active,29.35,4.3,4172
+270203f0-7d9c-4a5b-b3ec-39e1d1586bdb,Prince Pantry Pro,Food & Grocery,Pantry Staples,FOO-39713,Prince Works,13.0,7.66,41.08,281,46,"Warren, Kent and Gallegos",2024-09-07,Active,18.29,1.5,1288
+19a327fe-4cab-4ced-bee2-005a06a348b3,Hunter-West Organic Ultra,Food & Grocery,Organic,FOO-59936,Hunter-West Group,27.03,11.85,56.16,918,47,Phelps Group,2022-05-20,Active,23.91,2.7,2026
+adcd8e24-fc24-44b4-aa78-5740fd83382e,Riley Furniture Ultra,Office,Furniture,OFF-43536,Riley Labs,728.01,471.91,35.18,782,51,Hall and Sons,2017-08-17,Active,15.12,4.2,5606
+f73b546c-93d1-4324-a63b-0262160d8f1a,"Valdez, Supplies Essential",Office,Supplies,OFF-10456,"Valdez, Industries",581.91,274.62,52.81,433,107,Evans and Sons,2025-07-13,Active,27.18,2.2,4340
+9025ba4c-e7ec-4faa-9f71-4f05b27ce1b3,"Price, Smartphones Lite",Electronics,Smartphones,ELE-34563,"Price, Co",2360.23,1003.79,57.47,526,104,Gallegos Ltd,2024-10-04,Active,28.26,3.6,5226
+4303df02-c517-437b-9860-39091a04523b,Lee International Lite,Food & Grocery,International Foods,FOO-10598,Lee Group,16.41,11.08,32.48,170,104,Colon Group,2017-01-24,Active,19.93,4.2,3289
+d5ee6147-0ba5-429d-b111-6b24322f8fd7,"Smith, Bedding Elite",Home & Garden,Bedding,HOM-72440,"Smith, Tech",325.92,197.73,39.33,23,38,"Smith, Walsh and Carter",2025-12-16,Active,8.26,3.6,1625
+3258540c-7fd6-4b78-bbed-e0a373cbed9d,Dixon Supplies Prime,Office,Supplies,OFF-39448,Dixon Industries,837.87,367.39,56.15,168,108,"Camacho, Andrade and Smith",2025-05-12,Active,10.22,2.2,3115
+cc58ba52-e925-4fd2-b62b-ac8232bc2dbd,Benjamin Men's Elite,Clothing,Men's Tops,CLO-10375,Benjamin Tech,118.47,78.59,33.66,645,104,Jimenez-Patel,2019-11-30,Active,11.4,2.6,1697
+aedf4994-8a89-47a3-9363-a47eddcf4fee,Williams-Wang Skincare Core,Beauty,Skincare,BEA-82629,Williams-Wang Industries,14.32,7.68,46.37,617,62,"Vargas, Brown and Austin",2018-02-15,Active,19.27,3.6,3396
+631aed5c-dac2-4bd1-9128-e56662cdfe94,Hodges-Roberts Skincare Essential,Beauty,Skincare,BEA-93507,Hodges-Roberts Labs,15.74,8.09,48.6,276,86,"Romero, Owen and Rogers",2023-10-15,Active,18.88,3.3,3567
+c6681b67-f684-41e9-9cf3-0c5ecfbde1c0,Rivera-Gamble Cameras Core,Electronics,Cameras,ELE-32596,Rivera-Gamble Systems,891.94,623.98,30.04,391,88,"Torres, Warren and Dixon",2025-08-16,Out of Stock,20.3,2.9,3388
+b80dc66d-0bbd-457b-b09c-a861864eae0c,Nunez-Thompson Tools Essential,Home & Garden,Tools,HOM-80887,Nunez-Thompson Systems,358.89,174.0,51.52,526,99,"Bauer, Wright and Murphy",2024-06-19,Discontinued,1.09,4.7,3660
+90d5324d-ac12-4fb3-8479-3d08a5a519d0,Thomas-Buckley International Lite,Food & Grocery,International Foods,FOO-73320,Thomas-Buckley Labs,34.35,23.4,31.88,139,47,Weber-Burns,2023-03-31,Active,15.67,2.2,2297
+4469ade9-d0c4-4da9-8e58-54cd7bec4516,Robinson-Patterson Board Core,Toys,Board Games,TOY-32257,Robinson-Patterson Co,5.14,2.8,45.53,0,111,Lopez Ltd,2025-04-30,Active,20.79,4.4,2408
+d3800343-b2d0-41d9-90f9-026968d263ae,"Hooper, Furniture Elite",Home & Garden,Furniture,HOM-38495,"Hooper, Pro",1553.12,957.99,38.32,855,116,Marsh and Sons,2017-09-04,Active,20.02,4.2,6374
+9bb7c452-6d66-4a3e-8eae-f974acd6e4f6,Thomas-Buckley Board Core,Toys,Board Games,TOY-15051,Thomas-Buckley Labs,104.86,69.44,33.78,316,96,Bryan-Reed,2025-06-15,Active,7.16,4.4,1990
+88cc6716-dd56-44eb-a294-f5dde2f52743,Turner-French Science Plus,Books,Science,BOO-35020,Turner-French Pro,56.35,25.11,55.44,632,88,Garrison-Wagner,2017-10-09,Active,19.03,4.2,2971
+cb961201-c4f4-424d-8b5a-948d63606933,Turner-French Science Core,Books,Science,BOO-62019,Turner-French Pro,73.83,42.58,42.33,200,84,Reyes-Diaz,2020-03-02,Active,15.19,1.9,2772
+4f967915-5bf9-467d-ae4b-e6b517f198e4,"Miller, Dolls Max",Toys,Dolls & Plush,TOY-89486,"Miller, Co",176.72,101.69,42.46,540,95,Ramirez-Cabrera,2018-10-15,Active,21.25,1.6,1286
+626f4cb8-1bea-4e64-a756-7fa212c3d5cb,Jacobs Women's Max,Clothing,Women's Tops,CLO-32463,Jacobs Pro,192.35,113.59,40.95,183,103,Bean-David,2025-08-08,Active,3.68,1.5,4133
+46d20bf8-1473-4b43-9acb-f1ec79a2ea30,Dalton-Walker Team Plus,Sports,Team Sports,SPO-54725,Dalton-Walker Pro,398.92,235.01,41.09,669,83,Edwards and Sons,2018-10-30,Active,28.89,3.2,4484
+3256d34d-49e3-4e4b-81d9-f4b241154c85,"Valdez, Board Elite",Toys,Board Games,TOY-83774,"Valdez, Industries",132.71,92.37,30.4,214,25,Fields-Davis,2019-10-04,Out of Stock,19.58,3.0,627
+6efc8f2d-0b43-4e96-8808-ea36c6bc4162,Lee Electronics Elite,Automotive,Electronics,AUT-66268,Lee Labs,21.07,11.48,45.51,296,101,Jones Group,2022-09-20,Active,16.39,2.8,1094
+fa0386f6-0a2c-492c-8408-c8f5f70612ed,"Watson, Men's Essential",Clothing,Men's Tops,CLO-46250,"Watson, Tech",55.71,36.3,34.84,323,49,Lewis Inc,2017-04-16,Active,13.13,4.0,5221
+059acb13-6d54-423e-81c4-95a6045c49a0,"Frank, Car Pro",Automotive,Car Care,AUT-21895,"Frank, Tech",1141.62,647.2,43.31,429,77,"Yates, Moore and Williams",2021-06-13,Active,21.89,4.4,2907
+dea538c3-ec01-4d5a-8569-ac81cb5399c8,Smith Organic Prime,Food & Grocery,Organic,FOO-82008,Smith Industries,7.48,3.95,47.19,147,46,"Gilmore, Daniels and Schroeder",2017-10-09,Out of Stock,18.86,4.2,6425
+f44083dd-be6c-4b4a-a494-1b1a997fa5fa,Long-Smith Outdoor Essential,Toys,Outdoor Toys,TOY-23500,Long-Smith Co,94.64,40.18,57.54,789,32,Carroll-Singh,2024-06-22,Active,29.23,4.0,1960
+9a5c1094-be0f-4fe9-9cea-6e136ca50b45,"Watson, Outdoor Essential",Toys,Outdoor Toys,TOY-59487,"Watson, Tech",155.0,99.01,36.12,455,104,"Gonzalez, Knight and George",2019-03-21,Active,10.37,4.4,2801
+65ea39ef-b667-4ffb-b647-ff92b2ba4d3d,Hahn Dolls Prime,Toys,Dolls & Plush,TOY-98732,Hahn Tech,117.62,75.34,35.95,823,19,Hill-Larsen,2023-08-26,Active,2.29,3.7,6098
+b34ac6ab-8baf-4078-819a-8bcea28f5afe,Grant Women's Pro,Clothing,Women's Tops,CLO-81152,Grant Co,250.2,162.56,35.03,169,102,"Burns, Oconnell and Lopez",2019-07-27,Active,18.73,1.8,2788
+fb07a219-a76b-49ad-a092-f4322a6645e6,"Hooper, Cycling Ultra",Sports,Cycling,SPO-67076,"Hooper, Pro",703.89,306.77,56.42,292,26,"Marshall, Duran and Harrison",2023-04-19,Active,17.59,2.4,5446
+5bfdf141-9135-4ccb-9deb-94b2aabb5bce,"Sullivan, Tablets Ultra",Electronics,Tablets,ELE-70117,"Sullivan, Labs",616.71,406.42,34.1,291,56,"Neal, Norman and Miller",2023-12-15,Active,29.13,2.3,3424
+4c797122-0aa1-4bdb-9c4a-b0174b74b047,"Gilbert, Decor Ultra",Home & Garden,Decor,HOM-81901,"Gilbert, Works",1701.64,799.56,53.01,721,119,Cole-Nicholson,2023-07-30,Discontinued,0.05,2.0,4519
+472dc042-7132-4175-95fb-f0fd9f9ee7b6,Rivera-Gamble Software Prime,Office,Software,OFF-44271,Rivera-Gamble Systems,440.43,293.49,33.36,259,117,Sellers LLC,2020-06-13,Out of Stock,17.72,3.7,3771
+92f6f230-c3a7-4b08-8a89-61a25cb127a5,Rivera-Gamble Decor Elite,Home & Garden,Decor,HOM-33993,Rivera-Gamble Systems,1586.77,693.17,56.32,347,68,Thomas-Smith,2023-12-20,Out of Stock,2.76,3.6,6432
+aba89bb6-0a16-4784-89c6-ccc0d2a89b38,Dalton-Walker Car Prime,Automotive,Car Care,AUT-51549,Dalton-Walker Pro,557.06,337.89,39.34,392,112,Munoz Ltd,2022-04-29,Out of Stock,7.63,1.6,2192
+74a8c10d-fba9-4b1e-96a8-4fe2be65c081,Thomas-Wilson Supplies Elite,Office,Supplies,OFF-91117,Thomas-Wilson Tech,762.35,532.81,30.11,247,119,Martinez-Hoffman,2025-10-14,Active,10.82,2.8,5572
+7c2c42df-072e-47c5-b630-c13154d9c490,"Hooper, Skincare Plus",Beauty,Skincare,BEA-24662,"Hooper, Pro",155.85,104.56,32.91,217,83,Allen Ltd,2025-07-30,Active,6.89,4.1,1584
+3cff1896-9288-492e-a08a-95cd2580751f,"Hall, Laptops Prime",Electronics,Laptops,ELE-57827,"Hall, Group",1255.2,831.7,33.74,91,77,Buckley-Thomas,2025-09-29,Active,5.11,2.8,5950
+c17d4ec7-5389-4658-8e3f-88b189d14d4b,"Valdez, Outdoor Max",Toys,Outdoor Toys,TOY-73552,"Valdez, Industries",59.2,39.74,32.87,444,44,Rodgers PLC,2020-01-03,Discontinued,20.89,4.0,5750
+0cf08386-53e5-4374-a835-6399b127b0c2,"Frank, Self-Help Core",Books,Self-Help,BOO-19601,"Frank, Tech",54.86,24.67,55.03,0,53,Sandoval Group,2017-04-23,Active,14.8,3.0,2677
+0a3cceb8-8618-4892-80d6-df3c4327b8e7,"Key, Decor Essential",Home & Garden,Decor,HOM-65006,"Key, Labs",1576.25,945.34,40.03,52,83,"Ayala, Ellis and Davis",2024-06-17,Out of Stock,9.46,4.5,5093
+b51f766c-24b3-47e3-bb30-9c9f2a51a519,Chang International Pro,Food & Grocery,International Foods,FOO-79504,Chang Pro,11.82,6.3,46.7,203,119,Roberson Inc,2025-06-03,Active,25.45,3.8,1169
+141d6770-cee7-4007-b856-38093bd04a51,Warren-Lin Science Essential,Books,Science,BOO-26377,Warren-Lin Group,58.08,36.68,36.85,448,18,Navarro LLC,2026-05-11,Out of Stock,1.47,2.2,3
+019dae07-84f8-46c6-93cb-39e63a6f2c27,Hodges-Roberts Car Plus,Automotive,Car Care,AUT-43841,Hodges-Roberts Labs,1485.8,625.63,57.89,477,33,Adams-Melton,2021-10-25,Active,7.59,3.4,5047
+2eb589b3-066c-4cd9-874b-458129972940,Smith Networking Core,Office,Networking,OFF-63798,Smith Industries,468.24,227.85,51.34,104,93,"Norton, Norton and Simpson",2025-02-25,Active,9.15,2.3,1346
+a5651174-ca32-4bac-bb29-db72c9fd8ea0,Lopez Water Lite,Sports,Water Sports,SPO-69599,Lopez Labs,55.48,24.37,56.07,207,113,Young LLC,2020-05-11,Active,1.34,1.7,443
+318caf60-d298-4e46-9d2e-9fbef21716e2,Mason-Tanner Beverages Lite,Food & Grocery,Beverages,FOO-76582,Mason-Tanner Industries,53.57,24.57,54.13,489,83,Johnson-Simpson,2019-02-01,Active,13.02,4.5,3303
+33720224-af7d-4fe5-8349-512723a8a107,Lopez Business Elite,Books,Business,BOO-91155,Lopez Labs,65.52,43.66,33.36,571,21,"Wall, Robertson and Rodriguez",2022-04-30,Discontinued,7.9,4.4,6153
+456c1d4d-e4ff-4879-b523-3718d24533de,"Johnson, Supplies Plus",Office,Supplies,OFF-63096,"Johnson, Co",179.42,120.53,32.82,0,76,Thomas Group,2021-09-18,Active,22.82,5.0,2450
+e6d2b547-7666-4371-8385-d4897245b7d7,Bradley Furniture Pro,Home & Garden,Furniture,HOM-75946,Bradley Group,25.32,11.76,53.55,187,81,Murray LLC,2021-08-17,Active,20.74,2.3,881
+f9429eb1-d1d6-4152-bb24-05585e6add3b,"Taylor, Self-Help Core",Books,Self-Help,BOO-38315,"Taylor, Group",39.64,22.61,42.96,494,81,Aguilar-Taylor,2018-12-06,Active,3.39,4.7,6197
+02266e6e-54e8-4700-9c4b-f91c3e1ca359,"Joseph, Women's Pro",Clothing,Women's Tops,CLO-76400,"Joseph, Systems",133.51,78.67,41.08,236,54,Waller and Sons,2021-10-12,Active,24.48,3.2,2009
+2c22ed57-fed5-415b-8aae-b1ed8cbd24f4,"Key, Action Max",Toys,Action Figures,TOY-74741,"Key, Labs",83.94,58.54,30.26,174,78,Atkins Ltd,2021-04-14,Discontinued,11.12,2.7,681
+88d2c9f0-e1b4-41b8-9b19-42ba5d8c078f,Martin-Ramirez Team Ultra,Sports,Team Sports,SPO-48159,Martin-Ramirez Pro,642.86,297.71,53.69,333,117,"Brown, Golden and Thomas",2021-10-31,Discontinued,4.69,2.9,5838
+4f118332-7894-4f16-9eab-3a1e8a4fb3a5,"Peterson, Women's Elite",Clothing,Women's Tops,CLO-30851,"Peterson, Industries",260.33,133.66,48.66,370,34,Simpson Group,2020-12-11,Out of Stock,3.14,4.7,5421
+cdd37302-a5af-4200-8a7e-18177646425a,"Taylor, Cycling Core",Sports,Cycling,SPO-80506,"Taylor, Group",184.19,101.86,44.7,247,71,Perez-Baldwin,2017-01-26,Active,12.15,1.8,4103
+11818909-c492-4486-88e6-499a5c2a2012,"Hooper, Cycling Max",Sports,Cycling,SPO-21507,"Hooper, Pro",272.28,140.21,48.51,8,87,Randall Inc,2021-08-10,Discontinued,14.57,4.0,4633
+082d3fb8-8781-480a-a1b8-f805532ad75d,Martin-Ramirez Activewear Elite,Clothing,Activewear,CLO-78631,Martin-Ramirez Pro,252.7,158.02,37.47,432,64,Ruiz LLC,2021-04-03,Active,13.88,2.0,4168
+1230b4d2-4aeb-48bb-92cf-755c94785b3b,Lopez Organic Lite,Food & Grocery,Organic,FOO-93002,Lopez Labs,86.09,53.59,37.75,572,120,Miller-Middleton,2018-08-25,Active,7.11,3.7,1158
+4c16c06a-6800-48a6-800a-fcd999feba7d,Kelley-Horton Pantry Elite,Food & Grocery,Pantry Staples,FOO-28919,Kelley-Horton Tech,88.92,56.96,35.94,380,86,Solis Group,2024-08-30,Discontinued,20.56,2.3,2384
+f3eb2f3d-3140-41a6-9485-4a134515ece8,Caldwell Makeup Elite,Beauty,Makeup,BEA-31470,Caldwell Co,160.89,82.77,48.55,249,19,"Alexander, Burch and Deleon",2022-12-09,Discontinued,13.69,3.9,3994
+9cbf9048-1a96-4b3c-9f71-89ac85885aa1,Morris-Walter Water Lite,Sports,Water Sports,SPO-56580,Morris-Walter Systems,272.61,140.67,48.4,568,92,"Martinez, Fuentes and Barnett",2022-11-17,Active,16.83,3.5,6446
+47b0218f-d63d-4b2c-b012-090a39ccc303,Lee Car Plus,Automotive,Car Accessories,AUT-25083,Lee Labs,1285.72,616.8,52.03,438,82,Robinson Inc,2020-04-12,Active,27.44,3.9,1405
+37d6dba8-bca6-4d03-a135-3d7a612f72bd,Thomas-Buckley Kitchen Plus,Home & Garden,Kitchen,HOM-14609,Thomas-Buckley Labs,865.85,584.85,32.45,557,47,Church-Bernard,2018-04-27,Active,0.99,1.9,3626
+9d19fa3d-f239-4071-8626-5cfc1e68d14e,Morris-Walter Fiction Lite,Books,Fiction,BOO-39529,Morris-Walter Systems,8.41,4.63,44.95,309,24,Lewis-Shaw,2024-12-15,Discontinued,23.82,3.0,780
+dbd75c58-a03a-44d0-a7df-5c245101381d,Hunter-West Fragrances Pro,Beauty,Fragrances,BEA-79248,Hunter-West Group,40.79,27.01,33.78,226,15,"Moore, White and Walls",2019-05-28,Active,13.05,2.0,1332
+504d561c-8ac3-46d8-ba13-8dfffd086af7,"Cameron, Camping Core",Sports,Camping,SPO-68789,"Cameron, Tech",796.04,500.58,37.12,47,111,Stone-Graham,2024-06-26,Active,11.0,1.5,5327
+78923642-0f41-491b-a49c-e3482168e2b7,Thomas-Wilson Dolls Elite,Toys,Dolls & Plush,TOY-42486,Thomas-Wilson Tech,71.79,48.17,32.9,260,61,"Williams, Gordon and Baker",2019-04-16,Active,5.33,4.1,1368
+96b45ebc-5e02-40d9-8ce2-dffaae9dfdae,"Martinez, Action Plus",Toys,Action Figures,TOY-20867,"Martinez, Labs",119.34,65.3,45.28,450,16,"Mullins, Griffin and Lane",2020-07-24,Discontinued,19.06,3.8,1331
+caa39398-f1bb-4cb8-a941-85727a3c6c2e,Long-Smith Hair Lite,Beauty,Hair Care,BEA-71194,Long-Smith Co,47.39,20.46,56.83,409,81,"Lynch, Noble and Moreno",2025-03-12,Out of Stock,3.8,2.9,5295
+c2309edf-97ed-415c-a40b-29c7850c5516,Lopez Beverages Max,Food & Grocery,Beverages,FOO-36400,Lopez Labs,86.79,39.36,54.65,699,110,Reese-Thompson,2017-01-02,Active,9.95,4.0,5208
+6c90f676-9b41-41d8-b278-80356c644303,"Smith, Fitness Core",Sports,Fitness,SPO-12930,"Smith, Tech",131.02,58.36,55.46,289,35,Chen and Sons,2024-10-17,Active,9.31,4.1,971
+c894b305-025c-4abc-89bb-f62ea810b963,Riley History Max,Books,History,BOO-93932,Riley Labs,79.33,52.5,33.82,631,67,Hernandez Ltd,2021-09-02,Out of Stock,20.57,1.9,4113
+2db0ea30-5c1a-40ba-8039-37613a58aba5,Hodges-Roberts Beverages Max,Food & Grocery,Beverages,FOO-53404,Hodges-Roberts Labs,78.38,38.56,50.8,125,55,Miles-Thompson,2025-05-01,Active,29.64,4.6,5388
+386e90d3-f5b6-4bd0-8e9f-662476b86697,Turner-French Furniture Prime,Office,Furniture,OFF-78757,Turner-French Pro,1280.19,637.03,50.24,329,29,Huerta PLC,2022-09-07,Active,12.2,3.2,4050
+c73b1afb-0bbf-47b6-be8c-3173843b378a,"Key, Self-Help Elite",Books,Self-Help,BOO-73681,"Key, Labs",16.34,9.63,41.06,431,100,Cobb-Watts,2017-10-08,Active,1.94,4.5,146
+d57862b0-ac51-4778-b144-1729fe226d61,Thomas-Buckley Organic Elite,Food & Grocery,Organic,FOO-78757,Thomas-Buckley Labs,32.21,18.85,41.48,379,15,"Thompson, Mcguire and White",2025-05-08,Active,17.21,3.8,2243
+08efb3dd-6b73-4f80-91b8-7709fe33be80,Jones-Galloway Science Elite,Books,Science,BOO-20250,Jones-Galloway Co,17.66,10.06,43.04,380,91,Aguilar Inc,2022-07-01,Active,15.94,1.8,1789
+d73102b4-3270-4909-a63b-d33923e5e322,Dixon Beverages Prime,Food & Grocery,Beverages,FOO-57282,Dixon Industries,89.78,54.56,39.23,363,110,"Williams, Hughes and Lopez",2025-07-06,Active,2.09,2.9,2691
+00b5a914-bc1d-4f7c-90db-c731672ea203,Martin Smart Core,Electronics,Smart Home Devices,ELE-17476,Martin Co,1318.18,602.69,54.28,200,109,"Stanley, Fleming and Valdez",2024-01-02,Active,27.45,4.0,5410
+f762c97e-8fbf-48b2-9a6f-87f1852969f5,"Frank, Camping Max",Sports,Camping,SPO-34444,"Frank, Tech",435.43,299.55,31.21,327,40,Russo Ltd,2019-04-02,Active,6.01,4.6,1928
+971ea149-52e1-4695-a254-285cb813a38c,Kelley-Horton Educational Max,Toys,Educational,TOY-41721,Kelley-Horton Tech,21.99,9.48,56.89,182,81,Patterson-Taylor,2024-11-25,Active,12.02,2.5,3927
+c1cec12e-3ccd-4527-81f5-f84e917de002,Gonzales-Hernandez Accessories Max,Clothing,Accessories,CLO-95866,Gonzales-Hernandez Group,134.27,57.78,56.97,678,88,Peterson LLC,2019-11-04,Active,3.48,2.7,813
+57ffcaad-55ae-4ccc-aca7-ac6d83fda280,"Hooper, Electronics Essential",Automotive,Electronics,AUT-53178,"Hooper, Pro",1197.94,798.66,33.33,577,29,Ward-Carpenter,2020-09-14,Active,11.19,3.0,4299
+efc753fb-be09-4f33-ae5a-1860418c7bf4,Grant Technology Prime,Books,Technology,BOO-23289,Grant Co,17.57,10.69,39.16,633,43,Murray-Newman,2019-02-23,Active,14.94,4.0,1547
+6ee2ab4b-6b65-4ff1-bfbb-8c28c11d33ca,Ball Supplies Ultra,Office,Supplies,OFF-32623,Ball Pro,181.54,114.32,37.03,372,111,Terry-Romero,2023-02-07,Active,24.62,1.5,5240
+6a1c6735-81bf-4547-b6db-ae2146c57bc7,"Taylor, Car Prime",Automotive,Car Accessories,AUT-70177,"Taylor, Group",1034.66,605.09,41.52,101,93,"Thomas, Burke and Sandoval",2021-03-02,Active,21.34,3.5,6255
+99fa7358-e9fd-4044-a7ae-694ed0b7291f,"Hooper, Smartphones Prime",Electronics,Smartphones,ELE-86917,"Hooper, Pro",1826.6,1138.75,37.66,98,96,Larson-Pearson,2021-07-10,Active,10.92,1.7,2719
+5429eaf8-ef2b-4630-9b58-813db61c1dab,Thomas-Wilson International Max,Food & Grocery,International Foods,FOO-89597,Thomas-Wilson Tech,30.33,14.72,51.47,375,77,Rivers PLC,2020-03-31,Active,0.14,2.9,5814
+4e70e283-2263-43b8-b569-89334f1c4250,"Martinez, Makeup Essential",Beauty,Makeup,BEA-83396,"Martinez, Labs",224.38,112.85,49.71,255,120,Cox-Clark,2021-04-25,Active,14.17,4.8,5307
+ee361ed6-c6ac-47ea-9990-05779c036cc7,Leonard Decor Max,Home & Garden,Decor,HOM-75712,Leonard Labs,1931.47,946.99,50.97,375,96,"Bridges, Blackburn and Hubbard",2020-06-26,Out of Stock,29.19,2.2,3485
+455e41d1-74a7-4527-937b-ef9da746eab8,"Thomas, Lighting Plus",Automotive,Lighting,AUT-31099,"Thomas, Tech",1408.79,967.66,31.31,402,41,Foster-Hood,2023-05-30,Active,3.6,2.5,6211
+abced4c1-e8c5-44b7-9c1c-1a92d69af264,Ball Self-Help Lite,Books,Self-Help,BOO-10059,Ball Pro,35.49,16.57,53.31,463,110,"Sutton, Kerr and Guerra",2017-03-23,Active,22.13,4.9,1928
+86b93628-8b38-4481-b099-1cd4e09a2841,Clarke-Ward Action Lite,Toys,Action Figures,TOY-72269,Clarke-Ward Co,101.27,57.93,42.8,133,47,Molina-Williams,2021-01-23,Active,15.08,3.5,717
+158028e0-4db2-4be3-a3f5-88248f7c4413,Dalton-Walker Pantry Prime,Food & Grocery,Pantry Staples,FOO-90307,Dalton-Walker Pro,39.06,26.84,31.29,0,26,"Martin, Dodson and Castaneda",2025-04-23,Active,3.81,4.0,3286
+03ef82e4-3687-47ba-a609-4616a3a86255,"Cole, History Prime",Books,History,BOO-27504,"Cole, Industries",15.9,9.02,43.27,776,65,Gillespie and Sons,2017-01-08,Active,18.11,4.5,2376
+9be7ca92-896a-4830-8d11-88175fc6a448,Morris-Walter Furniture Plus,Office,Furniture,OFF-38332,Morris-Walter Systems,1135.07,577.22,49.15,532,81,Goodwin Group,2017-05-05,Active,7.03,2.0,4926
+0baa5866-112e-4dd4-a902-16c26b0d82be,Hart Software Elite,Office,Software,OFF-70676,Hart Labs,1164.9,700.3,39.88,620,99,"Lopez, Hammond and Graham",2020-06-11,Active,12.71,3.0,1325
+679933da-7d8d-4f5a-b85b-6aca3f2b9c1c,Dalton-Walker Camping Pro,Sports,Camping,SPO-71198,Dalton-Walker Pro,36.91,19.7,46.63,327,93,"Gross, Mccarthy and Love",2019-11-10,Active,9.28,2.2,45
+295b2c8e-5a6e-4c51-abc0-1d67871593ea,"Smith, Organic Lite",Food & Grocery,Organic,FOO-97151,"Smith, Tech",24.64,16.35,33.64,594,16,Alvarado-Orozco,2024-09-06,Out of Stock,27.16,3.5,1279
+71577a98-930a-49f4-9868-cc151d811675,Savage Hair Core,Beauty,Hair Care,BEA-31535,Savage Works,49.64,25.18,49.27,205,61,Stanley and Sons,2018-05-16,Active,9.49,1.5,5993
+65f68153-06b6-4f0b-8064-c409bdfe7e2a,Thomas-Buckley Car Elite,Automotive,Car Accessories,AUT-31023,Thomas-Buckley Labs,77.6,46.35,40.27,489,33,Price-Harper,2022-08-23,Active,10.21,3.9,5691
+d32b2bab-4e76-45db-a34a-9fb4b86d555f,"Kelley, Fiction Pro",Books,Fiction,BOO-48102,"Kelley, Pro",19.43,8.39,56.82,426,76,Castaneda-Bond,2020-11-16,Active,3.06,2.9,4440
+6f4da79c-c03f-4501-b991-0e6c85ebc5ef,"Joseph, Snacks Pro",Food & Grocery,Snacks,FOO-64424,"Joseph, Systems",41.35,27.66,33.11,321,95,Williams Ltd,2018-02-06,Active,27.28,4.3,6467
+294b100c-d9a8-4418-ac87-4fc858192b82,Hart International Prime,Food & Grocery,International Foods,FOO-76489,Hart Labs,71.26,46.52,34.72,507,89,"Jacobs, Thomas and Cook",2023-05-30,Active,15.05,3.7,2117
+1173e765-52c1-407b-9edd-584da453017b,"Cameron, Hair Essential",Beauty,Hair Care,BEA-90267,"Cameron, Tech",225.56,145.14,35.65,422,54,Duffy PLC,2017-11-07,Active,29.08,4.3,3670
+4b8d5e98-ec7f-412c-93a0-42260e932030,Caldwell Dolls Ultra,Toys,Dolls & Plush,TOY-57228,Caldwell Co,92.52,45.74,50.56,778,71,"Allen, Johnson and Thompson",2018-07-21,Active,14.36,1.7,2351
+0c0662d7-691b-4cdb-b8ca-b9f755c7737a,Thomas-Buckley Accessories Elite,Clothing,Accessories,CLO-25751,Thomas-Buckley Labs,228.83,101.98,55.43,830,41,Phillips Ltd,2020-08-24,Active,19.0,3.2,5966
+357326ce-a541-435c-9508-404eac2e1a1f,Thomas-Buckley Pantry Essential,Food & Grocery,Pantry Staples,FOO-66925,Thomas-Buckley Labs,40.52,25.18,37.86,516,43,"Potter, Mills and Crawford",2024-01-20,Active,9.68,4.5,170
+0bad3e3a-3e57-4d67-86f1-034f27049e94,Leonard Men's Pro,Beauty,Men's Grooming,BEA-89172,Leonard Labs,241.17,117.09,51.45,156,68,"Edwards, Rich and Daniels",2017-04-11,Active,16.23,4.1,3548
+c9e6c162-a309-49c8-a4d2-35e562e311db,"Kelley, Board Core",Toys,Board Games,TOY-35144,"Kelley, Pro",125.12,63.27,49.43,228,98,Smith-Martinez,2024-06-20,Active,9.01,3.8,5070
+5ee714eb-92e4-4c14-9afd-615ed01dc891,Gentry-Olson Outerwear Lite,Clothing,Outerwear,CLO-14383,Gentry-Olson Works,50.23,24.28,51.66,150,97,"Gonzalez, Benton and Patel",2017-03-09,Out of Stock,12.2,4.6,523
+acddbd4f-667e-4b55-84ab-2f49bc6248c4,Lee Running Plus,Sports,Running,SPO-27126,Lee Group,126.7,88.43,30.21,0,93,Green-Peterson,2020-02-08,Active,2.4,2.0,3550
+149623c0-5e6d-4bbb-8c08-d23e4dcfba37,Castaneda-Olson Bedding Max,Home & Garden,Bedding,HOM-47538,Castaneda-Olson Co,1037.77,640.08,38.32,0,105,Turner-Higgins,2021-09-22,Active,22.42,4.6,5927
+5e76e8ab-6d7b-41f7-83bc-11bb4ac82aba,"Cole, Outdoor Lite",Home & Garden,Outdoor Living,HOM-55123,"Cole, Industries",1857.04,988.53,46.77,393,46,"Graham, Rich and Abbott",2023-09-21,Active,20.21,4.6,1291
+4ff5ef46-6a50-4cf9-99e1-6be38fb5504e,"Mccoy, Networking Max",Office,Networking,OFF-49568,"Mccoy, Pro",1180.83,719.33,39.08,506,44,"Smith, Moses and Hess",2021-05-03,Active,3.33,3.0,4649
+4ac1bfe9-2898-456f-ad2e-19b102742ad4,Jacobs Men's Pro,Beauty,Men's Grooming,BEA-39831,Jacobs Pro,95.44,57.6,39.65,330,119,"Davis, Fletcher and Quinn",2025-11-04,Active,19.18,4.1,4191
+a3ad1e1b-3ca1-45de-9139-285b2f0aaf56,"Sullivan, Self-Help Pro",Books,Self-Help,BOO-33162,"Sullivan, Labs",24.3,15.67,35.51,422,76,Walker Group,2019-05-29,Active,14.73,4.0,3934
+35079fca-a0b2-42ea-b8f3-c61ab4b216b8,Chang Printers Essential,Office,Printers,OFF-70893,Chang Pro,171.86,73.51,57.23,163,23,Campbell Inc,2020-08-05,Active,20.62,1.7,4698
+4405b4cb-b5b7-48f3-9663-102d056e7edc,Grant Board Prime,Toys,Board Games,TOY-79493,Grant Co,127.78,62.26,51.28,480,86,"Rowe, King and Moore",2020-01-05,Active,19.02,3.2,5673
+ce99a5dd-0e83-4c66-92d4-b290d5c381cb,"Williams, Fragrances Core",Beauty,Fragrances,BEA-24702,"Williams, Industries",104.4,44.88,57.01,287,67,"Clarke, Wilson and Jackson",2024-07-07,Active,16.7,3.9,3333
+1c3ae5da-768b-49e6-bcd1-dcfdaab45382,Thomas-Buckley Skincare Lite,Beauty,Skincare,BEA-56699,Thomas-Buckley Labs,96.43,64.93,32.67,181,96,"Fox, Luna and Wilkinson",2019-06-19,Out of Stock,13.99,4.6,6375
+231fa40f-85d0-4492-bbca-6bb2819aec5e,"Smith, Men's Ultra",Clothing,Men's Tops,CLO-70621,"Smith, Tech",275.61,137.4,50.15,585,81,Cunningham-Perez,2026-04-29,Active,10.3,2.4,5489
+9d0ef0b7-9df2-4c46-aa4d-d4bdd70b289d,Hart Self-Help Elite,Books,Self-Help,BOO-34480,Hart Labs,40.1,26.83,33.09,301,102,Schaefer-Sutton,2019-04-17,Discontinued,14.2,2.6,2765
+7a8f3f39-0bdd-4a97-9b0c-869d7de01719,"Jordan, Outerwear Plus",Clothing,Outerwear,CLO-50029,"Jordan, Tech",255.37,119.95,53.03,738,120,Vaughan-George,2018-08-23,Out of Stock,22.82,2.2,4394
+ddb9353f-68f6-449b-84ed-4823d1ed57f0,Robinson Software Essential,Office,Software,OFF-50777,Robinson Group,773.59,464.86,39.91,239,50,"Kelley, Knapp and Wright",2022-05-25,Active,17.79,5.0,37
+2b0182fc-0186-46f9-a743-48deb7b96d15,Lee Fitness Essential,Sports,Fitness,SPO-48062,Lee Labs,412.47,233.38,43.42,71,23,"Livingston, Humphrey and Walters",2022-01-11,Active,27.63,1.6,5055
+1bcaa839-1412-452c-8709-79c4a37ab7c8,Thomas-Buckley Beverages Elite,Food & Grocery,Beverages,FOO-12894,Thomas-Buckley Labs,39.61,20.44,48.4,209,29,Patrick-White,2025-03-10,Active,14.86,4.4,6424
+a21c965e-da30-4a72-945b-0d0dca558a52,Caldwell Business Prime,Books,Business,BOO-47957,Caldwell Co,74.87,40.53,45.87,716,80,Brown Inc,2021-07-21,Active,18.79,2.7,4439
+9e091134-617a-4481-9af0-d7a80272a621,"Peterson, Accessories Ultra",Clothing,Accessories,CLO-90615,"Peterson, Industries",233.79,158.27,32.3,442,35,Gonzalez-Kline,2022-02-04,Active,26.7,4.3,3036
+dd0cdb7c-d864-4316-abcd-cba9ad85a4a0,Prince Beverages Prime,Food & Grocery,Beverages,FOO-71042,Prince Works,15.9,11.09,30.25,195,112,Torres-Harris,2024-10-20,Active,16.96,4.1,4110
+f8122141-a29e-4aa8-befc-3b88a76cc4ed,Benjamin Bedding Pro,Home & Garden,Bedding,HOM-71031,Benjamin Tech,1947.9,1274.21,34.59,80,36,Brooks Group,2020-09-25,Out of Stock,28.1,2.7,1192
+8fd41223-b8d1-468a-aca3-62bbf8ef9994,"Peterson, Denim Lite",Clothing,Denim,CLO-67290,"Peterson, Industries",69.8,39.19,43.85,537,53,Boyd LLC,2018-01-19,Active,8.25,4.1,1168
+4393440d-963e-4fc3-b482-af67a890cae4,Lee Lighting Core,Automotive,Lighting,AUT-56565,Lee Labs,740.57,453.67,38.74,736,67,Anderson-Robinson,2024-11-30,Active,28.2,3.1,3429
+3de67cc7-f2a0-4edb-8fe6-b990c5ed6636,"Gilbert, History Plus",Books,History,BOO-53172,"Gilbert, Works",11.9,8.25,30.67,122,52,"Elliott, Bullock and Brown",2022-07-21,Active,9.59,3.1,3959
+5fe6ba18-329e-4a09-ae1a-410c85a922f4,"Watson, Running Plus",Sports,Running,SPO-19385,"Watson, Tech",152.28,83.12,45.42,362,116,"Schmidt, Villegas and Morales",2026-03-12,Active,25.48,1.9,118
+67ba11f4-ae7b-41aa-97c0-4ef157fe6756,Gonzales-Hernandez Car Plus,Automotive,Car Accessories,AUT-39832,Gonzales-Hernandez Group,631.63,279.31,55.78,294,40,"Johnson, Meza and Dudley",2020-11-27,Active,13.76,4.9,512
+17bda0e7-ee05-4768-aa37-bc54c30931f8,Dixon Accessories Pro,Clothing,Accessories,CLO-96615,Dixon Industries,281.55,135.99,51.7,333,16,"Harris, Moore and Stone",2019-07-31,Out of Stock,11.61,3.8,3077
+5ec78d48-f35e-412c-81ec-575f0f2b1894,Thomas-Wilson Kitchen Max,Home & Garden,Kitchen,HOM-12373,Thomas-Wilson Tech,316.91,169.52,46.51,631,61,Anderson-Taylor,2021-04-05,Active,3.86,4.1,3256
+9a255a81-e547-4242-b534-fc016c880b02,Webb Skincare Prime,Beauty,Skincare,BEA-95398,Webb Pro,87.84,42.72,51.37,398,98,"Malone, Klein and Copeland",2018-01-10,Active,17.15,4.2,3152
+464465e7-2d0c-4c54-a945-68ec28f40a40,Benjamin Educational Essential,Toys,Educational,TOY-26654,Benjamin Tech,85.79,52.53,38.77,409,100,"Avila, Jordan and Hammond",2021-03-01,Active,4.87,2.5,3391
+619716f0-7ef6-4667-bbaa-21bfda3ede34,"Hall, Science Elite",Books,Science,BOO-79020,"Hall, Group",42.77,26.19,38.77,398,49,Simpson-Taylor,2018-09-10,Active,21.38,4.9,2509
+7c8df1d2-b54e-46ed-9bdc-4584601250f0,Morris-Walter Networking Prime,Office,Networking,OFF-44868,Morris-Walter Systems,348.64,166.72,52.18,318,55,Ruiz Group,2019-08-01,Active,7.32,2.5,2715
+4d6c9697-835c-410a-a1be-13e5092a763d,"Mccoy, Fiction Pro",Books,Fiction,BOO-54697,"Mccoy, Pro",18.98,12.64,33.4,166,102,Martin LLC,2024-05-23,Active,14.61,1.8,3796
+5f45e1dd-ca4c-406b-8b7a-77426d256701,"Thomas, Beverages Core",Food & Grocery,Beverages,FOO-59632,"Thomas, Tech",71.66,38.79,45.87,336,99,"Brock, Avila and Wade",2024-04-24,Active,11.08,2.7,2413
+a91a5a6a-dd05-47db-bba2-6dd8fbd40546,Jacobs Tools Essential,Automotive,Tools & Equipment,AUT-33664,Jacobs Pro,826.51,552.48,33.16,614,57,"Mccall, Case and Allen",2025-12-12,Active,0.65,1.8,4508
+66ba54e2-dc56-4da8-be6d-e20331d2a8e3,"Taylor, Tools Pro",Home & Garden,Tools,HOM-61588,"Taylor, Group",390.65,269.83,30.93,336,58,Reese-Gomez,2022-09-30,Out of Stock,8.97,4.8,6252
+8e4bd054-c022-4495-b8cc-7d66b5411df9,Webb Outerwear Elite,Clothing,Outerwear,CLO-70746,Webb Pro,19.0,8.34,56.11,233,82,"Price, Lewis and Thompson",2018-12-19,Active,4.79,3.4,772
+ef302f75-1228-4c2b-bca7-54f25d99bd86,"Nelson, Men's Plus",Beauty,Men's Grooming,BEA-43663,"Nelson, Systems",185.04,95.73,48.27,254,77,"Harris, Lee and Joyce",2020-11-06,Discontinued,9.1,3.0,613
+a50489f1-3c56-44ab-b23c-170164d0e7a5,Prince Networking Pro,Office,Networking,OFF-22120,Prince Works,687.2,394.29,42.62,341,100,Barron PLC,2020-06-07,Active,7.5,1.7,3129
+8c8fe030-ab3c-44c0-b133-88c528abce0d,"Joseph, Activewear Max",Clothing,Activewear,CLO-81056,"Joseph, Systems",263.38,179.0,32.04,316,86,Wilkerson Inc,2024-10-03,Active,19.35,3.1,3972
+024154ab-fd91-4627-8f73-8fbb01276eec,Thompson-Powell Lighting Prime,Automotive,Lighting,AUT-39086,Thompson-Powell Pro,1272.45,618.85,51.37,384,101,Robinson-Evans,2022-08-10,Out of Stock,20.89,1.9,5781
+b72e1523-80bb-4986-97bc-bdd78da4f7df,"Valdez, Electronics Plus",Automotive,Electronics,AUT-56823,"Valdez, Industries",570.68,349.94,38.68,262,118,Padilla-Miller,2022-10-27,Active,3.64,4.3,373
+401157c3-675b-4088-b111-fd7829f8a574,"Hooper, Outerwear Essential",Clothing,Outerwear,CLO-40630,"Hooper, Pro",164.68,106.07,35.59,163,55,Adams Inc,2023-08-17,Active,2.6,3.9,391
+f3e2ef24-57e4-4c98-8aee-776905a67ee5,Ford Technology Prime,Books,Technology,BOO-49121,Ford Works,42.09,24.73,41.24,291,53,"Flynn, Hernandez and Bates",2022-11-03,Discontinued,9.83,3.4,2873
+50b83970-84e6-4a44-8957-1ef48eddd36d,Gonzales-Hernandez Women's Lite,Clothing,Women's Tops,CLO-31154,Gonzales-Hernandez Group,284.84,137.31,51.79,130,93,Mata and Sons,2019-04-11,Active,2.95,3.2,1624
+03e4c47b-a83f-4811-9c0b-3bd628109452,Jacobs Hair Lite,Beauty,Hair Care,BEA-59878,Jacobs Pro,89.95,48.4,46.19,361,47,Cooper-Sexton,2022-05-24,Out of Stock,20.24,2.4,407
+0a77e244-f3f7-4a11-ada6-477f202a3e65,Mason-Tanner Kitchen Ultra,Home & Garden,Kitchen,HOM-15285,Mason-Tanner Industries,498.69,333.0,33.23,468,78,Wallace Ltd,2021-06-08,Active,1.9,2.3,1493
+c5594086-4f37-4930-83a5-590da92883c4,Hunter-West Outdoor Max,Home & Garden,Outdoor Living,HOM-11391,Hunter-West Group,1798.83,796.58,55.72,438,90,Jones Group,2022-04-02,Active,3.56,1.6,6278
+6b4754b4-89f6-4316-9a84-2ec7d21382fb,"Valdez, Decor Lite",Home & Garden,Decor,HOM-41226,"Valdez, Industries",1141.36,654.53,42.65,331,84,Howell-Jackson,2017-07-22,Active,18.2,3.0,1273
+89ac628d-fa89-4d7a-9722-9b6218bf215c,Lopez Snacks Essential,Food & Grocery,Snacks,FOO-21172,Lopez Labs,61.16,38.53,37.0,363,103,Salazar-Rocha,2024-11-21,Out of Stock,28.38,3.4,885
+6c351c15-61d6-4f25-b761-39250f105f9b,"Hooper, Educational Elite",Toys,Educational,TOY-62933,"Hooper, Pro",159.06,100.59,36.76,171,42,Boyd PLC,2020-01-15,Out of Stock,16.84,4.3,4380
+94b3e301-7385-4e8a-a3ac-2acae91c67ac,"Watson, Self-Help Prime",Books,Self-Help,BOO-27581,"Watson, Tech",65.02,38.84,40.26,264,72,"Francis, Ryan and Clark",2021-09-21,Discontinued,24.51,4.6,5638
+90bc62ea-ef2e-4c80-8df8-e3608d23fa0c,Morris-Walter Pantry Elite,Food & Grocery,Pantry Staples,FOO-25927,Morris-Walter Systems,50.49,26.89,46.74,78,17,Mays-Nixon,2021-05-13,Active,0.34,4.5,4403
+17eb9c7c-4453-458b-bab9-38219acbbd47,Webb Fiction Ultra,Books,Fiction,BOO-61952,Webb Pro,58.18,27.18,53.28,589,74,Martinez Inc,2022-04-20,Active,9.98,2.6,4134
+d97241dc-0741-4785-9099-b224f1265fcf,"Watson, Software Essential",Office,Software,OFF-95531,"Watson, Tech",539.1,226.84,57.92,0,47,Brown-Jarvis,2023-03-08,Active,13.35,4.9,5112
+ca0182d1-51b5-4a82-baea-873245a1c0cb,"Joseph, Makeup Plus",Beauty,Makeup,BEA-89488,"Joseph, Systems",61.48,33.13,46.11,557,72,Hughes-Yoder,2026-06-02,Active,11.11,4.6,1820
+77c149dc-dc4f-4c12-8e7f-5adec0f0797d,Turner-French Fragrances Ultra,Beauty,Fragrances,BEA-70155,Turner-French Pro,174.9,97.56,44.22,840,27,Hughes-Camacho,2021-05-25,Active,24.44,2.1,511
+412f9298-bb3e-493a-8083-7001b72685d3,Hodges-Roberts Fragrances Core,Beauty,Fragrances,BEA-56459,Hodges-Roberts Labs,211.5,134.14,36.58,10,100,Crosby PLC,2025-06-04,Active,19.26,2.3,3006
+698bd888-c6bf-44fa-9eb9-23636482791f,Chang Technology Lite,Books,Technology,BOO-40476,Chang Pro,60.39,26.34,56.38,711,27,Smith-Taylor,2017-04-14,Active,11.52,3.9,1627
+3a5bad6a-8799-4575-8c1e-6f1e39d45936,Benjamin Outerwear Max,Clothing,Outerwear,CLO-99906,Benjamin Tech,184.66,96.6,47.69,274,106,Brown Group,2025-07-15,Active,26.94,4.5,1472
+be82a774-7240-4b53-b788-25f7325a180f,Benjamin History Elite,Books,History,BOO-24887,Benjamin Tech,47.43,32.77,30.91,486,118,Rodriguez Group,2018-07-04,Active,4.47,3.2,1574
+29286645-e194-405b-a624-8ab11e2bd703,Hahn Team Core,Sports,Team Sports,SPO-95038,Hahn Tech,251.64,163.49,35.03,0,66,Jones PLC,2025-03-02,Discontinued,27.9,1.9,2930
+1f4d6df1-382e-4a56-b51b-fecaad660b4c,"Jordan, Beverages Lite",Food & Grocery,Beverages,FOO-87121,"Jordan, Tech",41.15,23.99,41.7,306,60,"Peterson, Cowan and Harris",2018-11-20,Discontinued,29.99,4.6,5042
+6ca7c0b5-eed4-4c42-9a7c-92e888e7e8c6,"Gilbert, Organic Pro",Food & Grocery,Organic,FOO-24849,"Gilbert, Works",36.77,19.35,47.38,339,31,Wood-Hall,2025-09-23,Active,13.27,2.1,1796
+1e58dc74-c229-469f-b289-e78e75ab123d,Ford Technology Lite,Books,Technology,BOO-68679,Ford Works,43.83,28.57,34.82,90,22,Fisher-Kelly,2021-05-31,Discontinued,4.06,2.3,2979
+48b9d44d-f24b-40d6-a937-25cbeb6a4625,Hahn Skincare Essential,Beauty,Skincare,BEA-84669,Hahn Tech,217.35,118.98,45.26,186,88,Randall Group,2024-07-07,Active,2.04,2.9,2382
+c42d4e05-73cf-4494-9e49-a71c7f7dfe11,Rivera-Gamble Furniture Pro,Office,Furniture,OFF-79586,Rivera-Gamble Systems,943.15,538.64,42.89,0,119,Richards Ltd,2025-11-25,Active,15.93,3.5,2111
+4373a8eb-ae75-4e2f-8e7f-871c65a0aff2,Chang Denim Ultra,Clothing,Denim,CLO-22329,Chang Pro,153.3,104.14,32.07,448,93,"Ward, Rodriguez and Carter",2019-03-08,Discontinued,27.54,3.9,1378
+df59530a-84d2-4087-8cee-8e907fe8424a,"Williams, Men's Max",Clothing,Men's Tops,CLO-51722,"Williams, Industries",57.33,25.5,55.52,433,44,Anderson Group,2022-05-06,Out of Stock,3.05,4.3,4587
+1c4ca0fb-4303-41d6-ae15-ebf9aabf97d0,Kelley-Horton Team Plus,Sports,Team Sports,SPO-73202,Kelley-Horton Tech,419.78,208.24,50.39,0,95,Ortega PLC,2022-01-17,Out of Stock,29.39,4.4,2800
+92efc4aa-2402-4a86-9cac-c9d61a452085,Benjamin Headphones Plus,Electronics,Headphones,ELE-11286,Benjamin Tech,861.79,415.37,51.8,181,43,Carter LLC,2024-02-10,Active,6.27,1.7,5388
+d9e033af-992b-4330-a82b-7a0bdb95544b,"Smith, Outdoor Essential",Home & Garden,Outdoor Living,HOM-47003,"Smith, Tech",477.68,248.43,47.99,751,41,"Marsh, Rodriguez and Taylor",2026-01-10,Active,27.15,4.4,1306
+067a0e09-67aa-4cd8-8dde-31b17af77196,Prince Smart Essential,Electronics,Smart Home Devices,ELE-84765,Prince Works,889.98,560.37,37.04,661,79,Nguyen-Soto,2017-02-20,Active,13.64,3.5,4431
+622e71e2-021a-4dba-af0b-7257fd48fea4,Flowers Dolls Essential,Toys,Dolls & Plush,TOY-90081,Flowers Industries,46.1,23.46,49.11,442,55,"Pineda, Baker and Clark",2023-08-14,Active,22.95,1.7,622
+f50162f3-08b8-45b7-ac7d-9655713e9e87,"Cameron, History Pro",Books,History,BOO-81547,"Cameron, Tech",35.11,21.32,39.28,441,35,"Silva, Henderson and Rogers",2017-07-10,Active,6.76,2.7,4058
+d2b3578b-9fdd-44fa-829e-94a8ec3a3921,"Kelley, Action Elite",Toys,Action Figures,TOY-20988,"Kelley, Pro",21.88,11.29,48.4,162,99,Brown-Osborne,2024-10-25,Active,6.21,3.8,2252
+06ba7824-4f91-4d5c-a05d-3c03a46e60f2,Fowler Action Max,Toys,Action Figures,TOY-26284,Fowler Works,44.04,24.75,43.8,0,25,Lopez Inc,2017-05-24,Discontinued,8.52,3.0,2067
+eb27d612-7a96-415d-996a-80d1c3e25dcc,"Thomas, Fiction Pro",Books,Fiction,BOO-38046,"Thomas, Tech",13.11,6.91,47.29,403,85,"Archer, Howard and Andrews",2020-04-30,Active,10.37,3.9,5150
+59d28625-303b-4a72-a048-754ef68729ba,"Miller, Technology Essential",Books,Technology,BOO-58434,"Miller, Co",18.22,11.39,37.49,406,118,Crane-Rios,2023-10-23,Active,6.28,2.7,2418
+27e7a382-ca70-4a36-ace6-69d0c16d4775,Ramirez Hair Core,Beauty,Hair Care,BEA-62499,Ramirez Industries,50.14,27.28,45.59,275,46,Fletcher PLC,2018-08-07,Discontinued,9.28,3.4,1647
+2c42e1ad-8af2-4a31-a46b-1a18931a675f,Kennedy-English Men's Plus,Beauty,Men's Grooming,BEA-24658,Kennedy-English Pro,148.14,83.08,43.92,271,50,"Ross, Sullivan and Rollins",2021-11-09,Active,4.29,2.9,2576
+d0be6e9d-10b6-4b32-9a25-c8fea01648b0,Gentry-Olson Lighting Prime,Automotive,Lighting,AUT-23664,Gentry-Olson Works,292.6,137.38,53.05,372,109,Patterson-Rogers,2022-06-10,Active,10.55,2.8,74
+3a60ce2b-4ee4-41f5-a4ef-6bf85600718e,Dalton-Walker Outdoor Elite,Toys,Outdoor Toys,TOY-39328,Dalton-Walker Pro,143.04,87.94,38.52,74,19,Bean Group,2018-04-14,Active,9.22,1.5,3118
+11607f07-57cc-49a3-abf6-01d4d89abd73,Dixon International Prime,Food & Grocery,International Foods,FOO-64452,Dixon Industries,18.13,8.88,51.02,474,91,"Jones, Porter and Love",2018-04-09,Active,3.57,4.0,1579
+0dce4e2c-9e98-4b27-be52-4d5891ae3913,"Joseph, Cameras Core",Electronics,Cameras,ELE-75122,"Joseph, Systems",1857.96,1292.85,30.42,785,106,Houston-Cordova,2025-05-04,Active,26.79,1.5,5002
+f00973b2-c255-4416-967c-df9247d539a9,"Gilbert, Decor Ultra",Home & Garden,Decor,HOM-74899,"Gilbert, Works",175.04,94.43,46.05,161,28,Hines-Wilson,2017-05-30,Active,21.55,3.6,2490
+04c8d9eb-d5b7-40f9-8862-eaff11494f1b,"Williams, Fitness Plus",Sports,Fitness,SPO-36416,"Williams, Industries",390.77,184.57,52.77,429,102,"Welch, Hill and Rogers",2024-08-20,Active,7.94,4.1,2312
+8cb1622b-8b21-44b4-a197-dfb2f6843129,"Watson, Cameras Core",Electronics,Cameras,ELE-77385,"Watson, Tech",101.15,55.5,45.13,262,119,Tanner LLC,2019-06-11,Active,2.72,3.9,986
+b4038fbc-d592-4aed-9d9d-cb47ad7b7b0a,"Williams, Kitchen Pro",Home & Garden,Kitchen,HOM-98247,"Williams, Industries",928.46,464.53,49.97,0,15,Kramer-Allen,2020-03-07,Active,21.29,4.8,3926
+fb597bbb-9225-4732-8314-28ca8ceb6aa5,Castaneda-Olson Team Prime,Sports,Team Sports,SPO-36510,Castaneda-Olson Co,319.17,157.68,50.6,360,67,Perez Ltd,2017-01-31,Active,7.87,4.2,710
+10e333d0-1c6e-493a-9aca-4f1c89919a47,"Miller, Skincare Lite",Beauty,Skincare,BEA-88226,"Miller, Co",55.17,26.98,51.1,392,100,"Owens, Walsh and Watson",2025-07-20,Active,3.61,3.5,4761
+48855380-049a-4001-957d-32950e7cc07b,Kennedy-English Fragrances Prime,Beauty,Fragrances,BEA-81917,Kennedy-English Pro,57.63,32.11,44.28,86,51,"Mooney, Walker and Perez",2026-01-08,Active,2.07,3.7,5081
+702d1f96-9b58-4cc6-9b34-509113a69559,Hill-Griffin Educational Plus,Toys,Educational,TOY-68260,Hill-Griffin Group,134.57,85.59,36.4,64,84,Acosta and Sons,2025-03-21,Active,22.8,2.5,3470
+76c786c5-ea70-4d6f-b210-99bed63b382e,"Kelley, Business Essential",Books,Business,BOO-60738,"Kelley, Pro",17.8,10.25,42.42,416,24,Martinez-Garcia,2021-11-06,Active,12.39,1.7,5247
+6a8e3d75-9f90-48db-8bf6-59426965e731,Clarke-Ward Furniture Lite,Office,Furniture,OFF-61222,Clarke-Ward Co,83.58,44.19,47.13,605,23,"Davis, Brown and Brown",2025-11-08,Active,4.2,2.8,4350
+da469cf1-b691-4ad2-ba4e-1b94d843c324,"Valdez, Software Prime",Office,Software,OFF-31909,"Valdez, Industries",1219.44,693.82,43.1,431,60,Ewing-Yoder,2026-03-31,Active,17.81,3.8,3132
+80d33ac2-0fc0-4b57-b043-8389bc318ddd,"Price, Smartphones Essential",Electronics,Smartphones,ELE-89412,"Price, Co",1825.89,775.91,57.51,382,88,Lyons-Villegas,2020-10-25,Active,7.97,4.8,5607
+291effb1-1160-4a85-8558-fbf172a835d8,Moyer-Brown Furniture Core,Office,Furniture,OFF-35202,Moyer-Brown Labs,310.33,157.51,49.24,266,102,Donaldson-Freeman,2026-03-17,Active,5.44,2.8,2162
+c1c00590-0c53-4525-b450-3a79e5752b81,"Martinez, Denim Ultra",Clothing,Denim,CLO-84469,"Martinez, Labs",274.8,157.98,42.51,169,102,Cooper-Thompson,2017-04-07,Discontinued,8.59,3.4,5294
+61cc39ab-fb3d-4514-bc0e-d4e77c278614,"Campbell, Tools Core",Home & Garden,Tools,HOM-49666,"Campbell, Systems",1414.73,744.34,47.39,434,19,Kim-Mckenzie,2023-09-10,Active,24.41,3.0,2559
+b0ed233e-efef-4c1b-972f-aed28626f8aa,Grant Bedding Lite,Home & Garden,Bedding,HOM-12599,Grant Co,64.36,30.71,52.28,362,16,Martinez PLC,2017-09-09,Active,21.96,3.6,4881
+4682b9f7-7b75-4b24-b67a-e3debb653070,"Miller, Fragrances Elite",Beauty,Fragrances,BEA-91560,"Miller, Co",37.86,24.69,34.79,74,112,Webb-Reyes,2020-05-13,Active,24.78,2.6,758
+3519495c-d282-48ff-a590-833db49507af,Benjamin Supplies Plus,Office,Supplies,OFF-91173,Benjamin Tech,483.29,285.95,40.83,88,46,Cowan-Barber,2025-01-10,Active,7.66,4.0,4607
+fedbd28b-c13a-4545-9f4d-64543a0bcdbc,"Valdez, Men's Elite",Beauty,Men's Grooming,BEA-26629,"Valdez, Industries",11.11,4.75,57.25,348,88,Stephens-Craig,2020-12-06,Out of Stock,2.26,3.5,85
+1796bd28-ac66-4a64-9160-f07de5f83b0b,"Sullivan, Outdoor Pro",Toys,Outdoor Toys,TOY-48973,"Sullivan, Labs",24.62,11.04,55.16,275,57,"Brady, Bishop and Peterson",2018-12-12,Active,10.75,4.6,2933
+3441fb69-c74a-4567-b1f3-334779294d53,Grant Supplies Pro,Office,Supplies,OFF-12435,Grant Co,965.58,470.27,51.3,175,109,Walker-Johnson,2026-04-30,Active,19.75,3.1,1445
+47a53c3a-6827-453b-b11b-dc976c3b42e1,Caldwell Software Max,Office,Software,OFF-53528,Caldwell Co,380.63,254.2,33.22,198,113,Collins-Klein,2021-10-16,Active,6.77,3.7,5872
+4c97d191-6cc5-424a-9f4d-944c624a86c4,Lopez Women's Lite,Clothing,Women's Tops,CLO-88954,Lopez Labs,144.4,73.57,49.05,399,70,"Wood, Swanson and Perez",2023-11-11,Active,15.18,2.5,817
+e53fccb1-4d18-4256-9d8e-8282a5817a49,Thomas-Wilson Beverages Ultra,Food & Grocery,Beverages,FOO-86693,Thomas-Wilson Tech,29.83,15.97,46.46,429,92,"Brooks, Potts and Evans",2017-02-23,Active,1.16,2.0,4577
+30ba9f6a-6586-4e63-9ded-351b07e7c566,"Taylor, Water Prime",Sports,Water Sports,SPO-41485,"Taylor, Group",402.18,276.48,31.25,390,50,Miller-Henderson,2026-03-23,Discontinued,6.45,3.8,3718
+27fa0af2-a2cf-44cb-9bd3-84a54c44a8f6,"Sullivan, Pantry Prime",Food & Grocery,Pantry Staples,FOO-34517,"Sullivan, Labs",72.83,31.23,57.12,445,43,"Garner, Page and Waters",2020-07-29,Active,9.77,3.0,272
+f0339671-0ede-4400-8ad8-24780bf7f753,"Smith, Dolls Prime",Toys,Dolls & Plush,TOY-24957,"Smith, Tech",40.7,19.52,52.04,343,21,Waters PLC,2023-08-14,Active,10.75,4.9,3639
+b88d2b84-1f39-47c0-866f-3786f10a65c2,"Price, Bedding Ultra",Home & Garden,Bedding,HOM-88620,"Price, Co",1004.57,669.27,33.38,757,78,"Wright, Steele and Ochoa",2018-10-27,Active,26.95,3.2,648
+578b16ff-d341-4146-b898-4ba05957a4b6,Clarke-Ward Board Core,Toys,Board Games,TOY-78929,Clarke-Ward Co,158.97,80.77,49.19,756,75,Chang Inc,2021-08-24,Out of Stock,24.92,1.9,2139
+c9ffaddb-1eeb-400f-98ad-3132a3138cf5,"Peterson, Networking Essential",Office,Networking,OFF-11134,"Peterson, Industries",1261.07,806.99,36.01,551,71,Taylor-Jones,2023-09-25,Active,3.19,2.4,5187
+413507b8-a13d-45c6-8557-8e978a9695b5,"Hall, Technology Plus",Books,Technology,BOO-88891,"Hall, Group",58.67,27.89,52.46,748,22,Walker Ltd,2018-02-13,Active,2.67,3.3,6146
+365ead99-a2dc-42c0-a253-944c3e41bc47,Warren-Lin Men's Max,Clothing,Men's Tops,CLO-43865,Warren-Lin Group,146.98,98.47,33.0,25,16,Martinez-Adams,2023-11-08,Active,11.17,1.6,2465
+daebb378-1cda-443a-9bb4-a9c8943e4512,"Thomas, Laptops Prime",Electronics,Laptops,ELE-78724,"Thomas, Tech",258.6,130.07,49.7,360,95,"Oconnell, Jones and Jones",2025-03-05,Out of Stock,13.57,4.2,1060
+9ed23fef-8e88-41f6-94e2-04c188090288,Ford History Plus,Books,History,BOO-12549,Ford Works,25.48,11.57,54.59,420,41,"Allen, Herrera and Kirk",2024-01-27,Active,8.17,2.0,730
+350b42c6-ef86-4d26-8dc0-17a20a12d620,Flowers Furniture Lite,Home & Garden,Furniture,HOM-72617,Flowers Industries,1874.0,1057.83,43.55,7,115,Gilbert LLC,2018-03-18,Active,11.6,1.6,3705
+25e2a151-c0ee-4b98-b133-46442bdbf34f,Dixon Hair Max,Beauty,Hair Care,BEA-24186,Dixon Industries,15.12,9.41,37.76,205,118,"Mcclure, Gibson and Turner",2018-01-31,Active,27.12,3.1,3395
+9ffc6b06-a61b-45c1-af14-cc891d8002b6,"Hall, Furniture Pro",Home & Garden,Furniture,HOM-68024,"Hall, Group",888.33,415.93,53.18,623,64,"Oliver, Hudson and White",2021-02-10,Active,24.78,4.7,5111
+c8eb72a8-8fbe-45d5-8772-3b544cd9fb9b,"Campbell, Water Ultra",Sports,Water Sports,SPO-63617,"Campbell, Systems",741.33,354.93,52.12,395,70,Davis PLC,2018-01-21,Active,24.55,4.5,3903
+730629eb-8c6a-476b-8150-f83b959f16c0,Ramirez Fiction Core,Books,Fiction,BOO-34863,Ramirez Industries,18.58,10.64,42.73,407,71,Walker-Baker,2026-05-12,Active,25.6,2.5,466
+ea3850fb-b73c-4746-b0c6-c0d97fb0af95,Nunez-Thompson Tools Lite,Home & Garden,Tools,HOM-48335,Nunez-Thompson Systems,1410.61,903.52,35.95,393,43,"Rivas, Patterson and Ferrell",2019-03-06,Active,13.68,2.7,4889
+55c00853-fd9d-4313-8ff2-e72a6fb5b3ca,"Mccoy, Camping Ultra",Sports,Camping,SPO-18791,"Mccoy, Pro",541.13,258.65,52.2,102,61,Freeman-Patterson,2017-04-14,Active,16.79,2.1,145
+1acfd992-fdf6-493b-9363-a370d99ca157,"King, Makeup Core",Beauty,Makeup,BEA-11155,"King, Group",126.71,82.62,34.8,170,54,Taylor Group,2019-08-27,Active,18.68,4.0,2263
+f037c241-1335-4977-b068-428bc787d706,Hahn Dolls Plus,Toys,Dolls & Plush,TOY-55487,Hahn Tech,41.16,23.84,42.08,484,102,Archer-Levy,2017-11-13,Active,12.14,4.6,4680
+8bb3d8af-754b-4fa7-9fe9-65668434eb0e,Williams-Wang Men's Pro,Clothing,Men's Tops,CLO-85084,Williams-Wang Industries,22.05,11.3,48.75,461,116,Rivera-Wagner,2019-08-06,Active,3.3,2.1,4190
+81d02344-bb9a-4fc7-b29a-30087118b86a,Benjamin Outdoor Lite,Toys,Outdoor Toys,TOY-49803,Benjamin Tech,149.9,83.1,44.56,128,17,White and Sons,2025-03-21,Active,10.61,4.4,4350
+eb01672e-cbb0-40cf-b4f6-e9f3441244c5,Bradley Camping Plus,Sports,Camping,SPO-34561,Bradley Group,457.14,235.74,48.43,366,48,Cole PLC,2024-02-17,Active,11.2,1.9,2673
+f010ffa7-5f71-4d0b-a0e9-10b3a7eae235,"Williams, Educational Prime",Toys,Educational,TOY-68115,"Williams, Industries",12.03,7.08,41.15,595,31,Kim-Lee,2024-08-07,Active,29.53,2.6,4646
+5ec36308-e4ba-4ab0-9175-5721a2d4d464,"Smith, Denim Essential",Clothing,Denim,CLO-92348,"Smith, Tech",208.27,123.58,40.66,652,32,"Jimenez, Lang and Morris",2026-03-01,Active,9.35,2.3,752
+24165ba1-b83a-4d80-b301-ed2f356235dc,Hill-Griffin Fragrances Pro,Beauty,Fragrances,BEA-34928,Hill-Griffin Group,162.04,102.63,36.66,512,21,"Young, Coleman and Lee",2020-01-04,Active,21.69,2.7,6378
+6687a013-a2cb-42e3-8685-d8775fcf968d,Martin-Ramirez Lighting Ultra,Automotive,Lighting,AUT-56329,Martin-Ramirez Pro,1304.59,828.62,36.48,304,99,Proctor-Schneider,2017-04-04,Active,28.84,4.9,5811
+1ffa1d64-13ea-4d46-9ac1-81e195c34f4f,"Joseph, Self-Help Essential",Books,Self-Help,BOO-85935,"Joseph, Systems",35.96,18.92,47.39,496,93,Brady-Jones,2023-07-15,Discontinued,9.23,2.1,5267
+df0c01c5-82b8-4f10-8014-b4400b132f5f,"Frank, Headphones Pro",Electronics,Headphones,ELE-68952,"Frank, Tech",2498.35,1453.32,41.83,170,16,"Luna, Perez and Maldonado",2020-07-18,Discontinued,19.5,4.9,3789
+7c05770b-0b64-451b-b6ad-5acf3ce25419,Ramirez Tools Max,Home & Garden,Tools,HOM-91657,Ramirez Industries,632.05,377.53,40.27,315,19,Marquez-Rush,2024-05-20,Active,2.72,3.5,976
+25ba6ada-8b92-4fe2-8077-ca899e133865,"Gilbert, Water Prime",Sports,Water Sports,SPO-94689,"Gilbert, Works",73.86,49.68,32.74,191,48,Smith-Johnson,2025-03-21,Out of Stock,5.04,2.0,62
+4ad9f12a-2821-4635-9ba4-fd5ee3d67ab5,Ford Outdoor Elite,Toys,Outdoor Toys,TOY-83511,Ford Works,55.33,24.75,55.27,678,62,Norris-Hudson,2026-04-16,Active,26.53,4.9,3121
+96ec1e29-3e6c-4c53-8749-a65c32786e42,"Johnson, International Elite",Food & Grocery,International Foods,FOO-52148,"Johnson, Co",16.2,9.38,42.1,232,82,Tucker-Reeves,2023-10-28,Active,24.56,3.8,3953
+de6a9035-b3f8-4bec-8fd4-a31cce0c3839,Savage Outdoor Core,Home & Garden,Outdoor Living,HOM-63407,Savage Works,910.3,573.3,37.02,342,49,Wilson-Cook,2026-05-19,Active,28.77,2.7,4106
+0326edf2-62c4-43c1-bc2e-db3a4472db7d,Ramirez Board Ultra,Toys,Board Games,TOY-34525,Ramirez Industries,165.11,86.81,47.42,225,21,Moore-Schneider,2024-02-02,Discontinued,6.3,1.7,6100
+2b21389c-3416-4594-afb3-d8e014cbae01,"Valdez, Kitchen Essential",Home & Garden,Kitchen,HOM-19191,"Valdez, Industries",956.54,451.7,52.78,564,58,Williams LLC,2025-07-13,Active,6.82,3.4,4060
+d8454cbc-108c-4b11-a8b0-161ef123d9af,Lopez International Elite,Food & Grocery,International Foods,FOO-85502,Lopez Labs,60.1,32.55,45.84,908,76,Gonzalez and Sons,2017-02-02,Active,25.24,3.6,1768
+5941e284-9116-4a89-83be-eb9f7bf451df,"Hall, Networking Lite",Office,Networking,OFF-75617,"Hall, Group",541.68,228.83,57.76,0,65,Williams-King,2021-06-22,Active,25.88,2.3,2547
+5b27df0f-9d84-4d77-8b8d-d3037a5ce6e8,Lee Cameras Elite,Electronics,Cameras,ELE-28825,Lee Group,2092.61,904.66,56.77,431,118,Ross-Martin,2025-09-01,Discontinued,13.3,2.2,1794
+f8971f50-3605-44bb-9b2d-03c8118ca849,Caldwell Dolls Ultra,Toys,Dolls & Plush,TOY-66046,Caldwell Co,79.31,46.0,42.0,318,24,Mcdonald-Chapman,2020-11-14,Out of Stock,25.81,4.9,237
+2531738e-c0c5-4c2a-80a8-76a73c687c0d,Garcia-Miller Organic Pro,Food & Grocery,Organic,FOO-25446,Garcia-Miller Co,16.82,10.77,35.97,48,29,Watkins Group,2021-07-05,Active,24.06,4.9,5025
+a6f17916-66c7-4ea5-90ea-937a776c254e,"Cole, Organic Lite",Food & Grocery,Organic,FOO-11394,"Cole, Industries",74.65,42.25,43.4,250,34,"Lynch, Cline and Welch",2018-09-10,Active,9.1,4.2,5773
+fa7abcb7-e4c2-4ba5-a821-49130b52bf15,Williams-Wang Self-Help Elite,Books,Self-Help,BOO-76924,Williams-Wang Industries,71.02,41.19,42.0,239,82,Gardner-Young,2017-02-05,Active,23.81,3.6,3133
+b3413e29-5e19-4861-b753-51cb24dc8b5a,"Frank, Smartphones Lite",Electronics,Smartphones,ELE-44022,"Frank, Tech",134.25,65.68,51.08,121,52,Davidson-Wallace,2019-01-19,Active,22.01,2.2,2639
+8347f134-c132-498b-a3f9-cde55d2d1d65,Kennedy-English Pantry Max,Food & Grocery,Pantry Staples,FOO-26236,Kennedy-English Pro,66.27,30.12,54.55,366,45,Clark-Lawson,2024-08-21,Discontinued,27.01,3.3,5311
+cc92897a-303e-468f-af0e-96de1a0bc434,Lopez Pantry Plus,Food & Grocery,Pantry Staples,FOO-47242,Lopez Labs,7.92,3.76,52.53,408,44,"Moore, Ingram and Osborne",2025-06-16,Active,22.47,4.5,385
+092b9187-0573-4173-a3a3-30a010072bc2,Webb Technology Plus,Books,Technology,BOO-73491,Webb Pro,9.53,4.42,53.62,654,68,Medina Inc,2018-12-16,Active,24.26,4.8,1038
+e023a39a-912d-4b8c-a04f-519a747ad0d8,"Cole, International Ultra",Food & Grocery,International Foods,FOO-93734,"Cole, Industries",71.34,47.22,33.81,437,32,Stewart PLC,2020-06-16,Discontinued,20.55,3.3,2190
+1ac5c22e-739e-4195-9736-e7c2f9459a8e,Flowers Outdoor Elite,Toys,Outdoor Toys,TOY-83296,Flowers Industries,82.23,56.83,30.89,267,65,Snyder-Foster,2017-06-27,Active,12.97,2.6,2911
+271251c3-7841-445b-bd34-bf8a83d89e8c,"Watson, Cycling Core",Sports,Cycling,SPO-72000,"Watson, Tech",32.44,14.54,55.18,302,91,Pugh-Gibson,2023-10-25,Active,2.77,3.0,1023
+9f51f10e-49f6-4fa0-802c-639668869ec5,Morris-Walter Activewear Plus,Clothing,Activewear,CLO-36598,Morris-Walter Systems,45.83,29.38,35.89,484,52,Schwartz Inc,2018-11-19,Active,3.58,2.2,3519
+89af99e0-ebb2-426f-81fc-0fa353b66c54,Kelley-Horton Men's Lite,Clothing,Men's Tops,CLO-36295,Kelley-Horton Tech,163.75,97.56,40.42,274,110,"Neal, Cooper and Gibson",2024-05-29,Active,24.27,4.9,1282
+c00bf242-af4c-4582-88aa-b1bd9bbafc36,Smith Laptops Elite,Electronics,Laptops,ELE-39861,Smith Industries,788.86,448.0,43.21,306,62,"Anderson, Johnston and Turner",2023-11-29,Active,29.32,2.5,136
+f9ba4775-9a93-424e-927c-053e25b6abc9,Martin-Ramirez Accessories Lite,Clothing,Accessories,CLO-26324,Martin-Ramirez Pro,101.39,56.54,44.24,561,60,Coleman Inc,2021-06-20,Active,15.06,2.7,545
+10077fba-a5b0-477d-acfd-5e4e79320c7d,Bradley Hair Pro,Beauty,Hair Care,BEA-66804,Bradley Group,9.7,4.73,51.24,342,96,"Martinez, Bruce and Smith",2020-11-29,Active,12.14,4.9,4410
+fd68a161-3fdb-4964-81b6-314d9482028e,Savage Electronics Pro,Automotive,Electronics,AUT-46201,Savage Works,686.94,371.42,45.93,170,66,Benson LLC,2025-08-24,Active,11.23,4.2,2384
+34d433fb-2a31-4675-ad77-fd0c2cae745a,Chang Men's Plus,Beauty,Men's Grooming,BEA-13637,Chang Pro,58.16,37.7,35.18,0,101,Ramsey-Rojas,2022-12-30,Discontinued,4.83,2.0,598
+078ffa36-ba82-453c-b7ee-8a766f189643,"Cole, Headphones Ultra",Electronics,Headphones,ELE-78505,"Cole, Industries",2449.93,1120.49,54.26,324,30,Morales-Ramirez,2025-03-03,Out of Stock,9.57,4.6,1845
+0b4382d2-1880-4c6b-aa58-cf62152626a4,Warren-Lin Organic Pro,Food & Grocery,Organic,FOO-91330,Warren-Lin Group,30.77,18.37,40.3,383,41,"Kim, Harris and Atkins",2018-02-20,Active,23.3,3.4,4496
+15a6edcd-2efa-4b7b-be6a-af91b4bc2b08,Thompson-Powell Organic Max,Food & Grocery,Organic,FOO-21287,Thompson-Powell Pro,31.25,18.73,40.06,236,62,Camacho-Jackson,2017-09-28,Active,7.9,2.1,3830
+6a977f0f-6c2f-4b77-b5eb-c0c6786e461e,Mason-Tanner Car Max,Automotive,Car Care,AUT-10162,Mason-Tanner Industries,151.73,98.96,34.78,426,22,Williams-Rice,2022-09-20,Active,3.6,3.5,5635
+89236104-08b3-462e-8a7b-14302301357e,Ramirez Denim Ultra,Clothing,Denim,CLO-87123,Ramirez Industries,53.12,22.36,57.91,418,59,Ellis and Sons,2025-07-12,Active,21.34,2.6,3105
+1e164aa6-7a5e-42f2-8b4f-174c8030f341,"Frank, Board Prime",Toys,Board Games,TOY-77342,"Frank, Tech",64.75,42.82,33.87,810,76,Harper-Alvarado,2021-12-09,Active,14.04,3.2,5798
+c0aa51c0-2ecd-44ca-a9aa-2e7d22949f79,Avery Smart Lite,Electronics,Smart Home Devices,ELE-76001,Avery Pro,1092.29,616.27,43.58,789,71,Hopkins and Sons,2021-08-23,Discontinued,5.69,2.9,610
+ca004e10-0320-4446-93f2-1fef12aa6f61,Moyer-Brown Pantry Pro,Food & Grocery,Pantry Staples,FOO-30369,Moyer-Brown Labs,46.45,31.63,31.91,127,41,Anderson-Walters,2025-01-28,Active,13.93,2.6,2422
+e14a52a9-c162-48b4-91e7-36fbe3449603,"Valdez, Science Max",Books,Science,BOO-97010,"Valdez, Industries",7.03,4.09,41.82,387,43,Griffith Group,2024-06-14,Active,22.28,2.6,3709
+1bd264a1-e344-4b04-9711-c93638c3630c,Lee Outdoor Lite,Toys,Outdoor Toys,TOY-87717,Lee Labs,82.95,47.23,43.06,330,35,Heath-Webster,2018-08-20,Active,2.95,3.5,145
+7a3c0c24-8b1f-4767-9a7f-bf3d91bf883b,Prince Business Pro,Books,Business,BOO-98783,Prince Works,10.85,7.3,32.72,624,58,Morris PLC,2024-11-21,Active,15.24,3.3,5878
+4c2252c2-8eb3-4221-8a35-94802f34fa1e,Martin Outdoor Elite,Toys,Outdoor Toys,TOY-96615,Martin Co,12.39,6.73,45.68,603,22,"Cook, Bowen and Benson",2020-06-21,Active,22.53,2.9,5203
+35d4ee63-8abe-41ea-94ed-5d480c3b1a13,Riley Men's Essential,Beauty,Men's Grooming,BEA-82620,Riley Labs,9.45,5.46,42.22,369,22,Moreno Inc,2021-11-09,Active,1.42,4.7,3509
+e818493a-4ebd-48b5-9a6a-a93caa48a965,"Kelley, Team Core",Sports,Team Sports,SPO-29829,"Kelley, Pro",764.6,437.19,42.82,666,78,"Hill, Watts and Frazier",2025-06-27,Out of Stock,8.36,4.3,831
+f5615605-a387-41d1-9384-3e2ad0d48e38,"Watson, Car Elite",Automotive,Car Care,AUT-84069,"Watson, Tech",1237.62,646.11,47.79,477,61,Mooney-Brennan,2022-08-11,Out of Stock,29.06,2.5,1776
+7f3fc115-8157-4e23-a4c9-c45f16a1edfa,"Joseph, Car Max",Automotive,Car Care,AUT-94221,"Joseph, Systems",110.59,72.72,34.24,215,67,Lee PLC,2019-12-14,Active,15.69,2.6,4322
+592f6830-501a-433e-a4a4-7512307c4bf3,"Martinez, Electronics Max",Automotive,Electronics,AUT-89879,"Martinez, Labs",294.31,135.72,53.89,324,108,"Hunt, Nelson and Vasquez",2026-05-11,Active,14.71,2.6,6442
+442e549b-0991-44e9-8326-f77a7bcf0dec,Morris-Walter Furniture Ultra,Office,Furniture,OFF-70433,Morris-Walter Systems,927.8,535.73,42.26,538,29,Ashley-Ferguson,2018-10-12,Active,8.65,4.2,2511
+1b61ec3a-ab75-45e5-8509-6072909bd4f9,Chang Fiction Max,Books,Fiction,BOO-55307,Chang Pro,71.89,42.77,40.51,857,66,Joseph LLC,2024-12-12,Out of Stock,25.94,3.0,2155
+474e26a6-5a8d-4d93-82c5-c850d6508356,Ramirez Pantry Lite,Food & Grocery,Pantry Staples,FOO-75501,Ramirez Industries,23.82,15.24,36.02,417,92,"Murphy, Martin and Macias",2018-01-22,Active,10.22,3.4,3530
+27496703-78c1-4c1b-8439-3ddd946e1c92,Savage Organic Pro,Food & Grocery,Organic,FOO-48632,Savage Works,56.83,25.29,55.5,307,77,Baldwin-Cameron,2017-10-26,Active,23.24,2.8,2942
+38249146-8e17-4792-b5a8-c64016c9a928,Long-Smith Fitness Lite,Sports,Fitness,SPO-70796,Long-Smith Co,797.13,489.44,38.6,715,83,Clarke-Parks,2021-10-07,Active,18.41,3.5,5061
+9f2f0269-e463-431b-bff0-b21d4a246c7f,Smith Beverages Ultra,Food & Grocery,Beverages,FOO-43104,Smith Pro,69.86,45.25,35.23,0,34,"Gonzalez, Stokes and Bray",2022-01-02,Active,5.58,2.9,6026
+b7f84575-e07b-470f-bf84-840de2df9658,Thompson-Powell Software Ultra,Office,Software,OFF-93693,Thompson-Powell Pro,96.09,63.73,33.68,572,88,"Johnson, Sims and Powers",2023-01-22,Active,28.93,1.8,3607
+c6c43298-053b-4104-b146-7ba6113f8b83,Leonard Fitness Lite,Sports,Fitness,SPO-50217,Leonard Labs,31.47,21.29,32.35,485,114,Gonzalez and Sons,2023-06-10,Active,12.28,3.3,1466
+9d5fb966-8e64-4a37-ac33-2221beefdf96,Grant Self-Help Pro,Books,Self-Help,BOO-72649,Grant Co,54.25,31.02,42.82,594,85,"Johnson, Mason and Pruitt",2017-12-01,Active,23.23,2.4,6385
+cb734b15-6912-4e15-9ed7-fa2278e207c6,Ball Snacks Lite,Food & Grocery,Snacks,FOO-32913,Ball Pro,76.4,32.56,57.38,582,86,Lee-Davis,2019-03-20,Active,27.72,3.7,1699
+21e3cf07-842e-4d19-85a1-c6d811573ed3,Ford Board Max,Toys,Board Games,TOY-79501,Ford Works,22.76,11.85,47.93,301,116,"Alvarez, Calderon and Guzman",2018-05-03,Active,5.07,4.6,5563
+651ad4b0-4582-45dd-98bb-612ec8824917,Dixon Hair Prime,Beauty,Hair Care,BEA-35825,Dixon Industries,120.92,72.03,40.43,260,91,Cole-Lee,2017-06-27,Active,1.67,3.1,2298
+2097729b-664d-4ed7-b4b5-9b3f5cdaf487,"Valdez, Men's Pro",Beauty,Men's Grooming,BEA-38062,"Valdez, Industries",193.75,91.01,53.03,488,18,Ortiz-Stewart,2023-09-25,Active,1.85,4.5,16
+1cf305ab-5016-4943-8ef9-2f6122f39019,Hodges-Roberts Car Essential,Automotive,Car Accessories,AUT-56456,Hodges-Roberts Labs,1284.0,543.44,57.68,860,56,Calhoun PLC,2023-11-21,Active,17.44,4.2,2673
+32fdb737-e27b-48c8-a986-8b51c76d1a0d,Kelley-Horton Networking Plus,Office,Networking,OFF-71383,Kelley-Horton Tech,80.65,52.1,35.4,0,49,"Martinez, Simpson and Holmes",2017-02-03,Discontinued,25.1,4.3,2929
+8b1326d8-5976-4fc3-a1cd-171515a433b1,Ramirez Printers Lite,Office,Printers,OFF-46908,Ramirez Industries,1258.42,533.27,57.62,0,43,Miller-Vasquez,2025-08-24,Active,22.39,2.7,519
+4f2afce4-5782-4589-8043-609c072b79d6,Flowers Hair Prime,Beauty,Hair Care,BEA-32277,Flowers Industries,18.81,11.34,39.71,517,93,"Herman, Phillips and Bell",2024-03-10,Active,2.03,4.4,4142
+734974de-0ce8-41ab-ba49-d3452f35483f,"Price, Water Lite",Sports,Water Sports,SPO-45620,"Price, Co",293.46,140.63,52.08,491,19,Becker LLC,2021-11-21,Active,6.52,4.2,4439
+654f42da-9d11-4a76-958f-da0c1aabeb42,Dalton-Walker Board Lite,Toys,Board Games,TOY-87577,Dalton-Walker Pro,196.06,116.48,40.59,388,47,"Nixon, Hale and White",2019-12-23,Active,2.03,2.8,5133
+17012ea9-7821-472e-a232-c1ef57f51ee5,Hunter-West Beverages Pro,Food & Grocery,Beverages,FOO-70270,Hunter-West Group,45.78,19.97,56.38,0,35,"Singleton, Ford and Stone",2020-08-23,Active,15.03,1.8,2862
+7ce06be6-7992-42c2-b841-d6a8bb30f88b,"Williams, History Elite",Books,History,BOO-23703,"Williams, Industries",63.57,34.84,45.19,0,63,Baker and Sons,2017-11-25,Active,13.17,1.5,225
+c4845e90-9889-44ec-930c-20277f48bd0b,"Campbell, Tools Ultra",Home & Garden,Tools,HOM-89820,"Campbell, Systems",1890.53,1214.77,35.74,405,29,Delgado Ltd,2018-12-02,Active,1.29,1.8,3993
+e9be31b6-793f-4387-9a0d-45586c11c9d0,Caldwell Organic Pro,Food & Grocery,Organic,FOO-33166,Caldwell Co,4.77,3.18,33.33,423,104,Strickland-Pittman,2022-02-15,Active,2.76,1.8,1044
+14172c55-db15-4fa9-ac80-2ea7af7eb9c7,"Key, Electronics Max",Automotive,Electronics,AUT-32932,"Key, Labs",418.02,215.69,48.4,117,69,Mcbride-Jordan,2021-12-17,Active,17.08,3.9,6402
+2bf1d0ba-dfdd-4c19-862e-6cb16a217318,"Sullivan, Women's Ultra",Clothing,Women's Tops,CLO-27745,"Sullivan, Labs",291.25,131.92,54.71,499,66,"Carpenter, Small and Edwards",2025-03-06,Out of Stock,26.34,3.9,3898
+d75f8659-d137-4c96-b667-31a8f4f47e6a,Lopez Outerwear Ultra,Clothing,Outerwear,CLO-65987,Lopez Labs,14.37,8.83,38.55,452,66,Nguyen and Sons,2017-12-15,Active,8.74,2.0,4230
+a632e140-e9d6-4d45-94f8-9119f683faa8,Mason-Tanner Outdoor Max,Toys,Outdoor Toys,TOY-22415,Mason-Tanner Industries,139.39,63.28,54.6,0,63,Garner PLC,2021-03-02,Active,3.07,1.8,4971
+83e5892c-fae1-4f92-aae1-8dfd7702052d,Hart Men's Lite,Beauty,Men's Grooming,BEA-16202,Hart Labs,222.01,134.75,39.3,532,40,Rosales-Bass,2024-02-01,Active,19.17,2.9,4126
+3f583155-52a5-4606-9bb9-495a718fc876,"Campbell, Organic Essential",Food & Grocery,Organic,FOO-34344,"Campbell, Systems",62.31,39.74,36.22,240,61,"Collins, Ross and Nguyen",2021-07-18,Active,16.58,4.7,3975
+d37292e9-57a7-4d00-90ff-455907d644ad,Jones-Galloway Denim Pro,Clothing,Denim,CLO-73830,Jones-Galloway Co,47.13,27.72,41.18,251,76,"Burke, Anderson and Page",2017-09-24,Active,14.27,1.9,4898
+bcb7f5f9-93c8-4f1c-a731-cbf13e784446,Leonard Pantry Ultra,Food & Grocery,Pantry Staples,FOO-96135,Leonard Labs,19.5,9.83,49.59,273,18,Blankenship-Moss,2020-07-13,Active,5.86,1.8,839
+b90a9490-c0fd-4c03-a471-69f80dc843dd,"Key, Hair Plus",Beauty,Hair Care,BEA-40963,"Key, Labs",221.23,116.66,47.27,0,95,Gamble LLC,2020-10-02,Active,9.94,1.9,6325
+497975c4-c784-4036-b274-55ab36c171ba,"Sullivan, Cycling Max",Sports,Cycling,SPO-65228,"Sullivan, Labs",726.46,468.71,35.48,220,68,Braun-Carpenter,2020-09-25,Active,25.5,3.0,2804
+a0d1f3dc-5a88-4d04-8245-ebbe122a7cc9,Martin Headphones Prime,Electronics,Headphones,ELE-57380,Martin Co,2057.33,914.9,55.53,316,37,Austin Inc,2019-07-10,Discontinued,19.65,3.8,2771
+e6cc58d4-2a7f-4a18-94fb-b0827f2da3fc,"Hall, Cycling Lite",Sports,Cycling,SPO-75878,"Hall, Group",494.74,253.12,48.84,315,118,Russell-Riley,2026-04-04,Active,28.82,2.0,5277
+bc14ebc6-abf0-4814-b36d-e887bee75d6e,Williams-Wang Headphones Plus,Electronics,Headphones,ELE-11580,Williams-Wang Industries,2491.29,1537.79,38.27,0,49,"Mcbride, Knight and Baker",2018-09-21,Active,27.61,2.8,1808
+69d4f530-2558-4842-aa0b-4798169d1b26,Robinson-Patterson Supplies Ultra,Office,Supplies,OFF-88686,Robinson-Patterson Co,303.58,134.11,55.82,499,112,"Lopez, Clarke and Jones",2023-01-17,Active,8.7,3.2,311
+4d391a23-4963-44f2-a260-06559c1d7aa7,Williams-Wang Hair Essential,Beauty,Hair Care,BEA-92739,Williams-Wang Industries,134.65,81.5,39.47,74,24,Briggs-Henry,2021-11-05,Active,10.34,1.7,2906
+95d4bfd6-5c4e-4d26-b08e-cd5291b175b3,Garcia-Miller Snacks Prime,Food & Grocery,Snacks,FOO-46450,Garcia-Miller Co,35.38,23.58,33.35,391,42,Gonzales and Sons,2018-07-10,Active,18.12,4.0,2026
+509e437d-f0dd-430b-906b-63dd1c3e2713,Mason-Tanner Dolls Essential,Toys,Dolls & Plush,TOY-88588,Mason-Tanner Industries,174.21,105.19,39.62,518,16,Ellis Inc,2025-05-04,Active,20.94,4.5,2473
+bb85aa69-3cab-4bf2-81eb-eca56a3ac4ba,Avery Beverages Prime,Food & Grocery,Beverages,FOO-45829,Avery Pro,38.05,20.96,44.91,61,44,Fuentes-Carr,2018-10-18,Active,12.83,3.2,2959
+cdb26a25-8475-4930-ba4e-7c9287094389,Thompson-Powell Tablets Max,Electronics,Tablets,ELE-27821,Thompson-Powell Pro,1955.64,1050.07,46.31,334,36,Morton LLC,2018-10-23,Active,26.81,2.2,4994
+79c76245-5f3d-451c-87e5-c9d988f5752b,Grant Board Pro,Toys,Board Games,TOY-56047,Grant Co,174.71,106.34,39.13,45,105,"Carpenter, Banks and Collins",2024-10-05,Active,6.45,2.1,2085
+20481548-5282-4f4b-83f5-b5385ba9c1f5,"Cole, Self-Help Prime",Books,Self-Help,BOO-69744,"Cole, Industries",17.4,9.89,43.16,409,55,Morgan-Patton,2021-05-27,Discontinued,20.88,2.9,3302
+beb4af57-59ab-4ecc-ab5d-12bc584f71c2,Kennedy-English Fiction Max,Books,Fiction,BOO-78293,Kennedy-English Pro,11.25,5.31,52.8,299,102,"Burton, Boyd and Reed",2017-11-11,Active,27.14,3.9,1971
+bb9343ee-7adb-4f5f-8769-f169b11ff132,Leonard Self-Help Max,Books,Self-Help,BOO-89395,Leonard Labs,61.75,36.22,41.34,534,85,Little-Santana,2018-05-12,Out of Stock,0.78,4.4,6308
+188242bb-b219-4dc5-ae9b-1678f8408c28,Burgess Team Prime,Sports,Team Sports,SPO-30051,Burgess Systems,376.27,163.55,56.53,308,44,Mitchell PLC,2018-05-16,Active,17.21,4.6,789
+5b062f0f-9747-46c5-b32b-6f911299bbbf,"Valdez, Electronics Pro",Automotive,Electronics,AUT-59012,"Valdez, Industries",542.54,333.02,38.62,326,31,Sanchez Ltd,2019-09-05,Active,11.95,3.4,5523
+4b784d46-efbe-4fa5-8e64-b4aa2ea701de,Williams-Wang History Essential,Books,History,BOO-32874,Williams-Wang Industries,45.04,21.79,51.62,401,60,Adkins-Chen,2018-07-11,Active,25.91,3.8,566
+b9ebe954-913b-4929-811b-6b6777a5f1a9,"Hooper, Networking Essential",Office,Networking,OFF-12983,"Hooper, Pro",800.26,516.59,35.45,20,85,"Terry, Williams and Cooke",2025-09-12,Active,15.24,3.6,4868
+191086ca-c125-4b21-bbca-9b94f2def617,"Hall, Tools Elite",Automotive,Tools & Equipment,AUT-78276,"Hall, Group",556.94,381.1,31.57,148,70,"Williams, Jones and Meza",2022-05-16,Active,17.72,4.6,5638
+6ee4d4cb-6e6a-451b-944e-bafd4bc8bd02,Prince Women's Essential,Clothing,Women's Tops,CLO-45282,Prince Works,220.81,147.14,33.36,105,44,Watson-Harris,2020-12-14,Active,5.49,2.6,2353
