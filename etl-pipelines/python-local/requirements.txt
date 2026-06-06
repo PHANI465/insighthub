@@ -1,0 +1,10 @@
+# etl-pipelines/python-local/requirements.txt
+# Install: pip install -r etl-pipelines/python-local/requirements.txt
+# Requires: Microsoft ODBC Driver 18 for SQL Server installed on the OS.
+
+pandas==2.2.2                  # DataFrame operations, CSV parsing, transformations
+pyodbc==5.1.0                  # Azure SQL / SQL Server ODBC connector
+azure-storage-blob==12.19.1   # Azure Blob Storage SDK
+azure-identity==1.16.0        # Azure auth (used by azure-storage-blob)
+python-dotenv==1.0.1          # .env file loader for local development
+numpy==1.26.4                 # Required by pandas (pinned for compatibility)

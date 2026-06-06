@@ -1,0 +1,106 @@
+# InsightHub — Project Status for Claude
+
+## What This Project Is
+End-to-end Azure analytics platform: synthetic data → ADLS Gen2 Blob → Azure Data Factory (or Python ETL) → Azure SQL star schema → FastAPI backend → React frontend.
+
+**Azure SQL database**: `insighthub-db` on `insighthub-sql-phani01.database.windows.net`  
+**Blob storage**: `insighthubstoragephani01` container `insighthub`, prefix `raw/insighthub/`
+
+---
+
+## Phase Status
+
+### Phase 1 — Synthetic Data & Blob Upload ✅ COMPLETE
+- Synthetic data generated and uploaded to Azure Blob Storage
+- Files: `customers.csv` (10K), `products.csv` (500), `employees.csv` (200), `campaigns.csv` (100), `orders.csv` (50K), `order_items.csv` (149K), `support_tickets.csv` (20K)
+
+### Phase 2 — Azure SQL Star Schema ✅ COMPLETE
+- Schema deployed: `database/schema/01_dimensions.sql` through `05_views.sql`
+- Tables: DimDate (5,113 rows), DimGeography (50K), DimCustomer (10K), DimProduct (500), DimEmployee (200), DimCampaign (100), FactSales (119,652+), FactSupportTickets (20K), FactCampaignPerformance (100)
+- Indexes + views deployed. Non-clustered columnstore index on FactSales for analytics queries.
+- AppUsers table: deployed (`database/schema/06_app_users.sql`), seeded with 3 demo users via `database/seed_users.py`
+
+### Phase 3 — ETL Pipeline ✅ COMPLETE (with caveats)
+**Python-local ETL**: `etl-pipelines/python-local/etl_runner.py`
+
+**Key bugs fixed during Phase 3:**
+1. `fast_executemany` type-inference bug (error 8114) → replaced with multi-row `VALUES` inserts in `_bulk_stage()`
+2. UUID case mismatch: SQL Server returns uppercase UUIDs, CSV has lowercase → added `.lower()` to key map builders in `loaders.py`
+3. `status_y` KeyError in `transform_fact_sales` → fixed to `status` (order_items has no status column, no rename collision)
+4. Geography key mismatch: `extract_geographies` normalizes null state → `""` but fast_executemany stored `"  "` (padded) → added `.strip()` to `geo_map` builder AND normalized `_geo_key()` helper in `transform_fact_sales`
+5. SatisfactionRating CHECK constraint (must be 1-5 or NULL): `_safe_numeric` was filling NaN with `0` → replaced with `pd.to_numeric(..., errors="coerce")` to preserve NULL
+6. `_date_filter()` in metrics_service returned empty string when no dates → fixed to return `WHERE 1=1`
+
+**Outstanding ETL gap**: ~30,195 FactSales rows still have unresolvable GeographyKey. Root cause: DimGeography contains `StateCode = '  '` (two spaces, artifact of the old fast_executemany padding empty strings) but lookup key is `''`. The `geo_map` builder `.strip()` fix resolves this — re-run ETL with `--full-reload` to close the gap.
+
+**Run ETL**: `cd E:\PHANI\Projects\insighthub && python etl-pipelines/python-local/etl_runner.py --full-reload`
+
+### Phase 4 — FastAPI Backend ✅ RUNNING
+**Start command (from `backend/`):**
+```
+cd backend
+python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+(Use `python -m uvicorn` — the Anaconda uvicorn.exe is the active one)
+
+**Health check**: `curl http://localhost:8000/api/health` → `{"status":"healthy","database":"connected"}`  
+**API docs**: http://localhost:8000/docs
+
+**Config fix**: `backend/app/core/config.py` uses `env_file=("../.env", ".env")` so it finds the project-root `.env` when started from `backend/`.
+
+**Demo credentials** (in AppUsers table):
+| Username | Password | Role |
+|----------|----------|------|
+| admin | InsightHub@Admin2024! | Admin |
+| analyst | InsightHub@Analyst2024! | Analyst |
+| viewer | InsightHub@Viewer2024! | Viewer |
+
+### Phase 5 — React Frontend ⏳ NOT STARTED
+
+---
+
+## File Structure
+
+```
+insighthub/
+├── .env                              # All secrets (never commit!)
+├── CLAUDE.md                         # This file
+├── backend/
+│   ├── app/
+│   │   ├── api/       auth.py, metrics.py, search.py, insights.py, powerbi.py
+│   │   ├── core/      config.py, database.py, security.py, appinsights.py, keyvault.py
+│   │   ├── models/    schemas.py
+│   │   └── services/  auth_service.py, metrics_service.py
+│   └── requirements.txt
+├── database/
+│   ├── schema/        01-06 SQL files
+│   └── seed_users.py
+└── etl-pipelines/python-local/
+    ├── etl_runner.py  main orchestrator
+    ├── loaders.py     DB staging + MERGE
+    ├── transformers.py data transformations
+    ├── validators.py  input validation
+    ├── blob_reader.py Azure Blob download
+    ├── watermark.py   incremental load tracking
+    ├── config.py      ETL settings
+    └── db_connection.py
+```
+
+---
+
+## Known Issues / Technical Debt
+
+1. **FactSales 30K gap**: ~20% of rows have international shipping addresses where `StateCode` was padded with spaces by the old ETL. Fixed in code (`.strip()` in geo_map builder), needs one `--full-reload` re-run to apply.
+2. **ETL speed**: Multi-row VALUES inserts are functional but slow (~2-3 hours for full reload due to Azure SQL latency + 9-index FactSales table). Consider BULK INSERT or disabling NCCI during load for production.
+3. **`test_conn.py`** at project root: diagnostic script, should be deleted before merge.
+4. **`check_columns.py`** and **`fix_views.py`** at project root: contain hardcoded credentials, should be deleted.
+5. **bcrypt version**: Anaconda environment uses bcrypt 4.0.1 (compatible with passlib 1.7.4). Requirements.txt specifies `passlib[bcrypt]==1.7.4`.
+
+---
+
+## Environment
+
+- Python: Anaconda (`C:\Users\Phaneendra\anaconda3\python.exe`)
+- ODBC: ODBC Driver 18 for SQL Server
+- All secrets in `.env` at project root
+- Azure Key Vault URL configured but SDK not installed in Anaconda env → skipped at startup (expected for local dev)

@@ -1,0 +1,22 @@
+{
+  "name": "LS_AzureBlobStorage_InsightHub",
+  "type": "Microsoft.DataFactory/factories/linkedservices",
+  "properties": {
+    "description": "Linked service to the InsightHub raw data Azure Blob Storage account. Uses account key stored in Azure Key Vault — never hardcoded.",
+    "type": "AzureBlobStorage",
+    "typeProperties": {
+      "connectionString": {
+        "type": "AzureKeyVaultSecret",
+        "store": {
+          "referenceName": "LS_AzureKeyVault_InsightHub",
+          "type": "LinkedServiceReference"
+        },
+        "secretName": "insighthub-storage-connection-string"
+      }
+    },
+    "connectVia": {
+      "referenceName": "AutoResolveIntegrationRuntime",
+      "type": "IntegrationRuntimeReference"
+    }
+  }
+}

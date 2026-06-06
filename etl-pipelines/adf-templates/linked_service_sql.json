@@ -1,0 +1,22 @@
+{
+  "name": "LS_AzureSQL_InsightHub",
+  "type": "Microsoft.DataFactory/factories/linkedservices",
+  "properties": {
+    "description": "Linked service to the InsightHub Azure SQL Database. Connection string stored in Azure Key Vault — never hardcoded in ADF.",
+    "type": "AzureSqlDatabase",
+    "typeProperties": {
+      "connectionString": {
+        "type": "AzureKeyVaultSecret",
+        "store": {
+          "referenceName": "LS_AzureKeyVault_InsightHub",
+          "type": "LinkedServiceReference"
+        },
+        "secretName": "insighthub-sql-connection-string"
+      }
+    },
+    "connectVia": {
+      "referenceName": "AutoResolveIntegrationRuntime",
+      "type": "IntegrationRuntimeReference"
+    }
+  }
+}

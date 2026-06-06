@@ -1,0 +1,210 @@
+{
+  "name": "PL_InsightHub_FullLoad",
+  "type": "Microsoft.DataFactory/factories/pipelines",
+  "properties": {
+    "description": "Full ETL pipeline: copies CSVs from Azure Blob Storage into InsightHub Azure SQL star schema. Dimensions load first (no FK dependencies), then fact tables. Uses Pre-Copy Script on each SQL sink for idempotent upsert behaviour.",
+    "parameters": {
+      "BlobSubfolder": {
+        "type": "String",
+        "defaultValue": "raw/insighthub"
+      },
+      "WatermarkDate": {
+        "type": "String",
+        "defaultValue": "2000-01-01T00:00:00Z",
+        "description": "Load records with date > this value. Set to '2000-01-01' for full reload."
+      }
+    },
+    "activities": [
+
+      {
+        "name": "Copy_Customers",
+        "description": "Load customers.csv → staging table, then MERGE into DimCustomer",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": { "timeout": "0.01:00:00", "retry": 2, "retryIntervalInSeconds": 30 },
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource",
+            "storeSettings": {
+              "type": "AzureBlobStorageReadSettings",
+              "recursive": false
+            },
+            "formatSettings": {
+              "type": "DelimitedTextReadSettings"
+            }
+          },
+          "sink": {
+            "type": "AzureSqlSink",
+            "writeBehavior": "upsert",
+            "upsertSettings": {
+              "useTempDB": true,
+              "keys": ["customer_id"]
+            },
+            "tableOption": "autoCreate"
+          },
+          "enableStaging": false
+        },
+        "inputs": [{
+          "referenceName": "DS_Blob_CSV_Customers",
+          "type": "DatasetReference",
+          "parameters": {
+            "FolderPath": { "value": "@pipeline().parameters.BlobSubfolder", "type": "Expression" }
+          }
+        }],
+        "outputs": [{
+          "referenceName": "DS_SQL_DimCustomer",
+          "type": "DatasetReference"
+        }]
+      },
+
+      {
+        "name": "Copy_Products",
+        "description": "Load products.csv → DimProduct",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": { "timeout": "0.01:00:00", "retry": 2, "retryIntervalInSeconds": 30 },
+        "typeProperties": {
+          "source": { "type": "DelimitedTextSource", "storeSettings": { "type": "AzureBlobStorageReadSettings" }, "formatSettings": { "type": "DelimitedTextReadSettings" } },
+          "sink": { "type": "AzureSqlSink", "writeBehavior": "upsert", "upsertSettings": { "useTempDB": true, "keys": ["product_id"] }, "tableOption": "autoCreate" },
+          "enableStaging": false
+        },
+        "inputs": [{ "referenceName": "DS_Blob_CSV_Products", "type": "DatasetReference" }],
+        "outputs": [{ "referenceName": "DS_SQL_DimProduct", "type": "DatasetReference" }]
+      },
+
+      {
+        "name": "Copy_Employees",
+        "description": "Load employees.csv → DimEmployee",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": { "timeout": "0.01:00:00", "retry": 2, "retryIntervalInSeconds": 30 },
+        "typeProperties": {
+          "source": { "type": "DelimitedTextSource", "storeSettings": { "type": "AzureBlobStorageReadSettings" }, "formatSettings": { "type": "DelimitedTextReadSettings" } },
+          "sink": { "type": "AzureSqlSink", "writeBehavior": "upsert", "upsertSettings": { "useTempDB": true, "keys": ["employee_id"] }, "tableOption": "autoCreate" },
+          "enableStaging": false
+        },
+        "inputs": [{ "referenceName": "DS_Blob_CSV_Employees", "type": "DatasetReference" }],
+        "outputs": [{ "referenceName": "DS_SQL_DimEmployee", "type": "DatasetReference" }]
+      },
+
+      {
+        "name": "Copy_Campaigns",
+        "description": "Load campaigns.csv → DimCampaign",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": { "timeout": "0.01:00:00", "retry": 2, "retryIntervalInSeconds": 30 },
+        "typeProperties": {
+          "source": { "type": "DelimitedTextSource", "storeSettings": { "type": "AzureBlobStorageReadSettings" }, "formatSettings": { "type": "DelimitedTextReadSettings" } },
+          "sink": { "type": "AzureSqlSink", "writeBehavior": "upsert", "upsertSettings": { "useTempDB": true, "keys": ["campaign_id"] }, "tableOption": "autoCreate" },
+          "enableStaging": false
+        },
+        "inputs": [{ "referenceName": "DS_Blob_CSV_Campaigns", "type": "DatasetReference" }],
+        "outputs": [{ "referenceName": "DS_SQL_DimCampaign", "type": "DatasetReference" }]
+      },
+
+      {
+        "name": "Wait_DimensionsComplete",
+        "description": "Gate: all 4 dimension loads must succeed before any fact table starts",
+        "type": "Wait",
+        "dependsOn": [
+          { "activity": "Copy_Customers",  "dependencyConditions": ["Succeeded"] },
+          { "activity": "Copy_Products",   "dependencyConditions": ["Succeeded"] },
+          { "activity": "Copy_Employees",  "dependencyConditions": ["Succeeded"] },
+          { "activity": "Copy_Campaigns",  "dependencyConditions": ["Succeeded"] }
+        ],
+        "typeProperties": { "waitTimeInSeconds": 1 }
+      },
+
+      {
+        "name": "Copy_Orders_FactSales",
+        "description": "Join orders + order_items → FactSales via Mapping Data Flow (DFW_FactSales). Applies watermark filter on order_date.",
+        "type": "ExecuteDataFlow",
+        "dependsOn": [
+          { "activity": "Wait_DimensionsComplete", "dependencyConditions": ["Succeeded"] }
+        ],
+        "policy": { "timeout": "0.02:00:00", "retry": 1, "retryIntervalInSeconds": 60 },
+        "typeProperties": {
+          "dataflow": {
+            "referenceName": "DFW_FactSales",
+            "type": "DataFlowReference",
+            "parameters": {
+              "WatermarkDate": { "value": "@pipeline().parameters.WatermarkDate", "type": "Expression" }
+            }
+          },
+          "compute": {
+            "coreCount": 8,
+            "computeType": "General"
+          }
+        }
+      },
+
+      {
+        "name": "Copy_Tickets_FactSupportTickets",
+        "description": "Load support_tickets.csv → FactSupportTickets with watermark filter on created_date.",
+        "type": "Copy",
+        "dependsOn": [
+          { "activity": "Wait_DimensionsComplete", "dependencyConditions": ["Succeeded"] }
+        ],
+        "policy": { "timeout": "0.02:00:00", "retry": 1, "retryIntervalInSeconds": 60 },
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource",
+            "storeSettings": { "type": "AzureBlobStorageReadSettings" },
+            "formatSettings": { "type": "DelimitedTextReadSettings" }
+          },
+          "sink": {
+            "type": "AzureSqlSink",
+            "preCopyScript": "DELETE FROM dbo.FactSupportTickets WHERE CreatedDateKey >= CONVERT(INT, FORMAT(CAST(@{pipeline().parameters.WatermarkDate} AS DATE), 'yyyyMMdd'))",
+            "writeBatchSize": 10000
+          },
+          "enableStaging": false
+        },
+        "inputs": [{ "referenceName": "DS_Blob_CSV_SupportTickets", "type": "DatasetReference" }],
+        "outputs": [{ "referenceName": "DS_SQL_FactSupportTickets", "type": "DatasetReference" }]
+      },
+
+      {
+        "name": "Copy_Campaigns_FactCampaignPerformance",
+        "description": "Load campaigns.csv → FactCampaignPerformance (upsert on campaign_id).",
+        "type": "Copy",
+        "dependsOn": [
+          { "activity": "Wait_DimensionsComplete", "dependencyConditions": ["Succeeded"] }
+        ],
+        "policy": { "timeout": "0.01:00:00", "retry": 1, "retryIntervalInSeconds": 60 },
+        "typeProperties": {
+          "source": { "type": "DelimitedTextSource", "storeSettings": { "type": "AzureBlobStorageReadSettings" }, "formatSettings": { "type": "DelimitedTextReadSettings" } },
+          "sink": { "type": "AzureSqlSink", "writeBehavior": "upsert", "upsertSettings": { "useTempDB": true, "keys": ["campaign_id"] }, "writeBatchSize": 5000 },
+          "enableStaging": false
+        },
+        "inputs": [{ "referenceName": "DS_Blob_CSV_Campaigns", "type": "DatasetReference" }],
+        "outputs": [{ "referenceName": "DS_SQL_FactCampaignPerformance", "type": "DatasetReference" }]
+      },
+
+      {
+        "name": "UpdateWatermark",
+        "description": "After all fact loads succeed, update dbo.ETL_Watermark via a stored procedure call.",
+        "type": "SqlServerStoredProcedure",
+        "dependsOn": [
+          { "activity": "Copy_Orders_FactSales",                "dependencyConditions": ["Succeeded"] },
+          { "activity": "Copy_Tickets_FactSupportTickets",      "dependencyConditions": ["Succeeded"] },
+          { "activity": "Copy_Campaigns_FactCampaignPerformance","dependencyConditions": ["Succeeded"] }
+        ],
+        "policy": { "timeout": "0.00:05:00", "retry": 0 },
+        "linkedServiceName": { "referenceName": "LS_AzureSQL_InsightHub", "type": "LinkedServiceReference" },
+        "typeProperties": {
+          "storedProcedureName": "dbo.usp_UpdateETLWatermark",
+          "storedProcedureParameters": {
+            "RunDate": { "value": { "value": "@utcNow()", "type": "Expression" }, "type": "String" }
+          }
+        }
+      }
+
+    ],
+    "annotations": [
+      "InsightHub",
+      "ETL",
+      "StarSchema",
+      "Phase3"
+    ]
+  }
+}

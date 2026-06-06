@@ -1,0 +1,30 @@
+# backend/requirements.txt
+# Install: pip install -r backend/requirements.txt
+
+# Web framework
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+
+# Auth & security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.9
+
+# Database
+pyodbc==5.1.0
+
+# Azure SDKs
+azure-keyvault-secrets==4.8.0
+azure-identity==1.16.0
+azure-monitor-opentelemetry==1.4.0
+opencensus-ext-azure==1.1.13
+
+# Config & utilities
+pydantic==2.7.1
+pydantic-settings==2.2.1
+python-dotenv==1.0.1
+httpx==0.27.0
+
+# Power BI embed token
+requests==2.31.0
+msal==1.28.0
