@@ -45,9 +45,10 @@ class Settings(BaseSettings):
     azure_search_index:    str = "insighthub-docs"
 
     # ── Azure OpenAI ───────────────────────────────────────────────────────────
-    azure_openai_endpoint:   str = ""
-    azure_openai_key:        str = ""
-    azure_openai_deployment: str = "gpt-4o"
+    azure_openai_endpoint:             str = ""
+    azure_openai_key:                  str = ""
+    azure_openai_deployment:           str = "gpt-4o"
+    azure_openai_embedding_deployment: str = "text-embedding-ada-002"
 
     # ── Power BI ───────────────────────────────────────────────────────────────
     powerbi_client_id:     str = ""

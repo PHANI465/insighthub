@@ -55,7 +55,50 @@ python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 | analyst | InsightHub@Analyst2024! | Analyst |
 | viewer | InsightHub@Viewer2024! | Viewer |
 
-### Phase 5 — React Frontend ⏳ NOT STARTED
+### Phase 5 — Power BI Embedded ⏳ SKIPPED (no workspace yet)
+
+### Phase 6 — Azure AI Search + RAG Pipeline ✅ COMPLETE
+
+**Index name**: `insighthub-docs` on `https://rg-insighthub-devphani.search.windows.net`
+
+**What was built:**
+- 20 realistic internal business documents in `ai-search/documents/` (HR, IT, Finance, Sales, Compliance, Operations, Customer Service, Product)
+- Azure AI Search index schema: full-text + 1536-dim HNSW vector field + semantic ranking configuration (`insighthub-semantic`)
+- Hybrid search (BM25 keyword + cosine vector) with semantic re-ranking fallback
+- GPT-4o RAG pipeline with grounded answers and source citations
+- FastAPI `/api/search` endpoint wired to the RAG pipeline (requires Analyst role)
+
+**Key files:**
+```
+ai-search/
+├── documents/           # 20 *.md source documents
+├── rag-pipeline/
+│   ├── config.py        # Settings (reads from .env)
+│   ├── chunker.py       # Paragraph-aware word-window chunker (300w, 60w overlap)
+│   ├── embeddings.py    # Azure OpenAI embedding client w/ retry
+│   ├── indexer.py       # Index creation + document upload
+│   ├── searcher.py      # Hybrid search (semantic + vector fallback)
+│   ├── rag.py           # Full RAG pipeline (standalone use / testing)
+│   └── requirements.txt
+└── run_indexer.py       # Entry point: builds the search index
+backend/app/services/rag_service.py  # Production RAG service (used by API)
+backend/app/api/search.py            # /api/search route (fully wired)
+```
+
+**Build the index (run once):**
+```
+cd E:\PHANI\Projects\insighthub
+python ai-search/run_indexer.py
+```
+
+**New .env variables added:**
+```
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-ada-002
+```
+
+**Note:** The embedding model `text-embedding-ada-002` must be deployed in your Azure OpenAI resource. If you used a different deployment name, update `AZURE_OPENAI_EMBEDDING_DEPLOYMENT` in `.env`.
+
+### Phase 7 — React Frontend ⏳ NOT STARTED
 
 ---
 
@@ -85,6 +128,14 @@ insighthub/
     ├── config.py      ETL settings
     └── db_connection.py
 ```
+
+---
+
+## Git Commit Rules
+
+- **Never add `Co-Authored-By: Claude` lines** to any commit message.
+- All commits must show only **Phani465** as the author.
+- Commit messages should be concise and describe the "why", not just the "what".
 
 ---
 
