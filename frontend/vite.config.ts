@@ -9,4 +9,7 @@ export default defineConfig({
     strictPort: true,
     allowedHosts: true,
   },
+  build: {
+    outDir: 'dist',
+  },
 })
