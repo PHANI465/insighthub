@@ -14,7 +14,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from jose import JWTError
 
 from app.api.deps import get_current_user, get_db_conn
-from app.core.appinsights import track_event
+from app.core.appinsights import track_event, track_failed_login
 from app.core.security import create_access_token, decode_refresh_token
 from app.models.schemas import LoginRequest, RefreshRequest, TokenResponse, UserInfo
 from app.services.auth_service import (
@@ -53,7 +53,10 @@ def login(
     """
     user = authenticate_user(conn, body.username, body.password)
     if not user:
+        # Log server-side with username for operator visibility; App Insights event
+        # intentionally omits username to prevent log-based account enumeration.
         log.warning("Failed login attempt for username: %s", body.username)
+        track_failed_login(reason="invalid_credentials")
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid username or password",
