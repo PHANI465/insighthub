@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus"
+    },
+    "openaiLocation": {
+      "value": "eastus"
+    },
+    "environment": {
+      "value": "dev"
+    },
+    "sqlAdminLogin": {
+      "value": "insighthub_admin"
+    },
+    "sqlAdminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/rg-insighthub-devphani/providers/Microsoft.KeyVault/vaults/insighthub-dev-kv"
+        },
+        "secretName": "insighthub-db-password"
+      }
+    },
+    "sqlSku": {
+      "value": "S2"
+    },
+    "appServiceSku": {
+      "value": "B2"
+    },
+    "gpt4oCapacity": {
+      "value": 10
+    },
+    "embeddingCapacity": {
+      "value": 30
+    }
+  }
+}
