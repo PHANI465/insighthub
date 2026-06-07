@@ -67,3 +67,7 @@ insighthub-backend.zip
 
 # Screenshots are committed to git so GitHub README renders them
 # docs/screenshots/*.png
+
+# Internal project docs — not for public GitHub
+CLAUDE.md
+docs/PORTFOLIO.md

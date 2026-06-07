@@ -65,42 +65,27 @@ FastAPI generates OpenAPI docs automatically, which is genuinely useful when you
 ## Architecture
 
 ```mermaid
-graph LR
-    subgraph Ingest
-        CSV["Synthetic CSVs\n7 datasets · 200K+ rows"]
-        BLOB[("ADLS Gen2\nBlob Storage")]
-        ETL["Python ETL\netl_runner.py"]
+graph TB
+    subgraph Client
+        A[React Frontend<br/>Vercel]
     end
 
-    subgraph DataTier
-        SQL[("Azure SQL\nStar Schema\n6 dims · 3 facts")]
+    subgraph Azure Cloud
+        B[FastAPI Backend<br/>App Service]
+        C[Azure SQL Database<br/>Star Schema]
+        D[Azure AI Search<br/>Hybrid RAG]
+        E[Azure OpenAI<br/>GPT-4o]
+        F[Azure Blob Storage<br/>CSV Files]
+        G[Azure Key Vault<br/>Secrets]
     end
 
-    subgraph AIServices
-        AOAI["Azure OpenAI\ngpt-4o · ada-002"]
-        AISEARCH["Azure AI Search\nHybrid + Semantic RAG"]
-    end
-
-    subgraph Backend
-        API["FastAPI :8000\nJWT · RBAC\n14 endpoints"]
-    end
-
-    subgraph Frontend
-        UI["React 18\nTypeScript · Tailwind\nRecharts · :3000"]
-    end
-
-    subgraph Ops
-        KV["Key Vault"]
-        APPINS["App Insights"]
-    end
-
-    CSV --> BLOB --> ETL --> SQL
-    SQL --> API
-    AOAI --> API
-    AISEARCH --> API
-    API --> KV
-    API --> APPINS
-    UI --> API
+    A -->|JWT Auth| B
+    B -->|Query| C
+    B -->|Search| D
+    D -->|Embeddings| E
+    B -->|Generate| E
+    F -->|ETL Pipeline| C
+    B -->|Read Secrets| G
 ```
 
 ---
