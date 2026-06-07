@@ -16,11 +16,19 @@ export interface AuthUser {
   access_token: string
 }
 
+// Sentinel token used to identify the guest / demo-mode session.
+// No actual network requests are made when this token is active.
+export const GUEST_TOKEN = 'demo-mode'
+
 interface AuthContextValue {
   user: AuthUser | null
   isAuthenticated: boolean
+  /** True when the session is a guest demo (no live backend calls). */
+  isGuest: boolean
   isLoading: boolean
   login: (credentials: LoginRequest) => Promise<void>
+  /** Skip the backend entirely and enter guest demo mode. */
+  loginAsGuest: () => void
   logout: () => void
   hasRole: (minimum: Role) => boolean
 }
@@ -62,6 +70,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(authUser))
   }, [])
 
+  /**
+   * Enter guest / demo mode without contacting the backend.
+   * Grants Analyst role so all pages are navigable (Search, Customers, Support).
+   * Pages detect the demo-mode token and render static sample data instead.
+   */
+  const loginAsGuest = useCallback(() => {
+    const guestUser: AuthUser = {
+      username: 'guest',
+      role: 'Analyst',
+      access_token: GUEST_TOKEN,
+    }
+    setUser(guestUser)
+    localStorage.setItem('insighthub_token', GUEST_TOKEN)
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(guestUser))
+  }, [])
+
   const logout = useCallback(() => {
     apiLogout()
     setUser(null)
@@ -75,9 +99,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     [user],
   )
 
+  const isGuest = user?.access_token === GUEST_TOKEN
+
   return (
     <AuthContext.Provider
-      value={{ user, isAuthenticated: user !== null, isLoading, login, logout, hasRole }}
+      value={{ user, isAuthenticated: user !== null, isGuest, isLoading, login, loginAsGuest, logout, hasRole }}
     >
       {children}
     </AuthContext.Provider>

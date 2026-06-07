@@ -4,7 +4,7 @@ import { useAuth } from '../contexts/AuthContext'
 import axios from 'axios'
 
 export default function LoginPage() {
-  const { login, isAuthenticated } = useAuth()
+  const { login, loginAsGuest, isAuthenticated } = useAuth()
   const navigate = useNavigate()
 
   const [username, setUsername] = useState('')
@@ -44,6 +44,11 @@ export default function LoginPage() {
     } finally {
       setLoading(false)
     }
+  }
+
+  function handleGuestLogin() {
+    loginAsGuest()
+    navigate('/dashboard', { replace: true })
   }
 
   return (
@@ -156,6 +161,23 @@ export default function LoginPage() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Guest / offline access — lives outside the white card */}
+        <div className="mt-4 text-center">
+          <div className="mb-3 flex items-center gap-3">
+            <hr className="flex-1 border-slate-600/50" />
+            <span className="text-xs text-slate-500">or</span>
+            <hr className="flex-1 border-slate-600/50" />
+          </div>
+          <button
+            type="button"
+            onClick={handleGuestLogin}
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-300 backdrop-blur-sm transition-colors hover:bg-white/10 hover:text-white"
+          >
+            Explore as Guest
+            <span className="ml-2 text-xs font-normal opacity-60">(sample data · no backend needed)</span>
+          </button>
         </div>
       </div>
     </div>

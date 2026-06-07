@@ -16,11 +16,15 @@ import KPICard from '../components/ui/KPICard'
 import LoadingSpinner from '../components/ui/LoadingSpinner'
 import ErrorBanner from '../components/ui/ErrorBanner'
 import { getKPISummary, getRevenueTrend, getCampaignROI } from '../api/metrics'
+import { useAuth } from '../contexts/AuthContext'
+import { GUEST_KPI, GUEST_REVENUE_TREND, GUEST_CAMPAIGNS } from '../lib/guestData'
 import type { KPISummary, RevenueTrend, CampaignROIRow } from '../types/api'
 import { formatCurrency, formatInt, formatPct } from '../utils/format'
 import axios from 'axios'
 
 export default function ExecutiveDashboard() {
+  const { isGuest } = useAuth()
+
   const [kpi, setKpi] = useState<KPISummary | null>(null)
   const [trend, setTrend] = useState<RevenueTrend[]>([])
   const [campaigns, setCampaigns] = useState<CampaignROIRow[]>([])
@@ -28,6 +32,15 @@ export default function ExecutiveDashboard() {
   const [error, setError] = useState('')
 
   useEffect(() => {
+    // Guest mode: load static data instantly, no network calls
+    if (isGuest) {
+      setKpi(GUEST_KPI)
+      setTrend(GUEST_REVENUE_TREND)
+      setCampaigns(GUEST_CAMPAIGNS)
+      setLoading(false)
+      return
+    }
+
     setLoading(true)
     Promise.all([getKPISummary(), getRevenueTrend('month'), getCampaignROI(10)])
       .then(([kpiData, trendData, campData]) => {
@@ -44,7 +57,7 @@ export default function ExecutiveDashboard() {
         }
       })
       .finally(() => setLoading(false))
-  }, [])
+  }, [isGuest])
 
   if (loading) {
     return (

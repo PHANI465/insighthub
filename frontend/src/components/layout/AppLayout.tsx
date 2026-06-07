@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function AppLayout({ minRole = 'Viewer' }: Props) {
-  const { isAuthenticated, isLoading, hasRole } = useAuth()
+  const { isAuthenticated, isGuest, isLoading, hasRole } = useAuth()
 
   if (isLoading) {
     return (
@@ -43,6 +43,18 @@ export default function AppLayout({ minRole = 'Viewer' }: Props) {
       <Sidebar />
       <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
         <TopBar />
+
+        {/* Guest mode banner — shown on every page when backend is bypassed */}
+        {isGuest && (
+          <div className="flex shrink-0 items-center justify-center gap-2 border-b border-amber-200 bg-amber-50 px-4 py-2 text-sm font-medium text-amber-800">
+            <span role="img" aria-label="warning" className="text-base">⚠️</span>
+            <span>
+              Guest Mode — showing sample data.{' '}
+              <span className="font-normal opacity-80">Backend is offline.</span>
+            </span>
+          </div>
+        )}
+
         <main className="flex-1 overflow-y-auto p-6">
           <Outlet />
         </main>

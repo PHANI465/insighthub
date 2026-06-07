@@ -11,11 +11,13 @@ import {
   ChevronUp,
 } from 'lucide-react'
 import { getInsights, getInsightDetail, generateInsights } from '../api/insights'
+import { useAuth } from '../contexts/AuthContext'
+import { GUEST_INSIGHT_DATA } from '../lib/guestData'
+import type { GuestInsightData } from '../lib/guestData'
 import type { InsightRow, InsightDetail, GenerateInsightResponse } from '../types/api'
 import LoadingSpinner from '../components/ui/LoadingSpinner'
 import ErrorBanner from '../components/ui/ErrorBanner'
 import Badge from '../components/ui/Badge'
-import { useAuth } from '../contexts/AuthContext'
 import { formatDate } from '../utils/format'
 import axios from 'axios'
 
@@ -29,15 +31,116 @@ interface CategoryMeta {
 }
 
 const CATEGORY_META: Record<string, CategoryMeta> = {
-  Sales:     { icon: TrendingUp, borderColor: 'border-blue-200',   bgColor: 'bg-blue-50',    badge: 'blue'   },
-  Customers: { icon: Users,      borderColor: 'border-violet-200', bgColor: 'bg-violet-50',  badge: 'violet' },
-  Support:   { icon: Headphones, borderColor: 'border-amber-200',  bgColor: 'bg-amber-50',   badge: 'amber'  },
+  Sales:     { icon: TrendingUp, borderColor: 'border-blue-200',    bgColor: 'bg-blue-50',    badge: 'blue'   },
+  Customers: { icon: Users,      borderColor: 'border-violet-200',  bgColor: 'bg-violet-50',  badge: 'violet' },
+  Support:   { icon: Headphones, borderColor: 'border-amber-200',   bgColor: 'bg-amber-50',   badge: 'amber'  },
   Campaigns: { icon: Megaphone,  borderColor: 'border-emerald-200', bgColor: 'bg-emerald-50', badge: 'green'  },
 }
 
 const CATEGORIES = ['Sales', 'Customers', 'Support', 'Campaigns']
 
-// ── Single insight card with lazy-loaded detail ───────────────────────────────
+// ── Guest-mode insight card (no API calls, pre-loaded data) ───────────────────
+
+function GuestInsightCard({ category, title, narrative, confidence, period_start, period_end, key_findings, recommendations, risk_flags }: GuestInsightData) {
+  const meta = CATEGORY_META[category] ?? {
+    icon: Lightbulb,
+    borderColor: 'border-gray-200',
+    bgColor: 'bg-gray-50',
+    badge: 'gray' as BadgeVariant,
+  }
+  const Icon = meta.icon
+  const [expanded, setExpanded] = useState(false)
+
+  return (
+    <div className={`rounded-xl border p-5 ${meta.borderColor} ${meta.bgColor} space-y-3`}>
+      {/* Header row */}
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex min-w-0 items-center gap-2">
+          <Icon className="h-5 w-5 shrink-0 text-gray-600" />
+          <h3 className="text-sm font-semibold leading-snug text-gray-900">{title}</h3>
+        </div>
+        <div className="flex shrink-0 flex-col items-end gap-1">
+          <Badge label={category} variant={meta.badge} />
+          <span className="text-xs text-gray-400">{Math.round(confidence * 100)}% confidence</span>
+        </div>
+      </div>
+
+      {/* Period */}
+      <p className="text-xs text-gray-400">
+        Period: {period_start} – {period_end}
+        {' · '}Sample data
+      </p>
+
+      {/* Narrative */}
+      <p className="text-sm leading-relaxed text-gray-700">{narrative}</p>
+
+      {/* Expand/collapse detail */}
+      <button
+        onClick={() => setExpanded((v) => !v)}
+        className="flex items-center gap-1 text-xs font-medium text-gray-500 hover:text-gray-800"
+      >
+        {expanded ? <ChevronUp className="h-3.5 w-3.5" /> : <ChevronDown className="h-3.5 w-3.5" />}
+        {expanded ? 'Hide' : 'Show'} key findings & recommendations
+      </button>
+
+      {expanded && (
+        <div className="space-y-3 border-t border-gray-200/70 pt-3">
+          {key_findings.length > 0 && (
+            <div>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                Key Findings
+              </p>
+              <ul className="space-y-1">
+                {key_findings.map((f, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-gray-700">
+                    <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {recommendations.length > 0 && (
+            <div>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                Recommendations
+              </p>
+              <ul className="space-y-1">
+                {recommendations.map((r, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-gray-700">
+                    <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
+                    {r}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {risk_flags && risk_flags.length > 0 && (
+            <div>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                Risk Flags
+              </p>
+              <ul className="space-y-1">
+                {risk_flags.map((r, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-amber-700">
+                    <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
+                    {r}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <p className="text-right text-xs text-gray-400">Sample data · gpt-4o · InsightHub</p>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ── Live insight card (lazy-loaded detail from API) ───────────────────────────
 
 interface InsightCardProps {
   insight: InsightRow
@@ -88,9 +191,7 @@ function InsightCard({ insight }: InsightCardProps) {
       : null
 
   return (
-    <div
-      className={`rounded-xl border p-5 ${meta.borderColor} ${meta.bgColor} space-y-3`}
-    >
+    <div className={`rounded-xl border p-5 ${meta.borderColor} ${meta.bgColor} space-y-3`}>
       {/* Header row */}
       <div className="flex items-start justify-between gap-3">
         <div className="flex min-w-0 items-center gap-2">
@@ -194,7 +295,7 @@ function InsightCard({ insight }: InsightCardProps) {
 // ── Main page ─────────────────────────────────────────────────────────────────
 
 export default function AIInsights() {
-  const { hasRole } = useAuth()
+  const { hasRole, isGuest } = useAuth()
   const isAdmin = hasRole('Admin')
 
   const [insights, setInsights] = useState<InsightRow[]>([])
@@ -204,6 +305,11 @@ export default function AIInsights() {
   const [genResult, setGenResult] = useState<GenerateInsightResponse | null>(null)
 
   const fetchInsights = useCallback(() => {
+    // Skip in guest mode — we use static data
+    if (isGuest) {
+      setLoading(false)
+      return Promise.resolve()
+    }
     setLoading(true)
     setError('')
     return getInsights(50)
@@ -217,11 +323,38 @@ export default function AIInsights() {
         }
       })
       .finally(() => setLoading(false))
-  }, [])
+  }, [isGuest])
 
   useEffect(() => {
     void fetchInsights()
   }, [fetchInsights])
+
+  // ── Guest mode: render static sample insight cards ──────────────────────────
+  if (isGuest) {
+    return (
+      <div className="space-y-6">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900">AI-Generated Business Insights</h2>
+            <p className="mt-0.5 text-sm text-gray-500">
+              GPT-4o narratives grounded in live Azure SQL data
+              <span className="ml-2 rounded-full border border-amber-200 bg-amber-50 px-2 py-0.5 text-xs text-amber-700">
+                Sample data
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
+          {GUEST_INSIGHT_DATA.map((insight) => (
+            <GuestInsightCard key={insight.category} {...insight} />
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  // ── Live mode ────────────────────────────────────────────────────────────────
 
   async function handleGenerate() {
     setGenerating(true)

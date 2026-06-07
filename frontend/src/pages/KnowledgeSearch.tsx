@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { FileText, Search as SearchIcon, Send } from 'lucide-react'
+import { FileText, Search as SearchIcon, Send, WifiOff } from 'lucide-react'
 import { search as apiSearch } from '../api/search'
+import { useAuth } from '../contexts/AuthContext'
 import type { SearchResponse } from '../types/api'
 import LoadingSpinner from '../components/ui/LoadingSpinner'
 import axios from 'axios'
@@ -20,7 +21,51 @@ const EXAMPLE_QUERIES = [
   'What is the expense reimbursement policy?',
 ]
 
+// ── Guest-mode offline notice ─────────────────────────────────────────────────
+
+function GuestOfflineNotice() {
+  return (
+    <div className="flex h-full flex-col items-center justify-center gap-5 px-4 text-center">
+      <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-100">
+        <WifiOff className="h-8 w-8 text-amber-500" />
+      </div>
+      <div className="max-w-sm">
+        <h2 className="text-xl font-semibold text-gray-800">
+          Search requires backend connection
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-gray-500">
+          The Knowledge Search feature uses Azure AI Search + GPT-4o to answer
+          questions about internal documents. Start the FastAPI backend to enable
+          AI search.
+        </p>
+      </div>
+      <div className="rounded-xl border border-gray-100 bg-gray-50 px-5 py-4 text-left text-xs text-gray-500">
+        <p className="mb-1 font-semibold text-gray-700">To enable this page:</p>
+        <ol className="list-decimal space-y-1 pl-4">
+          <li>
+            Configure <code className="rounded bg-gray-200 px-1">.env</code> with Azure credentials
+          </li>
+          <li>
+            Run{' '}
+            <code className="rounded bg-gray-200 px-1">python ai-search/run_indexer.py</code>
+          </li>
+          <li>
+            Start the backend:{' '}
+            <code className="rounded bg-gray-200 px-1">
+              cd backend && python -m uvicorn app.main:app --port 8000 --reload
+            </code>
+          </li>
+          <li>Sign in with a real account (not guest mode)</li>
+        </ol>
+      </div>
+    </div>
+  )
+}
+
+// ── Main page ─────────────────────────────────────────────────────────────────
+
 export default function KnowledgeSearch() {
+  const { isGuest } = useAuth()
   const [messages, setMessages] = useState<Message[]>([])
   const [query, setQuery] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -30,6 +75,15 @@ export default function KnowledgeSearch() {
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages, isLoading])
+
+  // Guest mode: show static offline notice instead of the chat interface
+  if (isGuest) {
+    return (
+      <div className="flex h-full flex-col" style={{ height: 'calc(100vh - 112px)' }}>
+        <GuestOfflineNotice />
+      </div>
+    )
+  }
 
   async function submit() {
     const q = query.trim()
@@ -115,7 +169,7 @@ export default function KnowledgeSearch() {
             ) : (
               /* Answer — left-aligned */
               <div key={msg.id} className="flex justify-start">
-                <div className="max-w-3xl w-full">
+                <div className="w-full max-w-3xl">
                   {msg.errorText ? (
                     <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
                       {msg.errorText}
