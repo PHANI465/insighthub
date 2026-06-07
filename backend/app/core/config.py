@@ -92,7 +92,7 @@ class Settings(BaseSettings):
         This string contains the password — never log it.
         """
         return (
-            f"DRIVER={{ODBC Driver 18 for SQL Server}};"
+            f"DRIVER={{ODBC Driver 17 for SQL Server}};"
             f"SERVER={self.db_server},{self.db_port};"
             f"DATABASE={self.db_name};"
             f"UID={self.db_user};"
