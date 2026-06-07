@@ -30,11 +30,11 @@ I built InsightHub as a portfolio project to demonstrate an end-to-end Azure dat
 
 | Page | Description |
 |------|-------------|
-| ![Login](docs/screenshots/01-login.png) | Login page with demo credentials hint |
-| ![Dashboard](docs/screenshots/02-dashboard.png) | Executive Dashboard — KPI cards, revenue trend, campaign ROI |
-| ![Customers](docs/screenshots/03-customers.png) | Customer Analytics — segment breakdown, revenue by segment |
-| ![Support](docs/screenshots/04-support.png) | Support Operations — ticket volume, resolution times, CSAT |
-| ![AI Insights](docs/screenshots/05-ai-insights.png) | AI Insights — GPT-4o generated findings per category |
+| ![Dashboard](docs/screenshots/dashboard.png) | Executive Dashboard — KPI cards, revenue trend, campaign ROI |
+| ![Customers](docs/screenshots/customers.png) | Customer Analytics — segment breakdown, revenue by segment |
+| ![Support](docs/screenshots/support.png) | Support Operations — ticket volume, resolution times, CSAT |
+| ![Knowledge Search](docs/screenshots/search.png) | Knowledge Search — RAG-powered natural language Q&A |
+| ![AI Insights](docs/screenshots/insights.png) | AI Insights — GPT-4o generated findings per category |
 
 > See [docs/screenshots/README.md](docs/screenshots/README.md) for capture instructions.
 

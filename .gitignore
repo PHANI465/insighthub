@@ -65,5 +65,5 @@ instructions.txt
 *.zip
 insighthub-backend.zip
 
-# Screenshots (captured locally, referenced from README)
-docs/screenshots/*.png
+# Screenshots are committed to git so GitHub README renders them
+# docs/screenshots/*.png
