@@ -16,6 +16,8 @@ import KPICard from '../components/ui/KPICard'
 import LoadingSpinner from '../components/ui/LoadingSpinner'
 import ErrorBanner from '../components/ui/ErrorBanner'
 import { getSupportMetrics } from '../api/metrics'
+import { useAuth } from '../contexts/AuthContext'
+import { GUEST_SUPPORT_METRICS } from '../lib/guestData'
 import type { SupportMetricsRow } from '../types/api'
 import { formatInt, formatPct } from '../utils/format'
 import axios from 'axios'
@@ -58,11 +60,17 @@ function buildCategoryRollups(data: SupportMetricsRow[]): CategoryRollup[] {
 }
 
 export default function SupportOperations() {
+  const { isGuest } = useAuth()
   const [data, setData] = useState<SupportMetricsRow[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
   useEffect(() => {
+    if (isGuest) {
+      setData(GUEST_SUPPORT_METRICS)
+      setLoading(false)
+      return
+    }
     getSupportMetrics()
       .then(setData)
       .catch((err: unknown) => {
@@ -74,7 +82,7 @@ export default function SupportOperations() {
         }
       })
       .finally(() => setLoading(false))
-  }, [])
+  }, [isGuest])
 
   if (loading) {
     return (

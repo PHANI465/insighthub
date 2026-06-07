@@ -7,7 +7,7 @@
  * 119K+ fact rows) so the shapes and magnitudes are representative.
  */
 
-import type { KPISummary, RevenueTrend, CampaignROIRow } from '../types/api'
+import type { KPISummary, RevenueTrend, CampaignROIRow, CustomerSegmentStat, SupportMetricsRow } from '../types/api'
 
 // ── KPI Summary ──────────────────────────────────────────────────────────────
 // Total revenue: $99,960,000  |  Orders: 34,716  |  Active customers: 7,835
@@ -189,6 +189,116 @@ export const GUEST_CAMPAIGNS: CampaignROIRow[] = [
     ctr_pct: 3.60,
     conversion_rate_pct: 2.70,
     roi_band: 'Medium',
+  },
+]
+
+// ── Customer Segments (4 tiers, total 7,835 customers matching GUEST_KPI) ────
+// Platinum + Gold + Silver + Bronze = 7,835 | Revenue sums to ~$99.9M
+
+export const GUEST_CUSTOMER_SEGMENTS: CustomerSegmentStat[] = [
+  {
+    segment: 'Platinum',
+    customer_count: 840,
+    total_revenue: 24_489_600,
+    avg_ltv: 29_154,
+    avg_order_value: 3_420,
+    churn_risk_count: 193,
+  },
+  {
+    segment: 'Gold',
+    customer_count: 1_680,
+    total_revenue: 33_264_000,
+    avg_ltv: 19_800,
+    avg_order_value: 2_980,
+    churn_risk_count: 336,
+  },
+  {
+    segment: 'Silver',
+    customer_count: 2_960,
+    total_revenue: 28_512_000,
+    avg_ltv: 9_630,
+    avg_order_value: 2_740,
+    churn_risk_count: 415,
+  },
+  {
+    segment: 'Bronze',
+    customer_count: 2_355,
+    total_revenue: 13_694_400,
+    avg_ltv: 5_815,
+    avg_order_value: 2_580,
+    churn_risk_count: 188,
+  },
+]
+
+// ── Support Metrics (one row per category; total 4,250 tickets) ───────────────
+// Matches GUEST_KPI: total_tickets=4,250, avg_csat=3.8
+
+export const GUEST_SUPPORT_METRICS: SupportMetricsRow[] = [
+  {
+    period: '2025',
+    category: 'Technical Support',
+    priority: 'All',
+    total_tickets: 1_050,
+    resolved_tickets: 882,
+    escalated_tickets: 84,
+    avg_resolution_hours: 18.4,
+    avg_csat: 3.6,
+    sla_compliance_pct: 84.0,
+  },
+  {
+    period: '2025',
+    category: 'Product Inquiry',
+    priority: 'All',
+    total_tickets: 830,
+    resolved_tickets: 764,
+    escalated_tickets: 25,
+    avg_resolution_hours: 6.2,
+    avg_csat: 4.3,
+    sla_compliance_pct: 96.0,
+  },
+  {
+    period: '2025',
+    category: 'Billing',
+    priority: 'All',
+    total_tickets: 780,
+    resolved_tickets: 694,
+    escalated_tickets: 47,
+    avg_resolution_hours: 11.7,
+    avg_csat: 4.1,
+    sla_compliance_pct: 91.0,
+  },
+  {
+    period: '2025',
+    category: 'Returns & Exchanges',
+    priority: 'All',
+    total_tickets: 620,
+    resolved_tickets: 527,
+    escalated_tickets: 62,
+    avg_resolution_hours: 24.1,
+    avg_csat: 3.8,
+    sla_compliance_pct: 79.0,
+  },
+  {
+    period: '2025',
+    category: 'Shipping',
+    priority: 'All',
+    total_tickets: 540,
+    resolved_tickets: 486,
+    escalated_tickets: 38,
+    avg_resolution_hours: 14.5,
+    avg_csat: 3.9,
+    sla_compliance_pct: 88.0,
+  },
+  {
+    period: '2025',
+    category: 'General Inquiry',
+    priority: 'All',
+    total_tickets: 430,
+    resolved_tickets: 394,
+    escalated_tickets: 13,
+    avg_resolution_hours: 4.1,
+    avg_csat: 4.4,
+    sla_compliance_pct: 98.0,
   },
 ]
 

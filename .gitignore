@@ -54,7 +54,16 @@ desktop.ini
 # Docker
 docker-compose.override.yml
 
-# Local diagnostic / credential scripts (never commit)
+# Local diagnostic / one-off scripts (never commit)
 test_conn.py
 check_columns.py
 fix_views.py
+load_campaigns_only.py
+instructions.txt
+
+# Deployment zips
+*.zip
+insighthub-backend.zip
+
+# Screenshots (captured locally, referenced from README)
+docs/screenshots/*.png

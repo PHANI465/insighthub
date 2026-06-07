@@ -14,6 +14,8 @@ import {
 import LoadingSpinner from '../components/ui/LoadingSpinner'
 import ErrorBanner from '../components/ui/ErrorBanner'
 import { getCustomerSegments } from '../api/metrics'
+import { useAuth } from '../contexts/AuthContext'
+import { GUEST_CUSTOMER_SEGMENTS } from '../lib/guestData'
 import type { CustomerSegmentStat } from '../types/api'
 import { formatCurrency, formatInt, formatPct } from '../utils/format'
 import axios from 'axios'
@@ -59,11 +61,17 @@ function PieLabel({ cx, cy, midAngle, innerRadius, outerRadius, percent, name }:
 }
 
 export default function CustomerAnalytics() {
+  const { isGuest } = useAuth()
   const [segments, setSegments] = useState<CustomerSegmentStat[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
   useEffect(() => {
+    if (isGuest) {
+      setSegments(GUEST_CUSTOMER_SEGMENTS)
+      setLoading(false)
+      return
+    }
     getCustomerSegments()
       .then(setSegments)
       .catch((err: unknown) => {
@@ -75,7 +83,7 @@ export default function CustomerAnalytics() {
         }
       })
       .finally(() => setLoading(false))
-  }, [])
+  }, [isGuest])
 
   if (loading) {
     return (
