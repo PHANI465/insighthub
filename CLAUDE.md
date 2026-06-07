@@ -238,22 +238,33 @@ frontend/
 
 | Service | Status | URL |
 |---------|--------|-----|
-| Frontend | Deployed on Vercel | _(update with live URL)_ |
-| Backend API | Pending — Azure App Service setup needed | `https://insighthub-api.azurewebsites.net` (target) |
+| Frontend | ⏳ Vercel deploy pending (auth step needed) | _(update with live URL after vercel deploy)_ |
+| Backend API | ✅ Live on Azure App Service | `https://insighthub-api-phani.azurewebsites.net` |
 | Azure SQL Database | ✅ Active | `insighthub-sql-phani01.database.windows.net` |
 | Azure AI Search | ✅ Active | `rg-insighthub-devphani.search.windows.net` |
 | Azure OpenAI | ✅ Active | gpt-4o + text-embedding-ada-002 deployed |
 | Application Insights | ✅ Active | Custom events wired in backend |
 
-**Backend deploy command (when ready):**
+**Backend deploy command (to redeploy):**
 ```bash
-cd backend
-zip -r ../insighthub-backend.zip . --exclude "*.pyc" --exclude "__pycache__/*" --exclude ".env"
-cd ..
-az webapp deployment source config-zip \
-  --name insighthub-dev-api \
-  --resource-group rg-insighthub-devphani \
-  --src insighthub-backend.zip
+# Build zip with Python (preserves forward-slash paths for Linux rsync)
+python -c "
+import zipfile, os
+src_dir = 'backend'
+out_zip = 'insighthub-backend.zip'
+exclude_dirs = {'__pycache__', '.git'}
+exclude_ext = {'.pyc', '.pyo', '.env'}
+os.remove(out_zip) if os.path.exists(out_zip) else None
+with zipfile.ZipFile(out_zip, 'w', zipfile.ZIP_DEFLATED) as zf:
+    for root, dirs, files in os.walk(src_dir):
+        dirs[:] = [d for d in dirs if d not in exclude_dirs]
+        for f in files:
+            if not any(f.endswith(e) for e in exclude_ext) and f != '.env':
+                fp = os.path.join(root, f)
+                zf.write(fp, os.path.relpath(fp, src_dir).replace(os.sep, '/'))
+"
+az webapp deploy --name insighthub-api-phani --resource-group rg-insighthub-dev \
+  --src-path insighthub-backend.zip --type zip
 ```
 
 ---
@@ -276,7 +287,7 @@ insighthub/
 │   └── seed_users.py
 ├── frontend/
 │   ├── .env.development  VITE_API_URL=http://localhost:8000
-│   ├── .env.production   VITE_API_URL=https://insighthub-api.azurewebsites.net
+│   ├── .env.production   VITE_API_URL=https://insighthub-api-phani.azurewebsites.net
 │   ├── package.json  React 18 + TypeScript + Vite + Tailwind + Recharts
 │   ├── src/          Full TypeScript source (28 files)
 │   └── index.html
@@ -316,13 +327,26 @@ insighthub/
 2. **ETL speed**: Multi-row VALUES inserts are functional but slow (~2-3 hours for full reload due to Azure SQL latency + 9-index FactSales table). Consider BULK INSERT or disabling NCCI during load for production.
 3. **`test_conn.py`** at project root: diagnostic script, should be deleted before merge.
 4. **`check_columns.py`** and **`fix_views.py`** at project root: contain hardcoded credentials, should be deleted.
-5. **bcrypt version**: Anaconda environment uses bcrypt 4.0.1 (compatible with passlib 1.7.4). Requirements.txt specifies `passlib[bcrypt]==1.7.4`.
+5. **bcrypt version**: requirements.txt now pins `bcrypt==3.2.2`. passlib 1.7.4's `detect_wrap_bug()` uses a >72-byte test password which causes a `ValueError` in bcrypt 4.x (Rust rewrite enforces 72-byte limit). bcrypt 3.x (Python impl) doesn't have this restriction.
+6. **ALLOWED_ORIGINS**: Currently set to `http://localhost:3000` in App Service. Update to include the Vercel frontend URL once deployed: `az webapp config appsettings set --name insighthub-api-phani --resource-group rg-insighthub-dev --settings "ALLOWED_ORIGINS=http://localhost:3000,https://<your-app>.vercel.app"`
 
 ---
+
+## Azure App Service Deployment Notes
+
+**App name**: `insighthub-api-phani`  
+**Resource group**: `rg-insighthub-dev`  
+**Region**: Central US (East US/East US 2/West US 2 had quota=0 on the free trial)  
+**SKU**: B1 Linux, Python 3.11  
+**Startup**: `bash /home/site/wwwroot/startup.sh` (absolute path required — Oryx wrapper can't find it via PATH)  
+**Build**: `SCM_DO_BUILD_DURING_DEPLOYMENT=false` — Oryx disabled. startup.sh runs `pip install` at container start (~2 min).  
+**Timeout**: `WEBSITES_CONTAINER_START_TIME_LIMIT=1800` (30 min — pip install is ~2 min actual)  
+**Key settings set**: DB_SERVER, DB_NAME, DB_USER, DB_PASSWORD, AZURE_SEARCH_ENDPOINT, AZURE_SEARCH_KEY, AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_KEY, JWT_SECRET_KEY, ALLOWED_ORIGINS, APPLICATIONINSIGHTS_CONNECTION_STRING  
+**SQL Firewall**: `AllowAzureServices` rule added (0.0.0.0/0.0.0.0)
 
 ## Environment
 
 - Python: Anaconda (`C:\Users\Phaneendra\anaconda3\python.exe`)
-- ODBC: ODBC Driver 18 for SQL Server
+- ODBC: ODBC Driver 18 for SQL Server (local); Driver 17 in App Service (pre-installed)
 - All secrets in `.env` at project root
 - Azure Key Vault URL configured but SDK not installed in Anaconda env → skipped at startup (expected for local dev)
