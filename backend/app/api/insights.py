@@ -1,139 +1,232 @@
 """
 backend/app/api/insights.py
 
-AI Insights routes — GPT-4o generated business narratives stored in Azure SQL.
+AI Insights API — GPT-4o generated business narratives stored in Azure SQL.
 
-  GET  /api/insights              → retrieve latest stored insights
-  POST /api/insights/generate     → trigger insight generation (Admin only)
+Endpoints:
+  GET  /api/insights                  → paginated list of latest insights
+  GET  /api/insights/{insight_id}     → full insight with structured JSON
+  POST /api/insights/generate         → trigger generation (Admin only)
 
-The full insight generation engine is built in Phase 7 (insights-engine/).
-This module defines the API surface and response contract.
+Role requirements:
+  GET  endpoints — Viewer and above
+  POST /generate — Admin only (generation consumes OpenAI tokens)
+
+Generation note:
+  POST /generate runs synchronously. Each category requires one GPT-4o call
+  (~5–15 s), so generating all 4 categories may take 20–60 s. This is
+  intentional: the endpoint is admin-only and called infrequently.
+  The response includes created insight IDs so callers can fetch them
+  immediately without polling.
 """
 
 import logging
 from typing import List, Optional
 
 import pyodbc
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Path, Query, status
 
-from app.api.deps import get_db_conn, get_current_user, require_role
+from app.api.deps import get_db_conn, require_role
 from app.core.appinsights import track_event
-from app.core.database import execute_query
-from app.models.schemas import GenerateInsightRequest, InsightRow, UserInfo
+from app.models.schemas import (
+    GenerateInsightRequest,
+    GenerateInsightResponse,
+    InsightDetail,
+    InsightRow,
+    UserInfo,
+)
+from app.services.insights_service import InsightStore, run_insight_generation
 
 log = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/insights", tags=["AI Insights"])
 
-_viewer  = require_role("Viewer")
-_analyst = require_role("Analyst")
-_admin   = require_role("Admin")
+_viewer = require_role("Viewer")
+_admin  = require_role("Admin")
 
-# ── SQL queries ───────────────────────────────────────────────────────────────
+_ALLOWED_CATEGORIES = {"Sales", "Customers", "Support", "Campaigns"}
 
-_SELECT_INSIGHTS = """
-SELECT TOP (?)
-    InsightID, Category, Title, Narrative,
-    GeneratedAt, PeriodStart, PeriodEnd, ConfidenceScore
-FROM dbo.AIInsights
-WHERE 1=1
-{category_filter}
-ORDER BY GeneratedAt DESC
-"""
 
-_CHECK_INSIGHTS_TABLE = """
-SELECT COUNT(*) FROM sys.tables WHERE name = 'AIInsights' AND schema_id = SCHEMA_ID('dbo')
-"""
-
+# ── GET /api/insights ─────────────────────────────────────────────────────────
 
 @router.get(
     "",
     response_model=List[InsightRow],
-    summary="Get latest AI-generated business insights",
+    summary="List latest AI-generated business insights",
+    description=(
+        "Returns the most recent AI-generated insights from dbo.AIInsights, "
+        "ordered by generation time descending. Optionally filter by category. "
+        "Returns an empty list if the AIInsights table does not yet exist."
+    ),
 )
 def get_insights(
-    limit: int = Query(10, ge=1, le=50, description="Number of insights to return"),
-    category: Optional[str] = Query(None, description="Filter: Sales | Customers | Support | Campaigns"),
+    limit: int = Query(20, ge=1, le=100, description="Maximum insights to return"),
+    category: Optional[str] = Query(
+        None,
+        description="Filter by category: Sales | Customers | Support | Campaigns",
+    ),
     conn: pyodbc.Connection = Depends(get_db_conn),
     _user: UserInfo = Depends(_viewer),
 ) -> List[InsightRow]:
-    """
-    Returns the most recent AI-generated business insights stored in Azure SQL.
-    The AIInsights table is populated by the insights-engine (Phase 7).
-    Until Phase 7 runs, returns an empty list.
-    """
-    # Check if the AIInsights table exists (created in Phase 7 migration)
-    table_exists = execute_query(conn, _CHECK_INSIGHTS_TABLE, fetch="one")
-    if not table_exists or table_exists[0] == 0:
-        # Table not yet created — return empty list (Phase 7 creates it)
-        log.info("AIInsights table not yet created. Returning empty insights list.")
-        return []
+    if category and category not in _ALLOWED_CATEGORIES:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"category must be one of: {sorted(_ALLOWED_CATEGORIES)}",
+        )
 
-    category_filter = ""
-    params = [limit]
-    if category:
-        allowed = {"Sales", "Customers", "Support", "Campaigns", "Products"}
-        if category not in allowed:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail=f"category must be one of: {allowed}",
-            )
-        category_filter = "AND Category = ?"
-        params.append(category)
-
-    sql = _SELECT_INSIGHTS.format(category_filter=category_filter)
-    rows = execute_query(conn, sql, tuple(params), fetch="all") or []
+    # Table is created on first generation run — gracefully return empty list before that
+    try:
+        store = InsightStore(conn)
+        rows  = store.fetch_list(limit=limit, category=category)
+    except Exception as exc:
+        if "Invalid object name" in str(exc) or "AIInsights" in str(exc):
+            log.info("AIInsights table not yet created — returning empty list.")
+            return []
+        log.error("Error fetching insights: %s", exc)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve insights.",
+        ) from exc
 
     return [
         InsightRow(
-            insight_id=r[0],
-            category=r[1],
-            title=r[2],
-            narrative=r[3],
-            generated_at=r[4],
-            period_start=r[5],
-            period_end=r[6],
-            confidence_score=float(r[7]) if r[7] else None,
+            insight_id=r["insight_id"],
+            category=r["category"],
+            title=r["title"],
+            narrative=r["narrative"],
+            generated_at=r["generated_at"],
+            period_start=r["period_start"],
+            period_end=r["period_end"],
+            confidence_score=r["confidence_score"],
         )
         for r in rows
     ]
 
 
+# ── GET /api/insights/{insight_id} ────────────────────────────────────────────
+
+@router.get(
+    "/{insight_id}",
+    response_model=InsightDetail,
+    summary="Get full insight detail including structured JSON",
+    description=(
+        "Returns the complete insight record: headline fields, GPT-4o structured "
+        "output (key_findings, recommendations, risk_flags, …), and the raw metrics "
+        "used as prompt context. Useful for debugging or deep-dive analysis."
+    ),
+)
+def get_insight_detail(
+    insight_id: str = Path(
+        ...,
+        description="Insight UUID (from GET /api/insights or POST /api/insights/generate)",
+        min_length=36,
+        max_length=36,
+    ),
+    conn: pyodbc.Connection = Depends(get_db_conn),
+    _user: UserInfo = Depends(_viewer),
+) -> InsightDetail:
+    try:
+        store = InsightStore(conn)
+        row   = store.fetch_one(insight_id)
+    except Exception as exc:
+        log.error("Error fetching insight %s: %s", insight_id, exc)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve insight.",
+        ) from exc
+
+    if not row:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Insight '{insight_id}' not found.",
+        )
+
+    return InsightDetail(
+        insight_id=row["insight_id"],
+        category=row["category"],
+        title=row["title"],
+        narrative=row["narrative"],
+        generated_at=row["generated_at"],
+        period_start=row["period_start"],
+        period_end=row["period_end"],
+        confidence_score=row["confidence_score"],
+        structured_json=row["structured_json"],
+        metrics_json=row["metrics_json"],
+        model_version=row["model_version"],
+        prompt_tokens=row["prompt_tokens"],
+        completion_tokens=row["completion_tokens"],
+    )
+
+
+# ── POST /api/insights/generate ───────────────────────────────────────────────
+
 @router.post(
     "/generate",
-    status_code=status.HTTP_202_ACCEPTED,
-    summary="Trigger AI insight generation (Admin only)",
+    response_model=GenerateInsightResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Generate AI insights (Admin only)",
     description=(
-        "Starts an asynchronous insight generation job. "
-        "GPT-4o will analyse the latest metrics and write narratives to AIInsights. "
-        "Full implementation in Phase 7 (insights-engine/)."
+        "Runs the GPT-4o insight generation pipeline for the requested categories. "
+        "Each category: (1) queries Azure SQL views for business metrics, "
+        "(2) calls GPT-4o with a category-specific prompt to produce structured JSON "
+        "plus a human-readable narrative, (3) stores the result in dbo.AIInsights. "
+        "If force_refresh=False (default), skips categories that already have an "
+        "insight for the exact period. "
+        "Period defaults to the full date range of available sales data if omitted. "
+        "Latency: ~5–15 s per category; 20–60 s total for all four."
     ),
 )
 def generate_insights(
     body: GenerateInsightRequest,
-    _user: UserInfo = Depends(_admin),
-) -> dict:
-    """
-    Admin-only endpoint to trigger insight regeneration.
-    Returns 202 Accepted — the generation runs asynchronously.
-    Phase 7 will connect this to the insights-engine.
-    """
+    conn: pyodbc.Connection = Depends(get_db_conn),
+    user: UserInfo = Depends(_admin),
+) -> GenerateInsightResponse:
+    log.info(
+        "Insight generation requested by %s: categories=%s period=%s–%s force=%s",
+        user.username, body.categories,
+        body.period_start, body.period_end,
+        body.force_refresh,
+    )
+
+    try:
+        result = run_insight_generation(
+            conn=conn,
+            categories=body.categories,
+            period_start=body.period_start,
+            period_end=body.period_end,
+            force_refresh=body.force_refresh,
+        )
+    except RuntimeError as exc:
+        # Missing Azure OpenAI credentials
+        log.warning("Insight generation configuration error: %s", exc)
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=str(exc),
+        ) from exc
+    except Exception as exc:
+        log.error("Insight generation failed: %s", exc, exc_info=True)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Insight generation failed. Check server logs for details.",
+        ) from exc
+
     track_event(
-        "InsightGenerationTriggered",
+        "InsightGenerationCompleted",
         {
-            "categories": ",".join(body.categories),
-            "force_refresh": body.force_refresh,
-            "triggered_by": _user.username,
+            "triggered_by":      user.username,
+            "status":            result["status"],
+            "generated_count":   result["generated_count"],
+            "failed_categories": ",".join(result["failed_categories"]),
+            "total_tokens":      result["total_prompt_tokens"] + result["total_completion_tokens"],
         },
     )
-    log.info(
-        "Insight generation triggered by %s for categories: %s",
-        _user.username, body.categories,
+
+    return GenerateInsightResponse(
+        status=result["status"],
+        generated_count=result["generated_count"],
+        failed_categories=result["failed_categories"],
+        insight_ids=result["insight_ids"],
+        period_start=result["period_start"],
+        period_end=result["period_end"],
+        total_prompt_tokens=result["total_prompt_tokens"],
+        total_completion_tokens=result["total_completion_tokens"],
     )
-    return {
-        "status": "accepted",
-        "message": (
-            f"Insight generation queued for: {', '.join(body.categories)}. "
-            "Full pipeline implemented in Phase 7."
-        ),
-        "categories": body.categories,
-    }

@@ -98,7 +98,49 @@ AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-ada-002
 
 **Note:** The embedding model `text-embedding-ada-002` must be deployed in your Azure OpenAI resource. If you used a different deployment name, update `AZURE_OPENAI_EMBEDDING_DEPLOYMENT` in `.env`.
 
-### Phase 7 — React Frontend ⏳ NOT STARTED
+### Phase 7 — AI Insights Engine ✅ COMPLETE
+
+**What was built:**
+- `database/schema/07_insights.sql` — `dbo.AIInsights` table with UNIQUEIDENTIFIER PK, indexes
+- `backend/app/services/insights_service.py` — full pipeline:
+  - `MetricsCollector` — focused SQL queries per category (vw_SalesSummary, DimCustomer, FactSupportTickets, vw_CampaignROI)
+  - `InsightGenerator` — GPT-4o with JSON mode, temperature 0.2, category-specific prompts
+  - `InsightStore` — idempotent table creation, INSERT, SELECT helpers
+  - `run_insight_generation()` — orchestrator; skips existing insights unless force_refresh=True
+- `backend/app/api/insights.py` — fully wired (3 endpoints):
+  - `GET  /api/insights` — list (Viewer+), category filter, graceful empty before first run
+  - `GET  /api/insights/{insight_id}` — full detail with structured_json + metrics_json
+  - `POST /api/insights/generate` — Admin only; synchronous; returns created IDs + token usage
+- `backend/app/models/schemas.py` — added `InsightDetail`, `GenerateInsightResponse`; fixed `InsightRow.insight_id: str`
+
+**Prompt engineering decisions (8 key choices — see module docstring in insights_service.py):**
+1. JSON mode (`response_format=json_object`) — guarantees parseable output
+2. Temperature 0.2 — reproducible factual analysis
+3. Metrics in user turn, system prompt stable (cacheable)
+4. Explicit JSON schema in every prompt — eliminates hallucinated field names
+5. Concrete analytical rules per category (e.g. "High if churn > 30%")
+6. Period anchoring with exact ISO dates — no vague "recently"
+7. Confidence score computed from data completeness, not by GPT-4o
+8. max_tokens=1000 per call — prevents truncated JSON
+
+**How to run (first time):**
+```
+# 1. Generate all 4 insight categories (uses full available data range by default)
+curl -X POST http://localhost:8000/api/insights/generate \
+  -H "Authorization: Bearer <admin_token>" \
+  -H "Content-Type: application/json" \
+  -d '{"categories":["Sales","Customers","Support","Campaigns"]}'
+
+# 2. Retrieve insights list
+curl http://localhost:8000/api/insights \
+  -H "Authorization: Bearer <viewer_token>"
+
+# 3. Get full detail (structured JSON + raw metrics)
+curl http://localhost:8000/api/insights/<insight_id> \
+  -H "Authorization: Bearer <viewer_token>"
+```
+
+### Phase 8 — React Frontend ⏳ NOT STARTED
 
 ---
 
@@ -113,10 +155,10 @@ insighthub/
 │   │   ├── api/       auth.py, metrics.py, search.py, insights.py, powerbi.py
 │   │   ├── core/      config.py, database.py, security.py, appinsights.py, keyvault.py
 │   │   ├── models/    schemas.py
-│   │   └── services/  auth_service.py, metrics_service.py
+│   │   └── services/  auth_service.py, metrics_service.py, insights_service.py, rag_service.py
 │   └── requirements.txt
 ├── database/
-│   ├── schema/        01-06 SQL files
+│   ├── schema/        01-07 SQL files  (07_insights.sql = AIInsights table)
 │   └── seed_users.py
 └── etl-pipelines/python-local/
     ├── etl_runner.py  main orchestrator

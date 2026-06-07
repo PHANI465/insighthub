@@ -172,8 +172,9 @@ class SearchResponse(BaseModel):
 # ── Insights schemas ──────────────────────────────────────────────────────────
 
 class InsightRow(BaseModel):
-    insight_id: int
-    category: str         # 'Sales', 'Customers', 'Support', 'Campaigns'
+    """List-view: headline fields only (no raw JSON payloads)."""
+    insight_id: str       # UNIQUEIDENTIFIER stored as lowercase UUID string
+    category: str         # 'Sales' | 'Customers' | 'Support' | 'Campaigns'
     title: str
     narrative: str
     generated_at: datetime
@@ -182,18 +183,44 @@ class InsightRow(BaseModel):
     confidence_score: Optional[float]
 
 
+class InsightDetail(InsightRow):
+    """
+    Detail-view: full insight including the raw GPT-4o structured output
+    and the metrics that were fed into the prompt.
+    """
+    structured_json: Dict[str, Any]    # key_findings, recommendations, risk_flags …
+    metrics_json:    Dict[str, Any]    # raw SQL metrics used as prompt context
+    model_version:   str
+    prompt_tokens:   Optional[int]
+    completion_tokens: Optional[int]
+
+
 class GenerateInsightRequest(BaseModel):
     categories: List[str] = ["Sales", "Customers", "Support", "Campaigns"]
-    force_refresh: bool = False
+    period_start: Optional[date] = None   # defaults to earliest available data
+    period_end:   Optional[date] = None   # defaults to latest available data
+    force_refresh: bool = False           # regenerate even if insight already exists
 
     @field_validator("categories")
     @classmethod
     def valid_categories(cls, v: List[str]) -> List[str]:
-        allowed = {"Sales", "Customers", "Support", "Campaigns", "Products"}
+        allowed = {"Sales", "Customers", "Support", "Campaigns"}
         invalid = set(v) - allowed
         if invalid:
             raise ValueError(f"Invalid categories: {invalid}. Allowed: {allowed}")
         return v
+
+
+class GenerateInsightResponse(BaseModel):
+    """Response from POST /api/insights/generate."""
+    status: str                    # 'completed' | 'partial' | 'failed'
+    generated_count: int
+    failed_categories: List[str]
+    insight_ids: List[str]
+    period_start: date
+    period_end: date
+    total_prompt_tokens: int
+    total_completion_tokens: int
 
 
 # ── Power BI schemas ──────────────────────────────────────────────────────────
