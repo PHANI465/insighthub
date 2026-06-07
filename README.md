@@ -6,6 +6,24 @@ End-to-end Azure analytics platform — synthetic data to executive dashboard in
 
 ---
 
+## Live Demo
+
+| Service | URL |
+|---------|-----|
+| Frontend | _Vercel URL — to be added after deployment_ |
+| Backend API | _Azure App Service URL — to be added after deployment_ |
+| API Docs (Swagger) | `<backend-url>/docs` |
+
+**Demo credentials** (no sign-up required):
+
+| Username | Password | Role | What you can see |
+|----------|----------|------|-----------------|
+| `admin` | `InsightHub@Admin2024!` | Admin | Everything including AI Insights generation |
+| `analyst` | `InsightHub@Analyst2024!` | Analyst | Dashboard · Customers · Support · Knowledge Search |
+| `viewer` | `InsightHub@Viewer2024!` | Viewer | Executive Dashboard · AI Insights (read-only) |
+
+---
+
 ## Architecture
 
 ```mermaid
@@ -275,12 +293,25 @@ Full interactive docs: http://localhost:8000/docs
 | 2 | Azure SQL star schema (9 tables, 5 views, 15 indexes) | ✅ |
 | 3 | Python ETL pipeline with watermark incremental loads | ✅ |
 | 4 | FastAPI backend — JWT, RBAC, 14 endpoints | ✅ |
-| 5 | Power BI Embedded | ⏳ Skipped |
+| 5 | Power BI Embedded | ⏳ License required |
 | 6 | Azure AI Search + RAG pipeline (hybrid + semantic) | ✅ |
 | 7 | AI Insights Engine — GPT-4o with structured JSON output | ✅ |
 | 8 | React 18 TypeScript frontend — 6 pages, Recharts | ✅ |
 | 9 | Security docs + OWASP audit + Application Insights custom events | ✅ |
 | 10 | README + Architecture + Bicep IaC + Interview Q&A | ✅ |
+
+---
+
+## Planned Enhancement — Power BI Embedded
+
+Power BI Embedded (App-Owns-Data pattern) is architecturally designed but requires a Power BI Pro license to activate. The embedding pattern, DAX measures, Row Level Security design, and embed token generation are ready to implement once a license is available.
+
+The backend already includes:
+- `backend/app/api/powerbi.py` — embed token endpoint wired and secured (Admin role)
+- `config.py` — `powerbi_client_id`, `powerbi_client_secret`, `powerbi_workspace_id`, `powerbi_report_id` settings
+- `keyvault.py` — `insighthub-powerbi-client-secret` secret mapping ready
+
+See [docs/powerbi/powerbi-design.md](docs/powerbi/powerbi-design.md) for the full architecture, planned DAX measures, Row Level Security design, and step-by-step activation instructions.
 
 ---
 
@@ -295,9 +326,182 @@ Full interactive docs: http://localhost:8000/docs
 
 ---
 
+## Deployment
+
+### Frontend — Vercel
+
+**Option A: GitHub integration (recommended)**
+
+1. Push this repository to GitHub
+2. Go to [vercel.com](https://vercel.com) → **New Project** → import the repo
+3. Set **Root Directory** to `frontend`
+4. Add environment variable:
+   ```
+   VITE_API_BASE_URL = https://<your-backend>.azurewebsites.net
+   ```
+5. Click **Deploy** — Vercel handles build (`npm run build`) and CDN distribution automatically
+
+**Option B: Vercel CLI**
+
+```bash
+npm install -g vercel
+
+cd frontend
+
+# Create .env.production with your backend URL
+echo "VITE_API_BASE_URL=https://<your-backend>.azurewebsites.net" > .env.production
+
+vercel --prod
+# Follow the prompts: link to project, confirm settings
+```
+
+After deployment, copy the Vercel URL and:
+- Update `ALLOWED_ORIGINS` in Azure App Service settings to the Vercel URL
+- Update the Live Demo section of this README
+
+---
+
+### Backend — Azure App Service
+
+**Prerequisites**: Azure CLI logged in (`az login`), resource group created.
+
+**Step 1 — Create App Service resources** (skip if already deployed via Bicep)
+
+```bash
+RG=rg-insighthub-devphani
+APP=insighthub-dev-api
+PLAN=insighthub-dev-plan
+
+az appservice plan create \
+  --name $PLAN \
+  --resource-group $RG \
+  --sku B2 \
+  --is-linux
+
+az webapp create \
+  --name $APP \
+  --resource-group $RG \
+  --plan $PLAN \
+  --runtime "PYTHON:3.11"
+```
+
+**Step 2 — Configure startup command**
+
+```bash
+az webapp config set \
+  --name $APP \
+  --resource-group $RG \
+  --startup-file "startup.sh"
+```
+
+**Step 3 — Set all environment variables**
+
+```bash
+az webapp config appsettings set \
+  --name $APP \
+  --resource-group $RG \
+  --settings \
+    DB_SERVER="insighthub-sql-phani01.database.windows.net" \
+    DB_NAME="insighthub-db" \
+    DB_USER="<your-sql-user>" \
+    DB_PASSWORD="<your-sql-password>" \
+    DB_PORT="1433" \
+    JWT_SECRET_KEY="<generate: openssl rand -hex 32>" \
+    JWT_ACCESS_TOKEN_EXPIRE_MINUTES="60" \
+    AZURE_OPENAI_ENDPOINT="https://<your-openai>.openai.azure.com/" \
+    AZURE_OPENAI_KEY="<your-openai-key>" \
+    AZURE_OPENAI_DEPLOYMENT="gpt-4o" \
+    AZURE_OPENAI_EMBEDDING_DEPLOYMENT="text-embedding-ada-002" \
+    AZURE_SEARCH_ENDPOINT="https://<your-search>.search.windows.net" \
+    AZURE_SEARCH_KEY="<your-search-key>" \
+    AZURE_SEARCH_INDEX="insighthub-docs" \
+    ALLOWED_ORIGINS="https://<your-vercel-app>.vercel.app" \
+    APPLICATIONINSIGHTS_CONNECTION_STRING="<from App Insights resource>" \
+    AZURE_KEYVAULT_URL="https://<your-kv>.vault.azure.net/" \
+    SCM_DO_BUILD_DURING_DEPLOYMENT="true" \
+    WEBSITES_PORT="8000"
+```
+
+> If using Key Vault (recommended for production), only `AZURE_KEYVAULT_URL` and
+> `APPLICATIONINSIGHTS_CONNECTION_STRING` are needed here — all secrets are fetched
+> from Key Vault at startup via Managed Identity.
+
+**Step 4 — Enable Managed Identity**
+
+```bash
+az webapp identity assign \
+  --name $APP \
+  --resource-group $RG
+
+# Grab the principal ID for role assignments
+PRINCIPAL=$(az webapp show \
+  --name $APP \
+  --resource-group $RG \
+  --query identity.principalId -o tsv)
+
+# Grant Key Vault Secrets User
+az role assignment create \
+  --role "Key Vault Secrets User" \
+  --assignee $PRINCIPAL \
+  --scope $(az keyvault show --name insighthub-dev-kv --query id -o tsv)
+```
+
+**Step 5 — Deploy the backend code**
+
+```bash
+# From project root — zip the backend directory
+cd backend
+zip -r ../insighthub-backend.zip . \
+  --exclude "*.pyc" \
+  --exclude "__pycache__/*" \
+  --exclude ".env" \
+  --exclude "*.egg-info/*"
+
+cd ..
+
+az webapp deployment source config-zip \
+  --name $APP \
+  --resource-group $RG \
+  --src insighthub-backend.zip
+```
+
+**Step 6 — Verify deployment**
+
+```bash
+curl https://$APP.azurewebsites.net/api/health
+# Expected: {"status":"healthy","database":"connected"}
+```
+
+**All environment variables for App Service:**
+
+| Variable | Source | Required |
+|----------|--------|----------|
+| `DB_SERVER` | Azure SQL FQDN | ✅ |
+| `DB_NAME` | `insighthub-db` | ✅ |
+| `DB_USER` | SQL login | ✅ (or Key Vault) |
+| `DB_PASSWORD` | SQL password | ✅ (or Key Vault) |
+| `DB_PORT` | `1433` | ✅ |
+| `JWT_SECRET_KEY` | Random 64-char hex | ✅ (or Key Vault) |
+| `JWT_ACCESS_TOKEN_EXPIRE_MINUTES` | `60` | Optional (default: 60) |
+| `AZURE_OPENAI_ENDPOINT` | OpenAI resource URL | ✅ |
+| `AZURE_OPENAI_KEY` | OpenAI API key | ✅ (or Key Vault / Managed Identity) |
+| `AZURE_OPENAI_DEPLOYMENT` | `gpt-4o` | ✅ |
+| `AZURE_OPENAI_EMBEDDING_DEPLOYMENT` | `text-embedding-ada-002` | ✅ |
+| `AZURE_SEARCH_ENDPOINT` | AI Search URL | ✅ |
+| `AZURE_SEARCH_KEY` | AI Search API key | ✅ (or Key Vault) |
+| `AZURE_SEARCH_INDEX` | `insighthub-docs` | ✅ |
+| `ALLOWED_ORIGINS` | Vercel app URL | ✅ |
+| `APPLICATIONINSIGHTS_CONNECTION_STRING` | App Insights resource | Recommended |
+| `AZURE_KEYVAULT_URL` | Key Vault URI | Recommended |
+| `SCM_DO_BUILD_DURING_DEPLOYMENT` | `true` | ✅ |
+| `WEBSITES_PORT` | `8000` | ✅ |
+
+---
+
 ## Further Reading
 
 - [Security Architecture](docs/security/security-architecture.md) — Defense in depth, Key Vault, Managed Identity, RBAC roles
 - [OWASP Checklist](docs/security/owasp-checklist.md) — Every endpoint audited against OWASP Top 10
 - [System Design](docs/architecture/system-design.md) — Component design, data flow, technology decisions
+- [Power BI Design](docs/powerbi/powerbi-design.md) — App-Owns-Data embedding, DAX measures, RLS, activation steps
 - [Interview Q&A](docs/interview/interview-qa.md) — 60+ questions and answers covering all phases

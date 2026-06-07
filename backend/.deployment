@@ -1,0 +1,15 @@
+# backend/.deployment
+#
+# Kudu (Azure App Service deployment engine) configuration.
+#
+# This file is used when deploying the ENTIRE repository root to App Service
+# (e.g. via GitHub Actions or az webapp deployment source config).
+# It tells Kudu that the deployable project lives in the "backend/" subdirectory.
+#
+# If deploying via zip-deploy of ONLY the backend/ directory (recommended),
+# this file is ignored — the zip contents are already the project root.
+#
+# Reference: https://github.com/projectkudu/kudu/wiki/Customizing-deployments
+
+[config]
+project = backend
