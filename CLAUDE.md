@@ -238,7 +238,7 @@ frontend/
 
 | Service | Status | URL |
 |---------|--------|-----|
-| Frontend | ✅ Live on Vercel | `https://frontend-xi-sandy-95.vercel.app` |
+| Frontend | ✅ Live on Vercel | `https://insighthub-five.vercel.app` |
 | Backend API | ✅ Live on Azure App Service | `https://insighthub-api-phani.azurewebsites.net` |
 | Azure SQL Database | ✅ Active | `insighthub-sql-phani01.database.windows.net` |
 | Azure AI Search | ✅ Active | `rg-insighthub-devphani.search.windows.net` |
@@ -328,7 +328,7 @@ insighthub/
 3. **`test_conn.py`** at project root: diagnostic script, should be deleted before merge.
 4. **`check_columns.py`** and **`fix_views.py`** at project root: contain hardcoded credentials, should be deleted.
 5. **bcrypt version**: requirements.txt now pins `bcrypt==3.2.2`. passlib 1.7.4's `detect_wrap_bug()` uses a >72-byte test password which causes a `ValueError` in bcrypt 4.x (Rust rewrite enforces 72-byte limit). bcrypt 3.x (Python impl) doesn't have this restriction.
-6. **ALLOWED_ORIGINS**: Set to `http://localhost:3000,https://frontend-xi-sandy-95.vercel.app,https://frontend-9mzem8xwn-phanigavara465-gmailcoms-projects.vercel.app`. Add new deployment URLs after each `vercel deploy --prod`.
+6. **ALLOWED_ORIGINS**: Set to `http://localhost:3000,https://insighthub-five.vercel.app,https://frontend-xi-sandy-95.vercel.app`. Add new deployment URLs after each `vercel deploy --prod`.
 
 ---
 
