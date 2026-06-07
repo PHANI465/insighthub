@@ -25,6 +25,11 @@ from app.core.config import get_settings
 
 log = logging.getLogger(__name__)
 
+# Suppress verbose HTTP transport logs emitted by the openai SDK (uses httpx)
+# so they don't pollute the uvicorn request log during search calls.
+for _noisy in ("httpx", "httpcore"):
+    logging.getLogger(_noisy).setLevel(logging.WARNING)
+
 # ── Prompt ────────────────────────────────────────────────────────────────────
 
 _SYSTEM_PROMPT = """\

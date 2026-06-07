@@ -48,6 +48,16 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
+# Silence verbose HTTP transport logs from Azure SDK and OpenAI SDK
+for _noisy in (
+    "azure.core.pipeline",
+    "azure.core.pipeline.policies",
+    "urllib3",
+    "httpx",     # openai SDK uses httpx for HTTP transport
+    "httpcore",  # httpx's underlying transport layer
+):
+    logging.getLogger(_noisy).setLevel(logging.WARNING)
+
 log = logging.getLogger(__name__)
 
 

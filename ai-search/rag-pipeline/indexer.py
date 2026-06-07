@@ -48,6 +48,8 @@ def _build_index_schema(index_name: str) -> SearchIndex:
     """
     Build the SearchIndex definition with HNSW vector search and semantic ranking.
     """
+    # Note: in azure-search-documents 11.4+, `retrievable` was removed.
+    # All fields are retrievable by default; use hidden=True to suppress.
     fields = [
         SearchField(
             name="id",
@@ -59,44 +61,37 @@ def _build_index_schema(index_name: str) -> SearchIndex:
             name="title",
             type=SearchFieldDataType.String,
             searchable=True,
-            retrievable=True,
             analyzer_name="en.microsoft",
         ),
         SearchField(
             name="content",
             type=SearchFieldDataType.String,
             searchable=True,
-            retrievable=True,
             analyzer_name="en.microsoft",
         ),
         SearchField(
             name="document_type",
             type=SearchFieldDataType.String,
-            searchable=False,
             filterable=True,
             facetable=True,
-            retrievable=True,
         ),
         SearchField(
             name="source_file",
             type=SearchFieldDataType.String,
-            searchable=False,
             filterable=True,
-            retrievable=True,
         ),
         SearchField(
             name="chunk_index",
             type=SearchFieldDataType.Int32,
             filterable=True,
             sortable=True,
-            retrievable=True,
         ),
-        # Vector field — not returned to clients (save bandwidth)
+        # Vector field — hidden from search results to save bandwidth
         SearchField(
             name="content_vector",
             type=SearchFieldDataType.Collection(SearchFieldDataType.Single),
             searchable=True,
-            retrievable=False,
+            hidden=True,
             vector_search_dimensions=_VECTOR_DIMS,
             vector_search_profile_name="vector-profile",
         ),
