@@ -140,7 +140,54 @@ curl http://localhost:8000/api/insights/<insight_id> \
   -H "Authorization: Bearer <viewer_token>"
 ```
 
-### Phase 8 — React Frontend ⏳ NOT STARTED
+### Phase 8 — React Frontend ✅ COMPLETE
+
+**Stack**: React 18 + TypeScript + Vite + Tailwind CSS 3 + Recharts + Axios + React Router v6
+
+**Start command (from `frontend/`):**
+```
+cd frontend
+npm install
+npm run dev
+```
+**Dev URL**: http://localhost:3000 (matches backend CORS `ALLOWED_ORIGINS=http://localhost:3000`)
+
+**Pages:**
+| Route | Component | Min Role | Description |
+|-------|-----------|----------|-------------|
+| `/login` | LoginPage | Public | JWT login form, demo credentials hint |
+| `/dashboard` | ExecutiveDashboard | Viewer | 5 KPI cards, Revenue+Profit line chart, Campaign ROI bar |
+| `/customers` | CustomerAnalytics | Analyst | Segment table, Revenue bar, Customer distribution pie |
+| `/support` | SupportOperations | Analyst | 4 KPI cards, Ticket volume bar, Resolution+CSAT composed chart, detail table |
+| `/search` | KnowledgeSearch | Analyst | RAG chat interface, source citation cards, latency display |
+| `/insights` | AIInsights | Viewer | Per-category insight cards, expandable key_findings/recommendations (lazy fetch), Generate button (Admin only) |
+
+**Architecture:**
+- `src/api/` — axios client with JWT interceptor + 401 redirect; typed wrappers per endpoint
+- `src/contexts/AuthContext.tsx` — `useAuth()` hook; role stored in localStorage, RBAC via `hasRole(minRole)`
+- `src/components/layout/` — `AppLayout` (Outlet wrapper with role guard), `Sidebar`, `TopBar`
+- `src/components/ui/` — `KPICard`, `LoadingSpinner`, `ErrorBanner`, `Badge`
+- `src/utils/format.ts` — `formatCurrency`, `formatPct`, `formatInt`, `formatDate`
+- `src/types/api.ts` — TypeScript interfaces matching all backend Pydantic schemas
+
+**Key files:**
+```
+frontend/
+├── .env.example              # VITE_API_BASE_URL=http://localhost:8000
+├── package.json              # React 18, recharts, lucide-react, axios, react-router-dom
+├── vite.config.ts            # port: 3000 (fixed, matches backend CORS)
+├── tailwind.config.js
+├── src/
+│   ├── api/                  # client.ts, auth.ts, metrics.ts, insights.ts, search.ts
+│   ├── contexts/             # AuthContext.tsx
+│   ├── components/
+│   │   ├── layout/           # AppLayout.tsx, Sidebar.tsx, TopBar.tsx
+│   │   └── ui/               # KPICard.tsx, LoadingSpinner.tsx, ErrorBanner.tsx, Badge.tsx
+│   ├── pages/                # LoginPage, ExecutiveDashboard, CustomerAnalytics,
+│   │   │                     # SupportOperations, KnowledgeSearch, AIInsights
+│   ├── types/api.ts
+│   └── utils/format.ts
+```
 
 ---
 
@@ -160,6 +207,11 @@ insighthub/
 ├── database/
 │   ├── schema/        01-07 SQL files  (07_insights.sql = AIInsights table)
 │   └── seed_users.py
+├── frontend/
+│   ├── .env.example  VITE_API_BASE_URL=http://localhost:8000
+│   ├── package.json  React 18 + TypeScript + Vite + Tailwind + Recharts
+│   ├── src/          Full TypeScript source (28 files)
+│   └── index.html
 └── etl-pipelines/python-local/
     ├── etl_runner.py  main orchestrator
     ├── loaders.py     DB staging + MERGE
