@@ -1,5 +1,11 @@
 # InsightHub
 
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![React](https://img.shields.io/badge/React-18-61DAFB)
+![Azure](https://img.shields.io/badge/Azure-Cloud-0078D4)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-black)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688)
+
 I built InsightHub as a portfolio project to demonstrate an end-to-end Azure data engineering and analytics stack — starting from raw synthetic data and finishing with a production-grade React dashboard backed by GPT-4o. The goal was to build something I'd actually be proud to show in an interview, not a toy app.
 
 **Stack**: Azure SQL · FastAPI · React 18 · Azure OpenAI (GPT-4o) · Azure AI Search · ADLS Gen2 · Azure Key Vault · Application Insights · Bicep IaC
@@ -10,9 +16,9 @@ I built InsightHub as a portfolio project to demonstrate an end-to-end Azure dat
 
 | Service | URL |
 |---------|-----|
-| Frontend | _Vercel URL — to be added after deployment_ |
-| Backend API | _Azure App Service URL — to be added after deployment_ |
-| API Docs (Swagger) | `<backend-url>/docs` |
+| Frontend | https://insighthub-five.vercel.app |
+| Backend API | https://insighthub-api-phani.azurewebsites.net |
+| API Docs (Swagger) | https://insighthub-api-phani.azurewebsites.net/docs |
 
 **Demo credentials** (no sign-up required):
 
