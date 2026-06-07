@@ -55,7 +55,7 @@ python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 | analyst | InsightHub@Analyst2024! | Analyst |
 | viewer | InsightHub@Viewer2024! | Viewer |
 
-### Phase 5 — Power BI Embedded ⏳ SKIPPED (no workspace yet)
+### Phase 5 — Power BI Embedded ⏳ License required (design complete)
 
 ### Phase 6 — Azure AI Search + RAG Pipeline ✅ COMPLETE
 
@@ -173,7 +173,8 @@ npm run dev
 **Key files:**
 ```
 frontend/
-├── .env.example              # VITE_API_BASE_URL=http://localhost:8000
+├── .env.development          # VITE_API_URL=http://localhost:8000  (dev server)
+├── .env.production           # VITE_API_URL=https://insighthub-api.azurewebsites.net  (Vercel build)
 ├── package.json              # React 18, recharts, lucide-react, axios, react-router-dom
 ├── vite.config.ts            # port: 3000 (fixed, matches backend CORS)
 ├── tailwind.config.js
@@ -187,6 +188,72 @@ frontend/
 │   │   │                     # SupportOperations, KnowledgeSearch, AIInsights
 │   ├── types/api.ts
 │   └── utils/format.ts
+```
+
+### Phase 9 — Security & Monitoring ✅ COMPLETE
+
+**Documents created:**
+- `docs/security/security-architecture.md` — 7-layer defense-in-depth diagram, Key Vault CLI setup, Managed Identity role assignments, KQL alert queries for brute-force/latency/token cost, security gaps register
+- `docs/security/owasp-checklist.md` — All 10 OWASP 2021 categories, every endpoint audited with exact code file references, scorecard table
+
+**Application Insights enhancements (`backend/app/core/appinsights.py` rewritten):**
+- Dual-channel: `AzureLogHandler` on `insighthub.events` logger for custom events; root logger handler for WARNING+ exceptions
+- `track_event(name, properties)` — writes to App Insights `traces` table, queryable via KQL
+- `track_failed_login(reason)` — called on 401; omits username from telemetry (timing-safe, no enumeration)
+- `track_metric(name, value, properties)` — numeric telemetry
+- `track_exception(exc, properties)` — logs to root logger with full traceback
+- All functions wrapped in bare `except: pass` — telemetry never crashes the app
+
+**Bugs fixed in Phase 9:**
+1. `sql_campaigns` in `get_kpi_summary()` queried `CampaignStatus` on `FactCampaignPerformance` (column doesn't exist there) → fixed to `FROM dbo.vw_CampaignROI`
+2. `/api/metrics/revenue` and `/api/metrics/campaigns` required Analyst but Executive Dashboard is Viewer-accessible → changed both to `Depends(_viewer)`
+3. `AS Open` alias in support insight SQL — `OPEN` is reserved in SQL Server (cursor keyword) → renamed to `AS OpenCount`
+
+### Phase 10 — Documentation & IaC ✅ COMPLETE
+
+**Documents created:**
+- `docs/architecture/system-design.md` — Mermaid component diagram, star schema rationale, ETL 4-stage architecture, FastAPI DI chain, RAG pipeline flow, React component tree, end-to-end request trace, scaling analysis, technology selection rationale
+- `docs/powerbi/powerbi-design.md` — App-Owns-Data vs User-Owns-Data comparison, embed token flow, 12 DAX measures, RLS with USERNAME(), 8-step activation guide, ready-to-use React component
+- `docs/interview/interview-qa.md` — 60+ Q&A spanning all 10 phases, each answer grounded in specific codebase decisions
+- `docs/screenshots/README.md` — Instructions for capturing 5 feature screenshots
+
+**IaC created:**
+- `infra/main.bicep` — 13 Azure resources with `@secure()` parameters, deterministic RBAC `guid()` naming, `dependsOn` for sequential OpenAI deployments
+- `infra/parameters.json` — Key Vault `reference` block for `sqlAdminPassword` (never plaintext)
+
+**Backend deployment prep:**
+- `backend/startup.sh` — Azure App Service startup script (uvicorn ASGI, 2 workers, proxy-headers)
+- `backend/.deployment` — Kudu config pointing to `backend/` subdirectory
+
+**Frontend deployment prep:**
+- `frontend/.env.development` — `VITE_API_URL=http://localhost:8000`
+- `frontend/.env.production` — `VITE_API_URL=https://insighthub-api.azurewebsites.net`
+- `frontend/src/api/client.ts` — updated `VITE_API_BASE_URL` → `VITE_API_URL` (removed TS cast)
+- `frontend/vite.config.ts` — `allowedHosts: true` (boolean — string `'all'` does NOT work in Vite)
+- Demo banner added to `LoginPage.tsx` — soft blue translucent notice above login card
+
+---
+
+## Deployment Status
+
+| Service | Status | URL |
+|---------|--------|-----|
+| Frontend | Deployed on Vercel | _(update with live URL)_ |
+| Backend API | Pending — Azure App Service setup needed | `https://insighthub-api.azurewebsites.net` (target) |
+| Azure SQL Database | ✅ Active | `insighthub-sql-phani01.database.windows.net` |
+| Azure AI Search | ✅ Active | `rg-insighthub-devphani.search.windows.net` |
+| Azure OpenAI | ✅ Active | gpt-4o + text-embedding-ada-002 deployed |
+| Application Insights | ✅ Active | Custom events wired in backend |
+
+**Backend deploy command (when ready):**
+```bash
+cd backend
+zip -r ../insighthub-backend.zip . --exclude "*.pyc" --exclude "__pycache__/*" --exclude ".env"
+cd ..
+az webapp deployment source config-zip \
+  --name insighthub-dev-api \
+  --resource-group rg-insighthub-devphani \
+  --src insighthub-backend.zip
 ```
 
 ---
@@ -208,10 +275,20 @@ insighthub/
 │   ├── schema/        01-07 SQL files  (07_insights.sql = AIInsights table)
 │   └── seed_users.py
 ├── frontend/
-│   ├── .env.example  VITE_API_BASE_URL=http://localhost:8000
+│   ├── .env.development  VITE_API_URL=http://localhost:8000
+│   ├── .env.production   VITE_API_URL=https://insighthub-api.azurewebsites.net
 │   ├── package.json  React 18 + TypeScript + Vite + Tailwind + Recharts
 │   ├── src/          Full TypeScript source (28 files)
 │   └── index.html
+├── docs/
+│   ├── security/     security-architecture.md, owasp-checklist.md
+│   ├── architecture/ system-design.md
+│   ├── powerbi/      powerbi-design.md
+│   ├── interview/    interview-qa.md
+│   └── screenshots/  README.md (capture instructions for 5 PNGs)
+├── infra/
+│   ├── main.bicep    All 13 Azure resources as code
+│   └── parameters.json  Key Vault reference for sqlAdminPassword
 └── etl-pipelines/python-local/
     ├── etl_runner.py  main orchestrator
     ├── loaders.py     DB staging + MERGE

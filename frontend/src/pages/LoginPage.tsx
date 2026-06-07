@@ -58,6 +58,23 @@ export default function LoginPage() {
           <p className="mt-1 text-sm text-slate-400">Business Analytics Platform</p>
         </div>
 
+        {/* Demo Banner */}
+        <div className="mb-4 rounded-xl border border-blue-400/30 bg-blue-500/10 px-4 py-3 text-center backdrop-blur-sm">
+          <p className="text-sm text-blue-200">
+            <span className="font-semibold">Portfolio demo.</span> The backend may be temporarily
+            offline.{' '}
+            <a
+              href="https://github.com/Phani465/insighthub#screenshots"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-white"
+            >
+              Screenshots of all features
+            </a>{' '}
+            are available in the README.
+          </p>
+        </div>
+
         {/* Card */}
         <div className="rounded-2xl bg-white p-8 shadow-2xl">
           <h2 className="mb-6 text-xl font-semibold text-gray-900">Sign in</h2>

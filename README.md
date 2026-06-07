@@ -24,6 +24,20 @@ End-to-end Azure analytics platform — synthetic data to executive dashboard in
 
 ---
 
+## Screenshots
+
+| Page | Description |
+|------|-------------|
+| ![Login](docs/screenshots/01-login.png) | Login page with demo credentials hint |
+| ![Dashboard](docs/screenshots/02-dashboard.png) | Executive Dashboard — KPI cards, revenue trend, campaign ROI |
+| ![Customers](docs/screenshots/03-customers.png) | Customer Analytics — segment breakdown, revenue by segment |
+| ![Support](docs/screenshots/04-support.png) | Support Operations — ticket volume, resolution times, CSAT |
+| ![AI Insights](docs/screenshots/05-ai-insights.png) | AI Insights — GPT-4o generated findings per category |
+
+> Screenshots in `docs/screenshots/`. See [docs/screenshots/README.md](docs/screenshots/README.md) for capture instructions.
+
+---
+
 ## Architecture
 
 ```mermaid
@@ -302,16 +316,21 @@ Full interactive docs: http://localhost:8000/docs
 
 ---
 
-## Planned Enhancement — Power BI Embedded
+## Power BI Embedded — Design Complete
 
-Power BI Embedded (App-Owns-Data pattern) is architecturally designed but requires a Power BI Pro license to activate. The embedding pattern, DAX measures, Row Level Security design, and embed token generation are ready to implement once a license is available.
+The full Power BI Embedded integration is designed using the **App-Owns-Data** pattern. A service principal authenticates via MSAL client-credentials, exchanges for an Azure AD token, and calls the Power BI REST API to generate short-lived embed tokens — keeping report access entirely server-side with no user credentials exposed to the browser.
 
-The backend already includes:
-- `backend/app/api/powerbi.py` — embed token endpoint wired and secured (Admin role)
-- `config.py` — `powerbi_client_id`, `powerbi_client_secret`, `powerbi_workspace_id`, `powerbi_report_id` settings
-- `keyvault.py` — `insighthub-powerbi-client-secret` secret mapping ready
+**Already implemented in this repo:**
+- `backend/app/api/powerbi.py` — embed token generation endpoint (Admin-only JWT guard)
+- `config.py` — `powerbi_client_id`, `powerbi_client_secret`, `powerbi_workspace_id`, `powerbi_report_id` settings wired to `.env`
+- `keyvault.py` — `insighthub-powerbi-client-secret` Key Vault mapping configured
+- 12 DAX measures designed across Revenue, Customer Lifetime Value, Support SLA, and Campaign ROI domains
+- Row Level Security (RLS) with `USERNAME()` identity injection — each user sees only their region's data
+- Ready-to-use `PowerBIEmbed` React component with `powerbi-client-react`
 
-See [docs/powerbi/powerbi-design.md](docs/powerbi/powerbi-design.md) for the full architecture, planned DAX measures, Row Level Security design, and step-by-step activation instructions.
+**Activation requires:** Power BI Pro license or Premium Per User (PPU) capacity to publish a workspace and create embedded reports.
+
+See [docs/powerbi/powerbi-design.md](docs/powerbi/powerbi-design.md) for the complete architecture, all DAX measures, RLS design, the full React embed component, and an 8-step activation guide.
 
 ---
 
@@ -337,7 +356,7 @@ See [docs/powerbi/powerbi-design.md](docs/powerbi/powerbi-design.md) for the ful
 3. Set **Root Directory** to `frontend`
 4. Add environment variable:
    ```
-   VITE_API_BASE_URL = https://<your-backend>.azurewebsites.net
+   VITE_API_URL = https://<your-backend>.azurewebsites.net
    ```
 5. Click **Deploy** — Vercel handles build (`npm run build`) and CDN distribution automatically
 
@@ -349,7 +368,7 @@ npm install -g vercel
 cd frontend
 
 # Create .env.production with your backend URL
-echo "VITE_API_BASE_URL=https://<your-backend>.azurewebsites.net" > .env.production
+echo "VITE_API_URL=https://<your-backend>.azurewebsites.net" > .env.production
 
 vercel --prod
 # Follow the prompts: link to project, confirm settings
