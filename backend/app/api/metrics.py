@@ -62,7 +62,7 @@ def get_revenue_trend(
     from_date: Optional[date] = Query(None),
     to_date:   Optional[date] = Query(None),
     conn: pyodbc.Connection = Depends(get_db_conn),
-    _user: UserInfo = Depends(_analyst),
+    _user: UserInfo = Depends(_viewer),   # Viewer+ — shown on Executive Dashboard
 ) -> List[RevenueTrend]:
     """Revenue, gross profit, and order count grouped by the requested time granularity."""
     return metrics_service.get_revenue_trend(conn, granularity, from_date, to_date)
@@ -119,7 +119,7 @@ def get_support_metrics(
 def get_campaign_roi(
     limit: int = Query(20, ge=1, le=100),
     conn: pyodbc.Connection = Depends(get_db_conn),
-    _user: UserInfo = Depends(_analyst),
+    _user: UserInfo = Depends(_viewer),   # Viewer+ — shown on Executive Dashboard
 ) -> List[CampaignROIRow]:
     """Marketing campaign ROI, CTR, conversion rate ordered by ROI descending."""
     return metrics_service.get_campaign_roi(conn, limit)

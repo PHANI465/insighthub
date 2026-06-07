@@ -338,7 +338,7 @@ class MetricsCollector:
                 SUM(CAST(fst.IsResolved AS INT))                               AS Resolved,
                 SUM(CAST(fst.IsEscalated AS INT))                              AS Escalated,
                 SUM(CASE WHEN fst.TicketStatus IN ('Open','In Progress')
-                         THEN 1 ELSE 0 END)                                    AS Open,
+                         THEN 1 ELSE 0 END)                                    AS OpenCount,
                 AVG(fst.ResolutionHours)                                       AS AvgResHours,
                 AVG(fst.FirstResponseHours)                                    AS AvgFirstRespHours,
                 AVG(CAST(fst.SatisfactionRating AS FLOAT))                     AS AvgCSAT,

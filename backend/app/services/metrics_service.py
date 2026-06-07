@@ -87,8 +87,7 @@ def get_kpi_summary(
         SELECT
             COUNT(*)      AS TotalCampaigns,
             MAX(ROI_Pct)  AS TopROI
-        FROM dbo.FactCampaignPerformance
-        WHERE CampaignStatus = 'Completed'
+        FROM dbo.vw_CampaignROI
     """
     camp_row = execute_query(conn, sql_campaigns, fetch="one")
 
